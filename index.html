@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#153d36">
+  <meta name="description" content="Learn2Play Bench studies how LLM agents learn from experience in 20 newly designed games with hidden rules.">
+  <meta property="og:title" content="Learn2Play Bench — Learning through experience">
+  <meta property="og:description" content="20 unfamiliar games. Hidden rules. Repeated play. How well do LLM agents learn from experience?">
+  <meta property="og:type" content="website">
+  <title>Learn2Play Bench · Learning through experience</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23153d36'/%3E%3Cpath d='M11 10v20h18v-5H16V10z' fill='%23d8fb83'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header"><div class="nav wrap">
+    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">L²</span> Learn2Play <span class="brand-light">Bench</span></a>
+    <nav aria-label="Main navigation"><a href="#benchmark">Benchmark</a><a href="#results">Results</a><a href="#games">Games</a></nav>
+    <a class="nav-play" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Play the games</a>
+  </div></header>
+  <main id="main">
+    <section class="hero wrap">
+      <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> A benchmark for learning from experience</p>
+        <h1>New worlds.<br>Hidden rules.<br><em>Learn by playing.</em></h1>
+        <p class="hero-description">How well do LLM agents learn from experience in unfamiliar environments?</p>
+        <p class="hero-detail">Meet Learn2Play Bench: 20 newly designed games where agents must discover the rules through interaction, then put what they learn to work.</p>
+        <div class="actions"><a class="button primary" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Try the games</a><a class="button secondary" href="https://anonymous.4open.science/r/Learn2Play-Bench-F1D8/" target="_blank" rel="noopener">Explore the code</a></div>
+        <p class="small-note">Game portal opens separately. Sign-in is required.</p>
+      </div>
+      <div class="hero-lab" aria-label="An illustration of the benchmark's evaluation process, not experimental data">
+        <div class="lab-top"><span>THE LEARNING LOOP</span><span class="live-label">Black-box interaction</span></div>
+        <div class="worlds" aria-hidden="true"><span>🦋</span><span>👻</span><span>💎</span><span>🍵</span></div>
+        <div class="lab-question">The rules aren't given.<br><strong>Experience is the teacher.</strong></div>
+        <ol class="loop"><li><span>01</span><div><b>Act</b><small>Choose an action in an unfamiliar game.</small></div></li><li><span>02</span><div><b>Observe</b><small>Use textual feedback to test an idea.</small></div></li><li><span>03</span><div><b>Learn & replay</b><small>Carry experience into the next attempt.</small></div></li></ol>
+        <div class="lab-bottom"><span>Same model weights</span><span>New experience</span></div>
+      </div>
+    </section>
+    <div class="stats wrap" aria-label="Benchmark overview"><div><strong>20</strong><span>newly designed games</span></div><div><strong>10 + 10</strong><span>fixed & re-shuffled games</span></div><div><strong>4</strong><span>performance & learning metrics</span></div><div><strong>0</strong><span>model-weight updates</span></div></div>
+    <section class="section wrap" id="benchmark">
+      <div class="section-heading"><p class="eyebrow">01 / THE BENCHMARK</p><h2>Solving a task isn't the same<br>as learning from it.</h2><p>A high score tells us what an agent can do. Repeated interaction helps us examine what it learns.</p></div>
+      <div class="principles"><article><span class="number">01</span><h3>Discover, don't look up.</h3><p>Novel, sometimes counterintuitive rules create unfamiliar situations. Agents see actions and feedback—not game source code or solutions.</p></article><article><span class="number">02</span><h3>Experience should matter.</h3><p>Agents play multiple episodes. Different methods retain past experience as full histories, reflections, rules, or workflows.</p></article><article><span class="number">03</span><h3>Test what carries over.</h3><p>Fixed games repeat an instance. Re-shuffled games change its surface details while keeping the underlying rules the same.</p></article></div>
+      <div class="protocol"><div><p class="eyebrow">EVALUATION AT A GLANCE</p><h3>One game. Repeated attempts.<br>A measurable learning trajectory.</h3></div><p>The main evaluation uses 5 episodes for normal games and 10 for challenge games, with a protocol of 3 independent trials. Scores are normalized per game. Challenge games receive weight 3 and normal games weight 1 in aggregate results.</p></div>
+    </section>
+    <section class="results-section" id="results"><div class="wrap section">
+      <div class="section-heading"><p class="eyebrow">02 / THE RESULTS</p><h2>Look beyond the final score.</h2><p>Compare achieved performance and improvement through experience. These are manuscript result snapshots—not a live leaderboard.</p></div>
+      <div class="metric-grid"><div><b>Max</b><p>Average peak score across trials.</p></div><div><b>Mean</b><p>Average score across episodes.</p></div><div><b>LG <span>Learning Gain</span></b><p>Improvement from early to late episodes.</p></div><div><b>LS <span>Learning Slope</span></b><p>Fitted rate of score change across episodes.</p></div></div>
+      <div class="results-card"><div class="table-toolbar"><div class="tabs" role="group" aria-label="Result comparison"><button type="button" class="active" data-group="backbones" aria-pressed="true">Backbones</button><button type="button" data-group="methods" aria-pressed="false">Methods</button><button type="button" data-group="harnesses" aria-pressed="false">Harnesses</button></div><label id="method-choice" hidden>Backbone <select id="method-backbone"><option value="opus">Claude Opus 5</option><option value="kimi">Kimi K3</option></select></label></div>
+      <p id="table-context" class="table-context"></p><div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable results table"><table><caption class="sr-only" id="result-caption">Main evaluation results</caption><thead><tr><th scope="col" id="name-column">Model</th><th scope="col">Max ↑</th><th scope="col">Mean ↑</th><th scope="col">LG ↑</th><th scope="col">LS ↑</th></tr></thead><tbody id="result-body"></tbody></table></div><p class="table-foot">Source: manuscript backbone/method and harness comparison tables · Snapshot: September 29, 2026. Values are aggregate point estimates; uncertainty is not displayed here.</p><noscript><p class="table-foot">Enable JavaScript to explore the result comparisons.</p></noscript></div>
+      <div class="findings"><article><p class="eyebrow">EXPERIENCE</p><h3>Keep the evidence.</h3><p>With Kimi K3, full interaction histories achieve the best or tied-best result on all four metrics among the six compared methods. Summarizing experience is not always better.</p></article><article><p class="eyebrow">AGENT HARNESS</p><h3>The framework matters, too.</h3><p>With Opus 5 fixed, Claude Code reaches a Max of <strong>81.8</strong>, compared with <strong>74.5</strong> for OpenCode. The surrounding software affects how a model learns and acts.</p></article><article><p class="eyebrow">TRANSFER</p><h3>New situations test old lessons.</h3><p>In the same-game comparison, re-shuffling reduces learning slope for many configurations, but not all. Learning a useful rule and reusing it are distinct challenges.</p></article></div>
+    </div></section>
+    <section class="section wrap" id="games"><div class="section-heading split"><div><p class="eyebrow">03 / THE GAME COLLECTION</p><h2>Small worlds.<br>Plenty to discover.</h2></div><p>From an unusual workplace to a mysterious inn, each game presents a different unfamiliar environment. Choose a world, try an idea, and learn from what happens.</p></div><div class="game-grid" id="game-grid"></div><noscript><p>Explore all games in the <a href="https://pointer-unhelpful-confiding.ngrok-free.dev">game portal</a>.</p></noscript><p class="small-note">Cards describe game goals, not hidden solutions. The live portal may include additional or updated game variants.</p></section>
+    <section class="cta wrap"><div><p class="eyebrow">YOUR NEXT ATTEMPT STARTS HERE</p><h2>What will you learn<br>the second time around?</h2><p>Explore the games behind Learn2Play Bench.</p></div><a class="button light" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Enter the game portal</a></section>
+  </main>
+  <footer class="wrap footer"><a class="brand" href="#">Learn2Play Bench</a><p>Learning through interaction. Improving through experience.</p><a href="https://github.com/liushiliushi/learn2play-bench-website" target="_blank" rel="noopener">Website source</a></footer>
+</body>
+</html>
