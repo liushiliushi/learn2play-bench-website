@@ -15,6 +15,6 @@ No package installation or build step is needed.
 
 Results are transcribed from the manuscript's main backbone/method and harness comparison tables (September 29, 2026). They are point estimates, not a live leaderboard. Preserve comparison groups when updating. The matched-transfer discussion is qualitative and does not claim every model declines.
 
-The game portal is hosted separately and requires sign-in. This repository contains no game server, credentials, private logs, or unfinished manuscript PDF. The code link currently points to the public anonymized benchmark repository.
+The game portal is hosted separately and requires sign-in. This repository contains no game server, credentials, private logs, or unfinished manuscript PDF. A benchmark-code button is intentionally omitted: the manuscript's anonymous archive returned HTTP 401 (`not_connected`) during deployment verification. Add a code link once a publicly accessible release is confirmed; do not expose a private repository.
 
 Publishing source: `main`, root directory. Commit and push changes to update the website.
