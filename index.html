@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#153d36">
-  <meta name="description" content="Learn2Play Bench studies how LLM agents learn from experience in 20 newly designed games with hidden rules.">
+  <meta name="description" content="Learn2Play Bench evaluates learning from experience through 20 game templates with hidden rules and instances generated from configurable seeds.">
   <meta property="og:title" content="Learn2Play Bench — Learning through experience">
-  <meta property="og:description" content="20 unfamiliar games. Hidden rules. Repeated play. How well do LLM agents learn from experience?">
+  <meta property="og:description" content="20 game templates. Seed-generated instances. Hidden rules. Can agents learn from experience?">
   <meta property="og:type" content="website">
   <title>Learn2Play Bench · Learning through experience</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23153d36'/%3E%3Cpath d='M11 10v20h18v-5H16V10z' fill='%23d8fb83'/%3E%3C/svg%3E">
@@ -23,9 +23,9 @@
   <main id="main">
     <section class="hero wrap">
       <div class="hero-copy"><p class="eyebrow"><span class="dot"></span> A benchmark for learning from experience</p>
-        <h1>New worlds.<br>Hidden rules.<br><em>Learn by playing.</em></h1>
-        <p class="hero-description">How well do LLM agents learn from experience in unfamiliar environments?</p>
-        <p class="hero-detail">Meet Learn2Play Bench: 20 newly designed games where agents must discover the rules through interaction, then put what they learn to work.</p>
+        <h1>Learn2Play<br><em>Bench</em></h1>
+        <p class="hero-description">Can agents learn from experience?</p>
+        <p class="hero-detail">A benchmark of procedurally generated games with hidden rules. Each of its 20 game templates generates different instances through configurable seeds.</p>
         <div class="actions"><a class="button primary" href="#leaderboard">View leaderboard</a><a class="button secondary" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Try the games</a></div>
         <p class="small-note">Game portal opens separately. Sign-in is required.</p>
       </div>
@@ -37,9 +37,9 @@
         <div class="lab-bottom"><span>Same model weights</span><span>New experience</span></div>
       </div>
     </section>
-    <div class="stats wrap" aria-label="Benchmark overview"><div><strong>20</strong><span>newly designed games</span></div><div><strong>10 + 10</strong><span>fixed & re-shuffled games</span></div><div><strong>4</strong><span>performance & learning metrics</span></div><div><strong>0</strong><span>model-weight updates</span></div></div>
+    <div class="stats wrap" aria-label="Benchmark overview"><div><strong>20</strong><span>game templates</span></div><div><strong>Seeded</strong><span>instances from configurable seeds</span></div><div><strong>4</strong><span>performance & learning metrics</span></div><div><strong>0</strong><span>model-weight updates</span></div></div>
     <section class="results-section" id="leaderboard"><div class="wrap section" id="results">
-      <div class="section-heading"><p class="eyebrow">01 / THE LEADERBOARD</p><h2>Who learns best?</h2><p>Rank agents by learning or performance across 20 games. Start with Learning Slope (LS), or choose another metric. Each tab keeps its comparison settings explicit.</p></div>
+      <div class="section-heading"><p class="eyebrow">01 / THE LEADERBOARD</p><h2>Who learns best?</h2><p>Rank agents by learning or performance across the 20 game templates in our evaluation. Start with Learning Slope (LS), or choose another metric. Each tab keeps its comparison settings explicit.</p></div>
       <div class="metric-grid"><div><b>Max</b><p>Average peak score across trials.</p></div><div><b>Mean</b><p>Average score across episodes.</p></div><div><b>LG <span>Learning Gain</span></b><p>Improvement from early to late episodes.</p></div><div><b>LS <span>Learning Slope</span></b><p>Fitted rate of score change across episodes.</p></div></div>
       <div class="results-card"><div class="table-toolbar"><div class="tabs" role="group" aria-label="Leaderboard comparison"><button type="button" class="active" data-group="backbones" aria-pressed="true">Backbones</button><button type="button" data-group="methods" aria-pressed="false">Methods</button><button type="button" data-group="harnesses" aria-pressed="false">Harnesses</button></div><div class="ranking-controls"><label id="method-choice" hidden>Backbone <select id="method-backbone" aria-label="Method backbone"><option value="opus">Claude Opus 5</option><option value="kimi">Kimi K3</option></select></label><label id="harness-choice" hidden>Backbone <select id="harness-backbone" aria-label="Harness backbone"><option value="opus">Claude Opus 5</option><option value="gpt">GPT-5.6-SOL</option></select></label><label>Rank by <select id="rank-metric" aria-label="Ranking metric"><option value="4">LS · Learning Slope</option><option value="3">LG · Learning Gain</option><option value="1">Max · Peak performance</option><option value="2">Mean · Average performance</option></select></label></div></div>
       <p id="table-context" class="table-context" aria-live="polite"></p><div class="table-scroll" tabindex="0" role="region" aria-label="Scrollable leaderboard"><table><caption class="sr-only" id="result-caption">Main evaluation leaderboard</caption><thead><tr><th scope="col" class="rank-column">Rank</th><th scope="col" id="name-column">Model</th><th scope="col" data-metric="1">Max ↑</th><th scope="col" data-metric="2">Mean ↑</th><th scope="col" data-metric="3">LG ↑</th><th scope="col" data-metric="4">LS ↑</th></tr></thead><tbody id="result-body"></tbody></table></div><p class="table-foot">Source: manuscript backbone/method and harness comparison tables · Updated September 29, 2026. Sorted highest first; equal displayed values share a rank. Highlighting marks the best value in each column. These are aggregate point estimates, not significance rankings. This leaderboard is a curated snapshot, not automatically updated.</p><noscript><p class="table-foot">Enable JavaScript to explore the leaderboard.</p></noscript></div>
