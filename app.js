@@ -79,3 +79,14 @@ games.forEach(([emoji,name,description]) => {
   card.append(icon,title,text); grid.append(card);
 });
 renderResults();
+document.querySelectorAll('[data-curve]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-curve]').forEach(b => {
+    b.classList.toggle('active', b === button);
+    b.setAttribute('aria-pressed', String(b === button));
+  });
+  const chart = document.querySelector('#learning-chart');
+  chart.src = `assets/learning-${button.dataset.curve}.svg`;
+  chart.alt = button.dataset.curve === 'backbones'
+    ? 'Learning curves for nine OpenCode backbones, showing normalized score against progress through the evaluation window.'
+    : 'Learning curves for six self-evolving methods and baselines with Claude Opus 5, showing normalized score against progress through the evaluation window.';
+}));

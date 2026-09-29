@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 490" role="img">
+<title>Normalized learning curves: backbones</title>
+<rect width="820" height="490" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#475569">
+<text x="65" y="24">Normalized score (% of reference ceiling)</text>
+<path d="M65 335.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="340.0" text-anchor="end">0</text>
+<path d="M65 265.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="270.0" text-anchor="end">25</text>
+<path d="M65 195.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="200.0" text-anchor="end">50</text>
+<path d="M65 125.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="130.0" text-anchor="end">75</text>
+<path d="M65 55.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="60.0" text-anchor="end">100</text>
+<text x="65" y="358" text-anchor="middle">0%</text>
+<text x="427.5" y="358" text-anchor="middle">50%</text>
+<text x="790" y="358" text-anchor="middle">100%</text>
+<text x="427" y="383" text-anchor="middle">Progress through the evaluation window</text>
+<polyline points="65.00,244.98 145.56,213.39 226.11,193.94 306.67,188.50 387.22,183.54 467.78,177.16 548.33,169.18 628.89,163.17 709.44,154.36 790.00,148.92" fill="none" stroke="#2563eb" stroke-width="2.4"/>
+<circle cx="65.00" cy="244.98" r="3" fill="#2563eb"/>
+<circle cx="145.56" cy="213.39" r="3" fill="#2563eb"/>
+<circle cx="226.11" cy="193.94" r="3" fill="#2563eb"/>
+<circle cx="306.67" cy="188.50" r="3" fill="#2563eb"/>
+<circle cx="387.22" cy="183.54" r="3" fill="#2563eb"/>
+<circle cx="467.78" cy="177.16" r="3" fill="#2563eb"/>
+<circle cx="548.33" cy="169.18" r="3" fill="#2563eb"/>
+<circle cx="628.89" cy="163.17" r="3" fill="#2563eb"/>
+<circle cx="709.44" cy="154.36" r="3" fill="#2563eb"/>
+<circle cx="790.00" cy="148.92" r="3" fill="#2563eb"/>
+<path d="M65 416 h22" stroke="#2563eb" stroke-width="3"/>
+<text x="95" y="421">Claude Opus 5</text>
+<polyline points="65.00,254.56 145.56,217.89 226.11,196.73 306.67,189.78 387.22,179.04 467.78,173.51 548.33,170.90 628.89,173.44 709.44,170.82 790.00,152.39" fill="none" stroke="#15803d" stroke-width="2.4"/>
+<circle cx="65.00" cy="254.56" r="3" fill="#15803d"/>
+<circle cx="145.56" cy="217.89" r="3" fill="#15803d"/>
+<circle cx="226.11" cy="196.73" r="3" fill="#15803d"/>
+<circle cx="306.67" cy="189.78" r="3" fill="#15803d"/>
+<circle cx="387.22" cy="179.04" r="3" fill="#15803d"/>
+<circle cx="467.78" cy="173.51" r="3" fill="#15803d"/>
+<circle cx="548.33" cy="170.90" r="3" fill="#15803d"/>
+<circle cx="628.89" cy="173.44" r="3" fill="#15803d"/>
+<circle cx="709.44" cy="170.82" r="3" fill="#15803d"/>
+<circle cx="790.00" cy="152.39" r="3" fill="#15803d"/>
+<path d="M310 416 h22" stroke="#15803d" stroke-width="3"/>
+<text x="340" y="421">Gemini 3.5 Flash</text>
+<polyline points="65.00,257.09 145.56,238.59 226.11,227.01 306.67,220.91 387.22,222.27 467.78,213.38 548.33,213.73 628.89,203.06 709.44,199.57 790.00,197.40" fill="none" stroke="#dc2626" stroke-width="2.4"/>
+<circle cx="65.00" cy="257.09" r="3" fill="#dc2626"/>
+<circle cx="145.56" cy="238.59" r="3" fill="#dc2626"/>
+<circle cx="226.11" cy="227.01" r="3" fill="#dc2626"/>
+<circle cx="306.67" cy="220.91" r="3" fill="#dc2626"/>
+<circle cx="387.22" cy="222.27" r="3" fill="#dc2626"/>
+<circle cx="467.78" cy="213.38" r="3" fill="#dc2626"/>
+<circle cx="548.33" cy="213.73" r="3" fill="#dc2626"/>
+<circle cx="628.89" cy="203.06" r="3" fill="#dc2626"/>
+<circle cx="709.44" cy="199.57" r="3" fill="#dc2626"/>
+<circle cx="790.00" cy="197.40" r="3" fill="#dc2626"/>
+<path d="M555 416 h22" stroke="#dc2626" stroke-width="3"/>
+<text x="585" y="421">GPT-5.6-SOL</text>
+<polyline points="65.00,272.35 145.56,260.12 226.11,250.94 306.67,239.55 387.22,232.38 467.78,223.84 548.33,221.39 628.89,221.61 709.44,220.67 790.00,207.26" fill="none" stroke="#7c3aed" stroke-width="2.4"/>
+<circle cx="65.00" cy="272.35" r="3" fill="#7c3aed"/>
+<circle cx="145.56" cy="260.12" r="3" fill="#7c3aed"/>
+<circle cx="226.11" cy="250.94" r="3" fill="#7c3aed"/>
+<circle cx="306.67" cy="239.55" r="3" fill="#7c3aed"/>
+<circle cx="387.22" cy="232.38" r="3" fill="#7c3aed"/>
+<circle cx="467.78" cy="223.84" r="3" fill="#7c3aed"/>
+<circle cx="548.33" cy="221.39" r="3" fill="#7c3aed"/>
+<circle cx="628.89" cy="221.61" r="3" fill="#7c3aed"/>
+<circle cx="709.44" cy="220.67" r="3" fill="#7c3aed"/>
+<circle cx="790.00" cy="207.26" r="3" fill="#7c3aed"/>
+<path d="M65 443 h22" stroke="#7c3aed" stroke-width="3"/>
+<text x="95" y="448">Claude Sonnet 5</text>
+<polyline points="65.00,264.99 145.56,248.53 226.11,235.73 306.67,233.63 387.22,228.38 467.78,227.51 548.33,216.79 628.89,211.00 709.44,213.44 790.00,198.46" fill="none" stroke="#b45309" stroke-width="2.4"/>
+<circle cx="65.00" cy="264.99" r="3" fill="#b45309"/>
+<circle cx="145.56" cy="248.53" r="3" fill="#b45309"/>
+<circle cx="226.11" cy="235.73" r="3" fill="#b45309"/>
+<circle cx="306.67" cy="233.63" r="3" fill="#b45309"/>
+<circle cx="387.22" cy="228.38" r="3" fill="#b45309"/>
+<circle cx="467.78" cy="227.51" r="3" fill="#b45309"/>
+<circle cx="548.33" cy="216.79" r="3" fill="#b45309"/>
+<circle cx="628.89" cy="211.00" r="3" fill="#b45309"/>
+<circle cx="709.44" cy="213.44" r="3" fill="#b45309"/>
+<circle cx="790.00" cy="198.46" r="3" fill="#b45309"/>
+<path d="M310 443 h22" stroke="#b45309" stroke-width="3"/>
+<text x="340" y="448">DeepSeek V4 Pro</text>
+<polyline points="65.00,238.45 145.56,218.40 226.11,208.19 306.67,199.62 387.22,195.17 467.78,190.96 548.33,171.77 628.89,180.28 709.44,173.33 790.00,165.03" fill="none" stroke="#be185d" stroke-width="2.4"/>
+<circle cx="65.00" cy="238.45" r="3" fill="#be185d"/>
+<circle cx="145.56" cy="218.40" r="3" fill="#be185d"/>
+<circle cx="226.11" cy="208.19" r="3" fill="#be185d"/>
+<circle cx="306.67" cy="199.62" r="3" fill="#be185d"/>
+<circle cx="387.22" cy="195.17" r="3" fill="#be185d"/>
+<circle cx="467.78" cy="190.96" r="3" fill="#be185d"/>
+<circle cx="548.33" cy="171.77" r="3" fill="#be185d"/>
+<circle cx="628.89" cy="180.28" r="3" fill="#be185d"/>
+<circle cx="709.44" cy="173.33" r="3" fill="#be185d"/>
+<circle cx="790.00" cy="165.03" r="3" fill="#be185d"/>
+<path d="M555 443 h22" stroke="#be185d" stroke-width="3"/>
+<text x="585" y="448">Kimi K3</text>
+<polyline points="65.00,251.64 145.56,229.45 226.11,207.94 306.67,204.56 387.22,187.74 467.78,184.61 548.33,173.77 628.89,165.64 709.44,157.02 790.00,150.95" fill="none" stroke="#0891b2" stroke-width="2.4"/>
+<circle cx="65.00" cy="251.64" r="3" fill="#0891b2"/>
+<circle cx="145.56" cy="229.45" r="3" fill="#0891b2"/>
+<circle cx="226.11" cy="207.94" r="3" fill="#0891b2"/>
+<circle cx="306.67" cy="204.56" r="3" fill="#0891b2"/>
+<circle cx="387.22" cy="187.74" r="3" fill="#0891b2"/>
+<circle cx="467.78" cy="184.61" r="3" fill="#0891b2"/>
+<circle cx="548.33" cy="173.77" r="3" fill="#0891b2"/>
+<circle cx="628.89" cy="165.64" r="3" fill="#0891b2"/>
+<circle cx="709.44" cy="157.02" r="3" fill="#0891b2"/>
+<circle cx="790.00" cy="150.95" r="3" fill="#0891b2"/>
+<path d="M65 470 h22" stroke="#0891b2" stroke-width="3"/>
+<text x="95" y="475">Qwen 3.8 Max</text>
+<polyline points="65.00,295.69 145.56,287.69 226.11,280.37 306.67,274.03 387.22,268.92 467.78,265.54 548.33,265.06 628.89,264.41 709.44,263.41 790.00,257.28" fill="none" stroke="#475569" stroke-width="2.4"/>
+<circle cx="65.00" cy="295.69" r="3" fill="#475569"/>
+<circle cx="145.56" cy="287.69" r="3" fill="#475569"/>
+<circle cx="226.11" cy="280.37" r="3" fill="#475569"/>
+<circle cx="306.67" cy="274.03" r="3" fill="#475569"/>
+<circle cx="387.22" cy="268.92" r="3" fill="#475569"/>
+<circle cx="467.78" cy="265.54" r="3" fill="#475569"/>
+<circle cx="548.33" cy="265.06" r="3" fill="#475569"/>
+<circle cx="628.89" cy="264.41" r="3" fill="#475569"/>
+<circle cx="709.44" cy="263.41" r="3" fill="#475569"/>
+<circle cx="790.00" cy="257.28" r="3" fill="#475569"/>
+<path d="M310 470 h22" stroke="#475569" stroke-width="3"/>
+<text x="340" y="475">GPT-5 Mini</text>
+<polyline points="65.00,252.79 145.56,237.73 226.11,239.67 306.67,222.83 387.22,218.63 467.78,213.00 548.33,208.94 628.89,215.54 709.44,216.95 790.00,205.25" fill="none" stroke="#9333ea" stroke-width="2.4"/>
+<circle cx="65.00" cy="252.79" r="3" fill="#9333ea"/>
+<circle cx="145.56" cy="237.73" r="3" fill="#9333ea"/>
+<circle cx="226.11" cy="239.67" r="3" fill="#9333ea"/>
+<circle cx="306.67" cy="222.83" r="3" fill="#9333ea"/>
+<circle cx="387.22" cy="218.63" r="3" fill="#9333ea"/>
+<circle cx="467.78" cy="213.00" r="3" fill="#9333ea"/>
+<circle cx="548.33" cy="208.94" r="3" fill="#9333ea"/>
+<circle cx="628.89" cy="215.54" r="3" fill="#9333ea"/>
+<circle cx="709.44" cy="216.95" r="3" fill="#9333ea"/>
+<circle cx="790.00" cy="205.25" r="3" fill="#9333ea"/>
+<path d="M555 470 h22" stroke="#9333ea" stroke-width="3"/>
+<text x="585" y="475">Gemini 3.7 Flash</text>
+</g></svg>

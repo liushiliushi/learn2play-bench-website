@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 490" role="img">
+<title>Normalized learning curves: methods</title>
+<rect width="820" height="490" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="14" fill="#475569">
+<text x="65" y="24">Normalized score (% of reference ceiling)</text>
+<path d="M65 335.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="340.0" text-anchor="end">0</text>
+<path d="M65 265.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="270.0" text-anchor="end">25</text>
+<path d="M65 195.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="200.0" text-anchor="end">50</text>
+<path d="M65 125.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="130.0" text-anchor="end">75</text>
+<path d="M65 55.0 H790" stroke="#e2e8f0"/>
+<text x="52" y="60.0" text-anchor="end">100</text>
+<text x="65" y="358" text-anchor="middle">0%</text>
+<text x="427.5" y="358" text-anchor="middle">50%</text>
+<text x="790" y="358" text-anchor="middle">100%</text>
+<text x="427" y="383" text-anchor="middle">Progress through the evaluation window</text>
+<polyline points="65.00,228.31 145.56,219.94 226.11,223.28 306.67,233.75 387.22,237.34 467.78,228.53 548.33,238.51 628.89,235.50 709.44,238.25 790.00,239.79" fill="none" stroke="#2563eb" stroke-width="2.4"/>
+<circle cx="65.00" cy="228.31" r="3" fill="#2563eb"/>
+<circle cx="145.56" cy="219.94" r="3" fill="#2563eb"/>
+<circle cx="226.11" cy="223.28" r="3" fill="#2563eb"/>
+<circle cx="306.67" cy="233.75" r="3" fill="#2563eb"/>
+<circle cx="387.22" cy="237.34" r="3" fill="#2563eb"/>
+<circle cx="467.78" cy="228.53" r="3" fill="#2563eb"/>
+<circle cx="548.33" cy="238.51" r="3" fill="#2563eb"/>
+<circle cx="628.89" cy="235.50" r="3" fill="#2563eb"/>
+<circle cx="709.44" cy="238.25" r="3" fill="#2563eb"/>
+<circle cx="790.00" cy="239.79" r="3" fill="#2563eb"/>
+<path d="M65 416 h22" stroke="#2563eb" stroke-width="3"/>
+<text x="95" y="421">Naive</text>
+<polyline points="65.00,233.18 145.56,217.72 226.11,204.31 306.67,196.06 387.22,195.41 467.78,191.35 548.33,184.23 628.89,185.27 709.44,186.98 790.00,182.71" fill="none" stroke="#15803d" stroke-width="2.4"/>
+<circle cx="65.00" cy="233.18" r="3" fill="#15803d"/>
+<circle cx="145.56" cy="217.72" r="3" fill="#15803d"/>
+<circle cx="226.11" cy="204.31" r="3" fill="#15803d"/>
+<circle cx="306.67" cy="196.06" r="3" fill="#15803d"/>
+<circle cx="387.22" cy="195.41" r="3" fill="#15803d"/>
+<circle cx="467.78" cy="191.35" r="3" fill="#15803d"/>
+<circle cx="548.33" cy="184.23" r="3" fill="#15803d"/>
+<circle cx="628.89" cy="185.27" r="3" fill="#15803d"/>
+<circle cx="709.44" cy="186.98" r="3" fill="#15803d"/>
+<circle cx="790.00" cy="182.71" r="3" fill="#15803d"/>
+<path d="M310 416 h22" stroke="#15803d" stroke-width="3"/>
+<text x="340" y="421">Reflexion</text>
+<polyline points="65.00,223.29 145.56,200.08 226.11,193.39 306.67,194.68 387.22,192.11 467.78,191.39 548.33,180.12 628.89,181.52 709.44,180.43 790.00,173.15" fill="none" stroke="#dc2626" stroke-width="2.4"/>
+<circle cx="65.00" cy="223.29" r="3" fill="#dc2626"/>
+<circle cx="145.56" cy="200.08" r="3" fill="#dc2626"/>
+<circle cx="226.11" cy="193.39" r="3" fill="#dc2626"/>
+<circle cx="306.67" cy="194.68" r="3" fill="#dc2626"/>
+<circle cx="387.22" cy="192.11" r="3" fill="#dc2626"/>
+<circle cx="467.78" cy="191.39" r="3" fill="#dc2626"/>
+<circle cx="548.33" cy="180.12" r="3" fill="#dc2626"/>
+<circle cx="628.89" cy="181.52" r="3" fill="#dc2626"/>
+<circle cx="709.44" cy="180.43" r="3" fill="#dc2626"/>
+<circle cx="790.00" cy="173.15" r="3" fill="#dc2626"/>
+<path d="M555 416 h22" stroke="#dc2626" stroke-width="3"/>
+<text x="585" y="421">EvoTest</text>
+<polyline points="65.00,230.20 145.56,223.44 226.11,207.04 306.67,199.21 387.22,190.96 467.78,195.55 548.33,191.34 628.89,192.58 709.44,189.37 790.00,179.80" fill="none" stroke="#7c3aed" stroke-width="2.4"/>
+<circle cx="65.00" cy="230.20" r="3" fill="#7c3aed"/>
+<circle cx="145.56" cy="223.44" r="3" fill="#7c3aed"/>
+<circle cx="226.11" cy="207.04" r="3" fill="#7c3aed"/>
+<circle cx="306.67" cy="199.21" r="3" fill="#7c3aed"/>
+<circle cx="387.22" cy="190.96" r="3" fill="#7c3aed"/>
+<circle cx="467.78" cy="195.55" r="3" fill="#7c3aed"/>
+<circle cx="548.33" cy="191.34" r="3" fill="#7c3aed"/>
+<circle cx="628.89" cy="192.58" r="3" fill="#7c3aed"/>
+<circle cx="709.44" cy="189.37" r="3" fill="#7c3aed"/>
+<circle cx="790.00" cy="179.80" r="3" fill="#7c3aed"/>
+<path d="M65 443 h22" stroke="#7c3aed" stroke-width="3"/>
+<text x="95" y="448">Memory</text>
+<polyline points="65.00,241.07 145.56,225.33 226.11,218.26 306.67,213.58 387.22,201.36 467.78,200.35 548.33,198.06 628.89,194.79 709.44,194.85 790.00,189.58" fill="none" stroke="#b45309" stroke-width="2.4"/>
+<circle cx="65.00" cy="241.07" r="3" fill="#b45309"/>
+<circle cx="145.56" cy="225.33" r="3" fill="#b45309"/>
+<circle cx="226.11" cy="218.26" r="3" fill="#b45309"/>
+<circle cx="306.67" cy="213.58" r="3" fill="#b45309"/>
+<circle cx="387.22" cy="201.36" r="3" fill="#b45309"/>
+<circle cx="467.78" cy="200.35" r="3" fill="#b45309"/>
+<circle cx="548.33" cy="198.06" r="3" fill="#b45309"/>
+<circle cx="628.89" cy="194.79" r="3" fill="#b45309"/>
+<circle cx="709.44" cy="194.85" r="3" fill="#b45309"/>
+<circle cx="790.00" cy="189.58" r="3" fill="#b45309"/>
+<path d="M310 443 h22" stroke="#b45309" stroke-width="3"/>
+<text x="340" y="448">ReasoningBank</text>
+<polyline points="65.00,239.71 145.56,228.96 226.11,221.80 306.67,225.70 387.22,233.95 467.78,232.00 548.33,226.30 628.89,232.04 709.44,226.08 790.00,224.26" fill="none" stroke="#be185d" stroke-width="2.4"/>
+<circle cx="65.00" cy="239.71" r="3" fill="#be185d"/>
+<circle cx="145.56" cy="228.96" r="3" fill="#be185d"/>
+<circle cx="226.11" cy="221.80" r="3" fill="#be185d"/>
+<circle cx="306.67" cy="225.70" r="3" fill="#be185d"/>
+<circle cx="387.22" cy="233.95" r="3" fill="#be185d"/>
+<circle cx="467.78" cy="232.00" r="3" fill="#be185d"/>
+<circle cx="548.33" cy="226.30" r="3" fill="#be185d"/>
+<circle cx="628.89" cy="232.04" r="3" fill="#be185d"/>
+<circle cx="709.44" cy="226.08" r="3" fill="#be185d"/>
+<circle cx="790.00" cy="224.26" r="3" fill="#be185d"/>
+<path d="M555 443 h22" stroke="#be185d" stroke-width="3"/>
+<text x="585" y="448">AWM</text>
+</g></svg>

@@ -1,0 +1,110 @@
+/* Research-first layout; keep the existing ranking and cost-chart components. */
+:root { --ink:#182526; --text:#485456; --muted:#637174; --line:#dfe5e5; --paper:#fff; --green:#165c50; --lime:#e6f1ed; --radius:10px; }
+body { font-family:'DM Sans',sans-serif; }
+.wrap { width:min(1120px,calc(100% - 64px)); }
+.header { background:#ffffffef; }
+.nav { height:72px; gap:20px; }
+.nav nav { gap:24px; }
+h1,h2,h3 { letter-spacing:-.035em; }
+h2 { font-size:clamp(28px,3.5vw,36px); line-height:1.22; }
+h3 { font-size:20px; line-height:1.35; }
+.hero { display:block; text-align:center; padding:70px 0 48px; }
+.hero-copy { max-width:850px; margin:auto; }
+.hero h1 { font-size:clamp(40px,5.8vw,66px); margin:20px 0; }
+.hero h1 em { color:var(--green); }
+.hero-description { max-width:none; font-size:24px; margin:0 auto 16px; }
+.hero-detail { max-width:760px; margin:auto; font-size:18px; line-height:1.75; }
+.hero .actions { justify-content:center; margin:27px 0 16px; }
+.button { padding:10px 21px; border-radius:6px; }
+.eyebrow { font-size:12px; color:var(--green); letter-spacing:.12em; }
+.small-note { font-size:13px; line-height:1.7; }
+.stats { grid-template-columns:repeat(3,1fr); padding:22px 0; }
+.stats strong { font-size:20px; letter-spacing:-.025em; }
+.stats span { font-size:13px; text-align:center; margin-top:5px; }
+.section { padding-top:64px; padding-bottom:64px; }
+.section-heading { max-width:800px; margin-bottom:30px; }
+.section-heading h2 { margin:12px 0 16px; }
+.section-heading>p:last-child { max-width:780px; font-size:17px; }
+.text-link { color:var(--green); text-decoration:underline; text-underline-offset:4px; }
+.trace-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; padding:16px 0; border-top:1px solid var(--line); font-size:14px; }
+.trace-heading span { color:var(--muted); }
+.trace-grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.trace-grid li { padding:24px; border-right:1px solid var(--line); }
+.trace-grid li:last-child { border:0; background:#f5faf8; }
+.trace-step { display:flex; align-items:center; justify-content:space-between; gap:8px; font-size:13px; margin-bottom:20px; }
+.trace-step b { color:var(--green); font-size:18px; font-variant-numeric:tabular-nums; }
+.trace-grid h3 { margin-bottom:12px; }
+.trace-grid p { font-size:16px; }
+.trace-grid code { display:block; margin-top:20px; font-size:12px; overflow-wrap:anywhere; color:#45565a; }
+.trace-grid blockquote { font-size:14px; margin:20px 0 0; border-left:2px solid #91b7aa; padding-left:12px; color:var(--text); }
+.results-section { background:#f7f9f9; }
+.metric-grid { gap:24px; margin-bottom:26px; }
+.metric-grid b { font-size:18px; }
+.tabs { background:#f0f3f3; }
+.rank-first { background:#e2efea; }
+td.best { background:#eef6f2; }
+.ranked-metric { box-shadow:inset 0 -2px #8bad9f; }
+th.ranked-metric { background:#e9f1ee; }
+.table-foot { font-size:13px; }
+.research-figure { margin:0; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.figure-toolbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding:20px; border-bottom:1px solid var(--line); }
+.figure-toolbar>a { font-size:14px; }
+.curve-scroll { padding:20px; overflow-x:auto; }
+.curve-scroll img { display:block; width:100%; max-width:920px; min-width:640px; height:auto; margin:auto; }
+.research-figure figcaption { padding:20px 24px; border-top:1px solid var(--line); background:#f8faf9; color:var(--muted); font-size:14px; }
+.cost-figure { border-radius:10px; }
+.cost-figure figcaption { background:#f8faf9; }
+.cost-figure figcaption p { font-size:14px; }
+.cost-figure figcaption .cost-source { font-size:13px; }
+.principles { gap:32px; }
+.principles .number { margin-bottom:12px; }
+.protocol { background:#f3f7f5; border-radius:10px; gap:35px; margin-top:32px; padding:30px; grid-template-columns:1fr 1.6fr; }
+.protocol h3 { font-size:23px; }
+.protocol p { font-size:16px; }
+.protocol p+p { margin-top:12px; }
+.protocol-details { margin-top:20px; border-block:1px solid var(--line); padding:18px 0; }
+.protocol-details summary { cursor:pointer; font-size:16px; font-weight:600; }
+.protocol-details p { padding-top:14px; font-size:16px; max-width:900px; }
+#benchmark,#games { border-bottom:1px solid var(--line); }
+.game-grid { grid-template-columns:repeat(4,1fr); gap:14px; }
+.game-card { border-radius:8px; padding:20px; }
+.game-icon { font-size:24px; margin-bottom:12px; }
+.game-card p { font-size:14px; }
+.resource-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.resource-grid>a { padding:24px; border:1px solid var(--line); border-radius:8px; display:flex; flex-direction:column; }
+.resource-grid>a:hover { border-color:var(--green); }
+.resource-grid p { font-size:16px; margin:12px 0 22px; }
+.resource-grid span { color:var(--green); font-size:14px; margin-top:auto; }
+.resources>.small-note { margin-top:20px; }
+.footer { border-top:1px solid var(--line); padding-block:28px; }
+@media(max-width:1000px) {
+  .nav nav { gap:16px; font-size:14px; }
+  .brand { font-size:17px; }
+  .game-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media(max-width:760px) {
+  .wrap { width:calc(100% - 36px); }
+  .hero { padding:42px 0 32px; }
+  .hero h1 { font-size:42px; }
+  .hero-description { font-size:21px; }
+  .hero-detail { font-size:16px; }
+  .hero .eyebrow { font-size:11px; }
+  .stats { grid-template-columns:1fr; padding:0; gap:0; }
+  .stats>div { align-items:flex-start; padding:14px 4px; border:0; border-bottom:1px solid var(--line); }
+  .stats strong { font-size:18px; }
+  .stats span { text-align:left; }
+  .section { padding-block:44px; }
+  .trace-grid,.resource-grid { grid-template-columns:1fr; }
+  .trace-grid li { border-right:0; border-bottom:1px solid var(--line); padding:22px; }
+  .trace-step { margin-bottom:12px; }
+  .trace-heading { font-size:13px; }
+  .protocol { grid-template-columns:1fr; padding:24px; gap:20px; }
+  .game-grid { grid-template-columns:1fr 1fr; }
+  .game-card { padding:17px; }
+  .figure-toolbar { padding:16px; }
+  .figure-toolbar .tabs { width:100%; }
+  .figure-toolbar .tabs button { flex:1; font-size:13px; padding:9px; }
+  .curve-scroll { padding:12px; }
+  .research-figure figcaption { padding:18px; }
+  .footer p { font-size:13px; }
+}
