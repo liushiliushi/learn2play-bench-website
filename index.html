@@ -11,14 +11,14 @@
   <title>Learn2Play Bench · Learning through experience</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23153d36'/%3E%3Cpath d='M11 10v20h18v-5H16V10z' fill='%23d8fb83'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css?v=research-2">
-  <link rel="stylesheet" href="research.css?v=research-2">
-  <script src="app.js?v=research-2" defer></script>
+  <link rel="stylesheet" href="research.css?v=games-1">
+  <script src="app.js?v=games-1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header"><div class="nav wrap">
     <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">L²</span> Learn2Play <span class="brand-light">Bench</span></a>
-    <nav aria-label="Main navigation"><a href="#leaderboard">Leaderboard</a><a href="#learning">Learning curves</a><a href="#benchmark">Protocol</a><a href="#resources">Resources</a></nav>
+    <nav aria-label="Main navigation"><a href="#example">Game examples</a><a href="#leaderboard">Leaderboard</a><a href="#learning">Learning curves</a><a href="#benchmark">Protocol</a></nav>
     <a class="nav-play" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Play the games</a>
   </div></header>
   <main id="main">
@@ -27,20 +27,18 @@
         <h1>Learn2Play <em>Bench</em></h1>
         <p class="hero-description">How effectively can LLM agents learn from experience?</p>
         <p class="hero-detail">20 game templates with novel, hidden rules and seed-generated instances. Agents discover how each game works through interaction, then reuse their experience across episodes—without updating model weights.</p>
-        <div class="actions"><a class="button primary" href="#leaderboard">Leaderboard</a><a class="button secondary" href="#learning">Learning curves</a><a class="button secondary" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Play the games</a></div>
+        <div class="actions"><a class="button primary" href="#leaderboard">Leaderboard</a><a class="button secondary" href="#example">Game examples</a><a class="button secondary" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Play the games</a></div>
         <p class="small-note">Research snapshot · September 2026 · Game portal requires sign-in</p>
       </div>
     </section>
     <div class="stats wrap" aria-label="Benchmark overview"><div><strong>20 templates</strong><span>Configurable seeds generate instances</span></div><div><strong>Hidden rules</strong><span>Learn through actions and feedback</span></div><div><strong>Repeated play</strong><span>Measure improvement across episodes</span></div></div>
     <section class="section wrap" id="example">
-      <div class="section-heading"><p class="eyebrow">An example of learning</p><h2>From rejected choices to a reusable rule.</h2><p>In Poisoner, the player serves dishes to a king whose preferences are hidden. The menu changes between episodes, but his preferences stay the same.</p></div>
-      <div class="trace-heading"><strong>Poisoner · OpenCode + Claude Opus 5</strong><span>Seed 2 · Trial 3 · Recorded run</span></div>
-      <ol class="trace-grid">
-        <li><div class="trace-step"><span>Episode 1</span><b>0 / 100</b></div><h3>Gather feedback</h3><p>The agent serves three dishes. All are rejected, providing the first evidence about the king’s preferences.</p><code>serve_0 → serve_1 → serve_2</code></li>
-        <li><div class="trace-step"><span>Episode 2</span><b>67 / 100</b></div><h3>Form a hypothesis</h3><p>Two dishes are accepted. The agent compares their visible attributes and starts forming a preference rule.</p><blockquote>“Score +33 for a successful feed. … Let me pick the closest match.”</blockquote></li>
-        <li><div class="trace-step"><span>Episodes 3–5</span><b>100 / 100</b></div><h3>Test and reuse</h3><p>The agent tests which attributes matter, revises its rule, and uses it to choose dishes from new menus.</p><code>Episode 3: serve_1 → serve_4 → serve_2</code></li>
-      </ol>
-      <p class="small-note">An illustrative successful trial, not an average or a guarantee of learning. Descriptions summarize the recorded actions and visible narration; the quoted excerpt is verbatim. The five episodes shown match this game’s reporting window.</p>
+      <div class="section-heading"><p class="eyebrow">Game examples</p><h2>See how each game is played.</h2><p>Choose a game, read the opening situation, and step through sample actions to see the feedback. These are recorded demonstrations—not a live game or a recommended strategy.</p></div>
+      <div class="game-explorer">
+        <div class="game-guide"><label for="example-game">Choose a game</label><select id="example-game" disabled><option>Loading game examples…</option></select><h3 id="example-name">Gameplay preview</h3><p id="example-goal"></p><h4>How to play</h4><p id="example-how">Loading recorded examples…</p><p class="small-note" id="example-meta"></p><a class="text-link" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Play in the game portal</a></div>
+        <div class="game-replay"><div class="replay-heading"><strong id="example-stage">Opening situation</strong><span>Recorded game output</span></div><div class="sample-action"><span>Action</span><code id="example-action">No action yet</code></div><pre id="example-output" tabindex="0" aria-label="Recorded game feedback">Loading…</pre><div class="replay-controls"><button type="button" id="example-prev" disabled>Previous</button><span id="example-progress" role="status" aria-live="polite"></span><button type="button" id="example-next" disabled>Show next action</button></div></div>
+      </div>
+      <p class="small-note">All 20 previews use actual output from the black-box game interface. They show only short opening sequences, not complete solutions or model evaluation results. Use the game portal for live play; sign-in is required.</p><noscript><p>Enable JavaScript to browse the recorded game examples, or visit the game portal to play.</p></noscript>
     </section>
     <section class="results-section" id="leaderboard"><div class="wrap section" id="results">
       <div class="section-heading"><p class="eyebrow">Results</p><h2>Leaderboard</h2><p>Compare backbone models, self-evolving methods, and agent harnesses. Default ranking uses Max; learning gains and slopes are reported separately. <a class="text-link" href="#benchmark">Evaluation protocol</a></p></div>
@@ -51,7 +49,7 @@
     <section class="section wrap" id="learning">
       <div class="section-heading"><p class="eyebrow">Learning through repeated interaction</p><h2>How does performance change with experience?</h2><p>A peak score does not show the path to that score. These curves track normalized performance over the evaluation window across all 20 games.</p></div>
       <figure class="research-figure">
-        <div class="figure-toolbar"><div class="tabs" role="group" aria-label="Learning curve comparison"><button type="button" data-curve="backbones" class="active" aria-pressed="true">Backbones · OpenCode</button><button type="button" data-curve="methods" aria-pressed="false">Methods · Opus 5</button></div><a class="text-link" href="assets/learning-curves.json" download>Download curve data</a></div>
+        <div class="figure-toolbar"><div class="tabs" role="group" aria-label="Learning curve comparison"><button type="button" data-curve="backbones" class="active" aria-pressed="true">Backbones · OpenCode</button><button type="button" data-curve="methods" aria-pressed="false">Methods · Opus 5</button></div></div>
         <div class="curve-scroll" tabindex="0" role="region" aria-label="Learning curves; scroll horizontally on small screens"><img id="learning-chart" src="assets/learning-backbones.svg" width="820" height="490" loading="lazy" alt="Learning curves for nine OpenCode backbones, showing normalized score against progress through the evaluation window."></div>
         <figcaption>Scores use the manuscript’s game-specific reference ceilings and challenge weights. The horizontal axis aligns the first and last retained episodes: 5 episodes for normal games, 10 for challenge games, linearly interpolated for plotting. Lines show aggregate means, not uncertainty intervals.</figcaption>
       </figure>
@@ -71,7 +69,7 @@
       <details class="protocol-details"><summary>How should these results be interpreted?</summary><p>Max and Mean measure achieved performance; Learning Gain and Learning Slope measure improvement across episodes. None of these metrics alone establishes that an agent has discovered the correct rules. Interaction records provide complementary evidence. Backbone, method, and harness comparisons use separate groups; the performance–cost overview is not a compute-matched experiment.</p></details>
     </section>
     <section class="section wrap" id="games"><div class="section-heading"><p class="eyebrow">Game collection</p><h2>20 templates, seed-generated instances</h2><p>Each template defines a different task. Configurable seeds generate instances; agents must learn the hidden rules from available actions and feedback.</p></div><div class="game-grid" id="game-grid"></div><noscript><p>Explore all games in the <a href="https://pointer-unhelpful-confiding.ngrok-free.dev">game portal</a>.</p></noscript><p class="small-note">Cards describe game goals, not hidden solutions. The live portal may include additional or updated game variants.</p></section>
-    <section class="section wrap resources" id="resources"><div class="section-heading"><p class="eyebrow">Access and reproducibility</p><h2>Explore the benchmark</h2><p>Play the games or download the plotted learning curves. Evaluation results on this page are a curated research snapshot.</p></div><div class="resource-grid"><a href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener"><h3>Game portal</h3><p>Try the interactive environments. Sign-in required.</p><span>Play the games ↗</span></a><a href="assets/learning-curves.json" download><h3>Learning-curve data</h3><p>Download the exact aggregate values plotted above.</p><span>Download JSON ↓</span></a><a href="https://github.com/liushiliushi/learn2play-bench-website" target="_blank" rel="noopener"><h3>Website source</h3><p>Inspect the page and leaderboard snapshot. This is not the evaluation code.</p><span>View on GitHub ↗</span></a></div><p class="small-note">The manuscript and evaluation code are not linked here until a public release is available. A result-submission workflow and citation entry are not yet published on this site.</p></section>
+    <section class="section wrap resources" id="resources"><div class="section-heading"><p class="eyebrow">Access and reproducibility</p><h2>Explore the benchmark</h2><p>Browse the gameplay examples or try the games yourself. Evaluation results on this page are a curated research snapshot.</p></div><div class="resource-grid"><a href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener"><h3>Game portal</h3><p>Try the interactive environments. Sign-in required.</p><span>Play the games ↗</span></a><a href="#example"><h3>Gameplay examples</h3><p>Explore real actions and game feedback for all 20 templates.</p><span>Browse examples</span></a><a href="https://github.com/liushiliushi/learn2play-bench-website" target="_blank" rel="noopener"><h3>Website source</h3><p>Inspect the page and leaderboard snapshot. This is not the evaluation code.</p><span>View on GitHub ↗</span></a></div><p class="small-note">The manuscript and evaluation code are not linked here until a public release is available. A result-submission workflow and citation entry are not yet published on this site.</p></section>
   </main>
   <footer class="wrap footer"><a class="brand" href="#">Learn2Play Bench</a><p>Learning through interaction. Improving through experience.</p><a href="https://github.com/liushiliushi/learn2play-bench-website" target="_blank" rel="noopener">Website source</a></footer>
 </body>

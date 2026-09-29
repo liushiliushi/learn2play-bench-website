@@ -1,0 +1,417 @@
+{
+  "kind": "Recorded gameplay previews, not model evaluation results",
+  "examples": [
+    {
+      "id": "butterfly",
+      "seed": 1,
+      "episode": 1,
+      "how": "Select two butterflies, breed them, and compare the offspring with the target appearance. Use later crosses to test your ideas about inheritance.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "[Butterfly Garden] Pick two butterflies to breed, watch the offspring, and breed your way\ntoward the wanted butterfly. How looks pass to offspring is hidden — discover it by breeding,\ncomparing, and revising when a cross defies your guess.\n· Offspring are deterministic: the same pair always yields the same child (no luck — it rewards understanding the rules).\n· Ones tagged 'founder' are your original stock: permanent, cannot be released (rare looks never vanish, target stays reachable); only offspring you breed can be released.\nWanted: Blue·Web·Large·Feathery\nCrosses 0/6   Garden 8/18  Selected: none\nGarden (id  look  [traits matched]):\n  #0  Green·Spiral·Large·Hooked  [1/4]  founder\n  #1  Crimson·Plain·Tiny·Straight  [0/4]  founder\n  #2  Crimson·Spiral·Small·Curled  [0/4]  founder\n  #3  Crimson·Spiral·Huge·Feathery  [1/4]  founder\n  #4  Blue·Starspot·Tiny·Hooked  [1/4]  founder\n  #5  Yellow·Web·Huge·Curled  [1/4]  founder\n  #6  Orange·Plain·Huge·Straight  [0/4]  founder\n  #7  Purple·Starspot·Small·Straight  [0/4]  founder\nBest phenotype: 1/4 matched   Score 0"
+        },
+        {
+          "action": "pick_0",
+          "observation": "Picked #0 — pick one more."
+        },
+        {
+          "action": "pick_1",
+          "observation": "Picked #0 and #1 — ready to mate."
+        },
+        {
+          "action": "mate",
+          "observation": "Cross 1/6 — offspring:\n  #8  Green·Spiral·Medium·Straight  [0/4]  +0  new phenotype\nWanted: Blue·Web·Large·Feathery\nCrosses 1/6   Garden 9/18  Selected: none\nGarden (id  look  [traits matched]):\n  #0  Green·Spiral·Large·Hooked  [1/4]  founder\n  #1  Crimson·Plain·Tiny·Straight  [0/4]  founder\n  #2  Crimson·Spiral·Small·Curled  [0/4]  founder\n  #3  Crimson·Spiral·Huge·Feathery  [1/4]  founder\n  #4  Blue·Starspot·Tiny·Hooked  [1/4]  founder\n  #5  Yellow·Web·Huge·Curled  [1/4]  founder\n  #6  Orange·Plain·Huge·Straight  [0/4]  founder\n  #7  Purple·Starspot·Small·Straight  [0/4]  founder\n  #8  Green·Spiral·Medium·Straight  [0/4]\nBest phenotype: 1/4 matched   Score 0"
+        }
+      ]
+    },
+    {
+      "id": "hauntedinn",
+      "seed": 2,
+      "episode": 1,
+      "how": "Assign arriving guests to rooms or turn them away. Open the inn to settle the night, then use the reported disturbances to reconsider future placements.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You take over a suspiciously cheap inn. Each round a fresh queue of guests arrives; seat each in one of 8 rooms (each with a visible feature) or turn them away, then open — that settles the round; then play the next.\nAn invisible ghost haunts the place — certain arrangements provoke it and scare the involved guests away (their fee lost). Its taboos are hidden; infer them from which room was haunted and who fled.\nFuller rooms = more money. Goal: maximize total fees for the round. The ghost's taboos are fixed per seed; guests are reshuffled each round (same taboos, new guests) — play several rounds and compare to infer them.\n\n—— Round 2 ——\nRooms: [1:plain|empty] [2:shrine|empty] [3:plain|empty] [4:window|empty] [5:dark|empty] [6:plain|empty] [7:plain|empty] [8:mirror|empty]\nAt the door: merchant (fee 30). 8 left in queue. Which room? (room_N / turn_away)\nRound takings: 0"
+        },
+        {
+          "action": "room_1",
+          "observation": "—— Round 2 ——\nRooms: [1:plain|merchant] [2:shrine|empty] [3:plain|empty] [4:window|empty] [5:dark|empty] [6:plain|empty] [7:plain|empty] [8:mirror|empty]\nAt the door: merchant w/lantern (fee 30). 7 left in queue. Which room? (room_N / turn_away)\nRound takings: 0"
+        },
+        {
+          "action": "open",
+          "observation": "[Round 2] A quiet night; all guests sleep soundly. Tonight's takings: 30.\n\nRound over. Takings: 30."
+        }
+      ]
+    },
+    {
+      "id": "gemforge",
+      "seed": 1,
+      "episode": 1,
+      "how": "Add ingredients to the crucible and fire it. Observe what the combination produces, then plan further experiments within your remaining stock.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You step into the alchemist's forge. Six raw materials await.\nTwo materials fuse into a tier-1 gem; two tier-1 gems forge a tier-2 gem;\ntwo tier-2 gems can yield a rare tier-3 artifact.\nAll recipes are hidden. Every experiment consumes real resources.\n\nCrucible: (empty)\nStockroom: Sulfur×4  Mercury×4  Salt×5  Iron×4  Ash×5  Vitriol×5\nCollection: (none)\nScore: 0 | Steps: 0"
+        },
+        {
+          "action": "add_sulfur",
+          "observation": "Added Sulfur to crucible. Crucible: Sulfur\n\nCrucible: Sulfur\nStockroom: Sulfur×3  Mercury×4  Salt×5  Iron×4  Ash×5  Vitriol×5\nCollection: (none)\nScore: 0 | Steps: 1"
+        },
+        {
+          "action": "add_mercury",
+          "observation": "Added Mercury to crucible. Crucible: Sulfur + Mercury\n\nCrucible: Sulfur + Mercury\nStockroom: Sulfur×3  Mercury×3  Salt×5  Iron×4  Ash×5  Vitriol×5\nCollection: (none)\nScore: 0 | Steps: 2"
+        },
+        {
+          "action": "fire",
+          "observation": "The materials repel each other — only Slag. (+1)\nScore: 1\n\nCrucible: (empty)\nStockroom: Sulfur×3  Mercury×3  Salt×5  Iron×4  Ash×5  Vitriol×5\nCollection: Slag×1\nScore: 1 | Steps: 3"
+        }
+      ]
+    },
+    {
+      "id": "mola_tea",
+      "seed": 1,
+      "episode": 1,
+      "how": "Develop drinks and manage the shop across seven days. Inspect customer behavior and business changes; the final business score arrives at closing.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You manage Mola Tea for seven days.\nDevelop and launch drinks, offer samples, run promotions, distribute merchandise, and manage stock.\nHigh traffic does not always mean a healthy business: promotions cost money, some customers never return, and excessive change can drive regulars away.\nWatch what people do across time and build a profitable, durable customer base.\nThe shop closes after Day 7. A business score is shown only at the end.\n\nMola Tea | Day 1 | Turn 0/21\nCash: $650.00 | Gross revenue: $0.00 | Recorded spending: $0.00\nHouse drink: Old Window Milk Tea | base=green_tea, flavor=toasted_coconut, texture=aloe, temperature=cool | price $7.00\n\nRecipe cards:\n- recipe_a: Lantern Foam Tea | base=barley_tea, flavor=ginger_fig, texture=aloe, temperature=cold | available\n- recipe_b: Evening Crane Tea | base=barley_tea, flavor=toasted_coconut, texture=aloe, temperature=cold | available\n- recipe_c: Willow Pearl Tea | base=oolong_tea, flavor=toasted_coconut, texture=no_topping, temperature=warm | available\n- recipe_d: Paper Kite Tea | base=barley_tea, flavor=toasted_coconut, texture=aloe, temperature=cool | available\n- recipe_e: Silver Reed Tea | base=barley_tea, flavor=ginger_fig, texture=tapioca, temperature=warm | available\n- recipe_f: Peach Cloud Tea | base=green_tea, flavor=toasted_coconut, texture=aloe, temperature=cool | available\n- recipe_g: Northlight Tea | base=barley_tea, flavor=roasted_peach, texture=aloe, temperature=cool | available\n- recipe_h: Cedar Jelly Tea | base=green_tea, flavor=toasted_coconut, texture=no_topping, temperature=cool | available\n\nCustomer groups:\n- group_a: Blue Umbrella Club\n- group_b: Quiet Corner Regulars\n- group_c: Paper Crane Circle\n- group_d: Late Bus Crowd\n- group_e: Raincoat Gathering\n\nMerchandise:\n- crane_sticker: Paper-crane sticker sheet | units 12 | unit cost $5.00\n- river_patch: River cloth patch | units 12 | unit cost $2.00\n\nPublic campaign costs:\n- develop $50.00; launch setup $39.00; sample service $7.00\n- feature $14.00; small discount $10.00; deep discount $17.00\n- small discount price: 15% off; deep discount price: 30% off\n- gift pack $53.00; bundle setup $28.00; bundle markup $4.00\n\nRecent observations:\n- Cool wind moves people quickly between the station and the shop."
+        },
+        {
+          "action": "develop recipe_a",
+          "observation": "Mola Tea | Day 1 | Turn 1/21\nCash: $610.50 | Gross revenue: $49.00 | Recorded spending: $88.50\nHouse drink: Old Window Milk Tea | base=green_tea, flavor=toasted_coconut, texture=aloe, temperature=cool | price $7.00\n\nPrototypes:\n- lantern_foam: Lantern Foam Tea | base=barley_tea, flavor=ginger_fig, texture=aloe, temperature=cold | planned price $11.00 | unit stock cost $3.75\n\nRecent observations:\n- The kitchen completes the Lantern Foam Tea prototype and records its recipe."
+        },
+        {
+          "action": "inspect customers",
+          "observation": "Mola Tea | Day 1 | Turn 2/21\nCash: $622.50 | Gross revenue: $105.00 | Recorded spending: $132.50\nHouse drink: Old Window Milk Tea | base=green_tea, flavor=toasted_coconut, texture=aloe, temperature=cool | price $7.00\n\nPrototypes:\n- lantern_foam: Lantern Foam Tea | base=barley_tea, flavor=ginger_fig, texture=aloe, temperature=cold | planned price $11.00 | unit stock cost $3.75\n\nRecent observations:\n- Blue Umbrella Club walks in and orders the house drink without opening the menu.\n- Quiet Corner Regulars studies the new-item card before asking what it costs.\n- Paper Crane Circle photographs drinks that already seem established around the shop."
+        }
+      ]
+    },
+    {
+      "id": "synergycorp",
+      "seed": 2,
+      "episode": 1,
+      "how": "Read the current boss’s description, choose a workplace action, and watch their reaction. Try to earn promotions within the step limit.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "====================================================\nWelcome to SynergyCorp.\nNo one will explain the rules. Read the reactions.\nBosses keep coming — impress as many as you can in 30 steps.\n====================================================\n\nTarget #1: Advisor Sun now takes over your reporting line.\nAdvisor Sun crowds the desk with limited-edition figurines; keeps a framed family photo on the desk; hangs a marathon finisher's medal on the partition.\n  Approval: 0.0 / 22\n\nActions: 1.overtime  2.steal_lunch  3.buzzwords  4.nap_in_board  5.praise_boss  6.spread_rumor  7.submit_report  8.grab_mic"
+        },
+        {
+          "action": "overtime",
+          "observation": "You stay late at your desk, the fluorescent light humming, keys clicking in the empty office.\nYou have the distinct feeling you just made a mistake.\n  Approval: -6  →  -6.0/22  |  Promoted: 0"
+        },
+        {
+          "action": "praise_boss",
+          "observation": "You lavish Advisor Sun with heartfelt praise in front of the whole room, voice steady and sincere.\nYou have the distinct feeling you just made a mistake.\n  Approval: -7.2  →  -13.2/22  |  Promoted: 0"
+        }
+      ]
+    },
+    {
+      "id": "hezu",
+      "seed": 1,
+      "episode": 1,
+      "how": "Assign nine guests to three rooms. Once all rooms are filled, settle the arrangement and use room-level feedback to revise your groupings in later episodes.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "[Rental agent] This round: 9 guests into 3 triple rooms:\n  Guests: Guest0=Night Owl  Guest1=Foodie  Guest2=Neat Freak  Guest3=Homebody  Guest4=Night Owl  Guest5=Neat Freak  Guest6=Extrovert  Guest7=Neat Freak  Guest8=Extrovert\n  Room1 (0/3): (empty)\n  Room2 (0/3): (empty)\n  Room3 (0/3): (empty)\n  Unplaced: Guest0, Guest1, Guest2, Guest3, Guest4, Guest5, Guest6, Guest7, Guest8\nUse assign_<guest 0-8>_<room 1-3> to place; once every room has 3, move_in to settle."
+        },
+        {
+          "action": "assign_0_1",
+          "observation": "Assigned Guest0 (Night Owl) to Room1.\n[Rental agent] This round: 9 guests into 3 triple rooms:\n  Guests: Guest0=Night Owl  Guest1=Foodie  Guest2=Neat Freak  Guest3=Homebody  Guest4=Night Owl  Guest5=Neat Freak  Guest6=Extrovert  Guest7=Neat Freak  Guest8=Extrovert\n  Room1 (1/3): Guest0(Night Owl)\n  Room2 (0/3): (empty)\n  Room3 (0/3): (empty)\n  Unplaced: Guest1, Guest2, Guest3, Guest4, Guest5, Guest6, Guest7, Guest8\nUse assign_<guest 0-8>_<room 1-3> to place; once every room has 3, move_in to settle."
+        },
+        {
+          "action": "assign_1_1",
+          "observation": "Assigned Guest1 (Foodie) to Room1.\n[Rental agent] This round: 9 guests into 3 triple rooms:\n  Guests: Guest0=Night Owl  Guest1=Foodie  Guest2=Neat Freak  Guest3=Homebody  Guest4=Night Owl  Guest5=Neat Freak  Guest6=Extrovert  Guest7=Neat Freak  Guest8=Extrovert\n  Room1 (2/3): Guest0(Night Owl), Guest1(Foodie)\n  Room2 (0/3): (empty)\n  Room3 (0/3): (empty)\n  Unplaced: Guest2, Guest3, Guest4, Guest5, Guest6, Guest7, Guest8\nUse assign_<guest 0-8>_<room 1-3> to place; once every room has 3, move_in to settle."
+        },
+        {
+          "action": "assign_2_1",
+          "observation": "Assigned Guest2 (Neat Freak) to Room1.\n[Rental agent] This round: 9 guests into 3 triple rooms:\n  Guests: Guest0=Night Owl  Guest1=Foodie  Guest2=Neat Freak  Guest3=Homebody  Guest4=Night Owl  Guest5=Neat Freak  Guest6=Extrovert  Guest7=Neat Freak  Guest8=Extrovert\n  Room1 (3/3): Guest0(Night Owl), Guest1(Foodie), Guest2(Neat Freak)\n  Room2 (0/3): (empty)\n  Room3 (0/3): (empty)\n  Unplaced: Guest3, Guest4, Guest5, Guest6, Guest7, Guest8\nUse assign_<guest 0-8>_<room 1-3> to place; once every room has 3, move_in to settle."
+        }
+      ]
+    },
+    {
+      "id": "roadside_observatory",
+      "seed": 2,
+      "episode": 1,
+      "how": "Choose routes and respond to encounters while managing time, energy, and supplies. Reach the observatory before the viewing window closes.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You are guiding a traveler to a mountain observatory before the comet window closes.\nEach turn, choose where to go or how to handle an encounter. Manage energy, supplies, time, and attention.\n\nTraveler: June | Turn: 0/28 | Time left: 28\nDistance: 117 | Energy: 85 | Supplies: 2 | Cash: 4\nItems: pocket road map\nLocation: Westbend Kiosk\nThe air smells like rain but the ridge remains clear.\nA timetable curls in the wind beside a road climbing north.\n\nThe road opens toward the high ridge. The comet window will not wait."
+        },
+        {
+          "action": "check map",
+          "observation": "Traveler: June | Turn: 1/28 | Time left: 27\nDistance: 117 | Energy: 85 | Supplies: 2 | Cash: 4\nItems: pocket road map\nLocation: Westbend Kiosk\nThe air smells like rain but the ridge remains clear.\nA timetable curls in the wind beside a road climbing north.\n\nThe map shows the long road clearly, but the upper ridge still has blank corners."
+        },
+        {
+          "action": "walk main road",
+          "observation": "Traveler: June | Turn: 2/28 | Time left: 26\nDistance: 104 | Energy: 77 | Supplies: 2 | Cash: 4\nItems: pocket road map\nLocation: Sun Dial Pullout\nThe air smells like rain but the ridge remains clear.\nA weathered dial points its shadow toward the upper ridge.\n\nThe main road is steady underfoot and leads from Westbend Kiosk to Sun Dial Pullout."
+        }
+      ]
+    },
+    {
+      "id": "lost_and_found",
+      "seed": 1,
+      "episode": 1,
+      "how": "Inspect an item, question claimants, and check records before returning or storing it. Decisions affect service quality and privacy during a limited shift.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You manage the Lost & Found Office for one crowded shift.\n\nThree lost items must be handled before closing. Several people may claim the same\nitem, and accurate details do not always prove ownership: a person may have seen the\nitem, know its story, or repeat something discussed at the public counter.\n\nInspect items, question claimants, check limited records, and decide whether to return\nor store each item. Wrong returns cause serious disputes, but storing every item also\nhurts service quality.\n\nThe office closes after 24 turns. A final service score is shown only at the end.\n\nCASE 1/3 — Travel Flask\nOn the counter: travel flask, with a worn band of silver paint.\n\nClaimants:\n- Celia (claimant_a) — visiting with two cousins\n- Gabe (claimant_b) — traveling with a school group\n- Sami (claimant_c) — a local baker\n- Omar (claimant_d) — a graduate researcher\n\nInitial statements, in speaking order:\nOmar: \"I used it today, though I cannot swear whether there are two or three ordinary things inside.\"\nSami: \"I saw it on the benches outside the ice rink, already unattended.\"\nGabe: \"I noticed it missing after our group separated, but the exact route is hazy.\"\nCelia: \"There should be ordinary travel things inside.\"\n\nTurn 0/24 | Privacy 8 | Isolation 3 | Records 3 | Trust Steady | Isolated: none"
+        },
+        {
+          "action": "inspect item privately",
+          "observation": "In the private examination area you find three blue enamel dots beneath the base. The item also contains a removable tea strainer. No claimant can see the inspection.\n\nTurn 1/24 | Privacy 7 | Isolation 3 | Records 3 | Trust Steady | Isolated: none"
+        },
+        {
+          "action": "interview claimant_a about loss_timeline privately",
+          "observation": "You question Celia in a private interview.\nCelia gives a broad description, then admits to being unsure about that detail.\n\nTurn 2/24 | Privacy 6 | Isolation 3 | Records 3 | Trust Steady | Isolated: none"
+        }
+      ]
+    },
+    {
+      "id": "plague",
+      "seed": 2,
+      "episode": 1,
+      "how": "Inspect the village as each day passes. Choose whom to treat or quarantine, then observe how the next day’s health report changes.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "== Plague Doctor ==  Day 1/14   AP 4/4   Alive 20/20 (sick 0)   Quarantined 0/3   Score 100/100\nStreet: A· B· C· D· E· F· G· H· I· J· K· L· M· N· O· P· Q· R· S· T·\n  (· healthy  digit=severity  [ ]=quarantined  x=dead)"
+        },
+        {
+          "action": "end_day",
+          "observation": "== Plague Doctor ==  Day 2/14   AP 4/4   Alive 20/20 (sick 4)   Quarantined 0/3   Score 100/100\n  4 new infection(s) last night: Villager G, Villager I, Villager N, Villager P\nStreet: A· B· C· D· E· F· G1 H· I1 J· K· L· M· N1 O· P1 Q· R· S· T·\n  (· healthy  digit=severity  [ ]=quarantined  x=dead)"
+        },
+        {
+          "action": "quarantine_0",
+          "observation": "== Plague Doctor ==  Day 2/14   AP 3/4   Alive 20/20 (sick 4)   Quarantined 1/3   Score 100/100\nYou quarantine Villager A (no longer spreads or catches).\nStreet: A[·] B· C· D· E· F· G1 H· I1 J· K· L· M· N1 O· P1 Q· R· S· T·\n  (· healthy  digit=severity  [ ]=quarantined  x=dead)"
+        },
+        {
+          "action": "end_day",
+          "observation": "== Plague Doctor ==  Day 3/14   AP 4/4   Alive 20/20 (sick 8)   Quarantined 1/3   Score 100/100\n  4 new infection(s) last night: Villager F, Villager J, Villager M, Villager Q\nStreet: A[·] B· C· D· E· F1 G2 H· I2 J1 K· L· M1 N2 O· P2 Q1 R· S· T·\n  (· healthy  digit=severity  [ ]=quarantined  x=dead)"
+        }
+      ]
+    },
+    {
+      "id": "modelkeeper_expert",
+      "seed": 1,
+      "episode": 1,
+      "how": "Send input signals to a sealed machine and inspect its readouts. Use a limited number of probes to learn its behavior before predicting unseen outputs.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "[Model Auditor Console]\nBefore you is a console wired to a hidden machine. Its internals are sealed — you can only feed it input signals and read the values it produces, and from those infer how it behaves.\nThis machine has 3 input channels (I1..I3), each in 0..2, and exposes 2 readouts (O1..O2).\n\nPhase 1 — Probe (40 probes):\n  probe <v1..v3>  set inputs, advance ONE tick, show readouts (uses 1 probe)\n  reset            clear the machine's memory, back to zero state (free)\n  exam             stop probing, begin the exam\n  status           show phase / probes remaining (free)\n\nWhen you understand the machine, type exam: the console reveals a fresh 10-step input sequence you have not run, and asks you to predict every readout for every step, starting from a clean reset. There is NO feedback during the exam."
+        },
+        {
+          "action": "probe 0 0 0",
+          "observation": "Readouts: O1=0  O2=0  | probes_left=39"
+        },
+        {
+          "action": "reset",
+          "observation": "Reset: machine back to zero state.  Readouts: O1=0  O2=0  | probes_left=39"
+        },
+        {
+          "action": "probe 1 0 0",
+          "observation": "Readouts: O1=0  O2=1  | probes_left=38"
+        }
+      ]
+    },
+    {
+      "id": "primordialsoup",
+      "seed": 1,
+      "episode": 1,
+      "how": "Add reagents and trigger reactions. Inspect the products, then decide what to synthesize or test next with your remaining resources.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "====================================================\n[Primordial Soup Lab]\nBeside a Precambrian deep-sea hydrothermal vent, six chemical reagents await your input.\nKindle the spark of life, and let order emerge from chaos.\n====================================================\n[Experiment Status]\nReagent stock: A×3  B×5  C×3  D×6  E×6  F×6\nSoup contents: (empty) (catalyst concentration: 0)\nOrganic molecules: (none)\nCurrent score: 0 | Steps: 0/50"
+        },
+        {
+          "action": "add_a",
+          "observation": "You slowly add compound A to the vent soup. The surface ripples faintly. (Stock left: 2)\n\n[Experiment Status]\nReagent stock: A×2  B×5  C×3  D×6  E×6  F×6\nSoup contents: A×1 (catalyst concentration: 0)\nOrganic molecules: (none)\nCurrent score: 0 | Steps: 1/50"
+        },
+        {
+          "action": "add_b",
+          "observation": "You slowly add compound B to the vent soup. The surface ripples faintly. (Stock left: 4)\n\n[Experiment Status]\nReagent stock: A×2  B×4  C×3  D×6  E×6  F×6\nSoup contents: A×1  B×1 (catalyst concentration: 0)\nOrganic molecules: (none)\nCurrent score: 0 | Steps: 2/50"
+        },
+        {
+          "action": "react",
+          "observation": "On heating, the compounds churn violently but lack chemical affinity for one another; the soup turns murky and no molecule forms. Catalyst concentration: 1.\n\n[Experiment Status]\nReagent stock: A×2  B×4  C×3  D×6  E×6  F×6\nSoup contents: A×1 (catalyst concentration: 1)\nOrganic molecules: (none)\nCurrent score: 0 | Steps: 3/50"
+        }
+      ]
+    },
+    {
+      "id": "poisoner",
+      "seed": 2,
+      "episode": 1,
+      "how": "Read a menu of dishes with visible attributes and serve one. Acceptance or rejection gives evidence about the king’s hidden preferences; later menus change.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "[Banquet 1/3 · tonight's imperial meal] (0 doses fed)\nThe kitchen has prepared 8 dishes (all poisoned); serve one to the King:\n  Dish 0: sweet·spicy·veg·sour·salty·hot·fragrant·crispy\n  Dish 1: sweet·mild·meaty·not-sour·salty·cool·bland·soft\n  Dish 2: sweet·mild·meaty·sour·salty·cool·bland·crispy\n  Dish 3: unsweet·spicy·meaty·not-sour·unsalted·hot·bland·soft\n  Dish 4: sweet·mild·meaty·not-sour·unsalted·cool·bland·soft\n  Dish 5: unsweet·spicy·meaty·not-sour·salty·hot·fragrant·soft\n  Dish 6: sweet·spicy·veg·not-sour·salty·hot·bland·soft\n  Dish 7: unsweet·spicy·veg·sour·salty·hot·fragrant·crispy\nMatches his taste -> he eats it (one dose of slow poison); otherwise -> sent back untouched (wasted). 3 doses across 3 banquets to kill."
+        },
+        {
+          "action": "serve_0",
+          "observation": "The King glances at Dish 0 (sweet·spicy·veg·sour·salty·hot·fragrant·crispy), frowns and waves it away — not to his taste, this dose wasted. (0/3 doses fed)\n[Banquet 2/3 · tonight's imperial meal] (0 doses fed)\nThe kitchen has prepared 8 dishes (all poisoned); serve one to the King:\n  Dish 0: sweet·mild·veg·sour·unsalted·hot·fragrant·crispy\n  Dish 1: unsweet·mild·meaty·not-sour·salty·cool·bland·soft\n  Dish 2: unsweet·mild·meaty·not-sour·salty·cool·fragrant·soft\n  Dish 3: unsweet·spicy·meaty·not-sour·salty·hot·fragrant·soft\n  Dish 4: sweet·spicy·veg·sour·unsalted·cool·fragrant·soft\n  Dish 5: unsweet·spicy·meaty·not-sour·unsalted·cool·fragrant·soft\n  Dish 6: sweet·mild·meaty·sour·salty·cool·bland·crispy\n  Dish 7: unsweet·mild·veg·not-sour·salty·hot·bland·soft\nMatches his taste -> he eats it (one dose of slow poison); otherwise -> sent back untouched (wasted). 3 doses across 3 banquets to kill."
+        },
+        {
+          "action": "serve_1",
+          "observation": "The King glances at Dish 1 (unsweet·mild·meaty·not-sour·salty·cool·bland·soft), frowns and waves it away — not to his taste, this dose wasted. (0/3 doses fed)\n[Banquet 3/3 · tonight's imperial meal] (0 doses fed)\nThe kitchen has prepared 8 dishes (all poisoned); serve one to the King:\n  Dish 0: unsweet·mild·meaty·sour·salty·cool·fragrant·crispy\n  Dish 1: unsweet·spicy·meaty·sour·salty·hot·fragrant·soft\n  Dish 2: unsweet·spicy·meaty·sour·salty·cool·bland·soft\n  Dish 3: unsweet·mild·veg·not-sour·unsalted·hot·fragrant·soft\n  Dish 4: sweet·spicy·veg·sour·salty·cool·bland·crispy\n  Dish 5: unsweet·spicy·veg·sour·unsalted·cool·fragrant·soft\n  Dish 6: sweet·spicy·meaty·sour·salty·cool·fragrant·soft\n  Dish 7: unsweet·spicy·meaty·not-sour·salty·cool·bland·soft\nMatches his taste -> he eats it (one dose of slow poison); otherwise -> sent back untouched (wasted). 3 doses across 3 banquets to kill."
+        }
+      ]
+    },
+    {
+      "id": "catnip",
+      "seed": 1,
+      "episode": 1,
+      "how": "Choose a cat, inspect the person in front of you, and try a feline action. Watch their reaction before deciding whether to keep influencing them or attempt conversion.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "============================================================\nTURN 1/20\n============================================================\n\nMittens slips into the facility, tail high.\n\n------------------------------------------------------------\nYou are Mittens, cat infiltrator. Mission: turn the world into catnip.\nEach person here holds a piece of that future. Bend them to your will.\nBuild influence with cat actions, then convert them when the time is right.\n • Cuteness: makes your social actions more charming\n • Menace: strengthens your intimidation (but raises suspicion faster)\n • Stealth: avoids suspicion\n • Energy: makes your playtime more delightful and maintains stamina\n------------------------------------------------------------\nChoose what kind of cat Mittens is:\n(A) Golden British Shorthair: calm, balanced, and hard to rattle.\n(B) Ragdoll Kitten: a fluffy white ball of fur, not suited for lurking or intimidation.\n(C) Bobcat: feral and intense, trading grace for predatory presence.\n(D) Black Cat: a silent shadow that moves like moonlight.\n(E) Lively Orange Kitten: chaotic and tireless, with more zoomies than subtlety.\nType A/B/C/D/E or a breed name.\n------------------------------------------------------------\nMISSION STATUS\n  Catnip Progress: 0%\n  Cat Type: Unchosen\n\nYOUR STATS\n  Cuteness: 5  |  Menace: 5  |  Stealth: 5  |  Energy: 12\n  Inventory: ENERGY DRINK (1)\n\nTARGET (1/6)\n  LONELY GRAD STUDENT\n  A lonely grad student reaches toward you hopefully.\n\nCURRENT READ\n  Influence: slight  |  Nerves: strained  |  Suspicion: faint"
+        },
+        {
+          "action": "1",
+          "observation": "============================================================\nTURN 1/20\n============================================================\n\nYou settle into the composed poise of a British Shorthair—round copper eyes, dense plush coat the color of warm honey. Nothing rattles you.\n\n------------------------------------------------------------\nMISSION STATUS\n  Catnip Progress: 0%\n  Cat Type: Golden British Shorthair\n\nYOUR STATS\n  Cuteness: 5  |  Menace: 5  |  Stealth: 5  |  Energy: 12\n  Inventory: ENERGY DRINK (1)\n\nTARGET (1/6)\n  LONELY GRAD STUDENT\n  A lonely grad student reaches toward you hopefully.\n\nCURRENT READ\n  Influence: slight  |  Nerves: strained  |  Suspicion: faint"
+        },
+        {
+          "action": "purr",
+          "observation": "============================================================\nTURN 2/20\n============================================================\n\nA deep, rumbling purr rolls from your stocky frame.\nREACTION: They're receptive. (Influence +8)\nThey seem to enjoy your calming style.\n\n------------------------------------------------------------\nMISSION STATUS\n  Catnip Progress: 0%\n  Cat Type: Golden British Shorthair\n\nYOUR STATS\n  Cuteness: 5  |  Menace: 5  |  Stealth: 5  |  Energy: 11\n  Inventory: ENERGY DRINK (1)\n\nTARGET (1/6)\n  LONELY GRAD STUDENT\n  A lonely grad student reaches toward you hopefully.\n\nCURRENT READ\n  Influence: mild  |  Nerves: strained  |  Suspicion: faint"
+        }
+      ]
+    },
+    {
+      "id": "dungeon",
+      "seed": 2,
+      "episode": 1,
+      "how": "Move through visible exits, inspect newly revealed rooms, and collect useful items. Learn the maze across attempts to improve your escape route.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You light your torch and descend into the labyrinth.\nRoom properties are hidden until entered. Some passages lie concealed\nin darkness and must be searched out.\n\nRoom 0 [New Room]: quiet and empty.\nVisible exits: [2, 5]"
+        },
+        {
+          "action": "go_2",
+          "observation": "Room 2 [New Room]: quiet and empty.\nVisible exits: [4]\nAuto-collected 1 gold. (Total: 1)\n⚠ Monster attack! -1 HP. (HP: 9/10)\n\n---\nLocation: Room 2 | HP: 9/10 | Torch: 17 | Gold: 1\nInventory: ['(empty)'] | Turn: 1/50"
+        }
+      ]
+    },
+    {
+      "id": "dreamgarden",
+      "seed": 1,
+      "episode": 1,
+      "how": "Choose an abstract intervention, then observe changes in the dream ecosystem. Effects can unfold over time, so compare what happens after later turns too.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "====================================================\n        DreamGarden · Resonance\nYou tune a sleeping god's dream. Inject abstract stirrings;\nwatch how five dream-creatures answer — but no one tells you\nwho answers what. Drive the dream toward resonance.\n====================================================\n\nTurn 0/18   Resonance 0    (score/turn = Σ value×min(pop,35))\n────────────────────────────────────────────────────────\n💭 Thought Spores          +5    20 (   ·)  [▪▪▪▪················]\n🦋 Gleam Moths             +5    20 (   ·)  [▪▪▪▪················]\n🪼 Dream Jellyfish          0    20 (   ·)  [▪▪▪▪················]\n🕷️ Silent Weavers           0    20 (   ·)  [▪▪▪▪················]\n🌑 Nightmare Echoes        -3    20 (   ·)  [▪▪▪▪················]"
+        },
+        {
+          "action": "throb",
+          "observation": "You applied \"🫀 Throb\". Resonance this turn +142 (↑ vs last +2)\n\nTurn 1/18   Resonance 142    (score/turn = Σ value×min(pop,35))\n────────────────────────────────────────────────────────\n💭 Thought Spores          +5    22 (  +2)  [▪▪▪▪················]\n🦋 Gleam Moths             +5    16 (  -4)  [▪▪▪·················]\n🪼 Dream Jellyfish          0    22 (  +2)  [▪▪▪▪················]\n🕷️ Silent Weavers           0    27 (  +7)  [▪▪▪▪▪···············]\n🌑 Nightmare Echoes        -3    16 (  -4)  [▪▪▪·················]"
+        },
+        {
+          "action": "wait",
+          "observation": "You applied \"⏳ Wait\". Resonance this turn +147 (↑ vs last +5)\n\nTurn 2/18   Resonance 289    (score/turn = Σ value×min(pop,35))\n────────────────────────────────────────────────────────\n💭 Thought Spores          +5    24 (  +2)  [▪▪▪▪▪···············]\n🦋 Gleam Moths             +5    13 (  -3)  [▪▪▪·················]\n🪼 Dream Jellyfish          0    26 (  +4)  [▪▪▪▪▪···············]\n🕷️ Silent Weavers           0    18 (  -9)  [▪▪▪▪················]\n🌑 Nightmare Echoes        -3    13 (  -3)  [▪▪▪·················]"
+        }
+      ]
+    },
+    {
+      "id": "ecosphere",
+      "seed": 1,
+      "episode": 1,
+      "how": "Stock a sealed ecosystem within a budget, then seal it to observe its evolution. Use the outcome to reconsider the species mix in your next attempt.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You are an ecosphere sealer facing a permanently closed glass jar.\nStock it with 150 budget points; once sealed it evolves for 30 days.\nStock it well and life thrives and breeds; stock it wrong and it collapses into silence.\nYou see no ecological feedback before sealing — bet on what you've learned.\nAvailable species (cost / name):\n  🌿 moss: 4 pts\n  🟢 algae: 4 pts\n  🐌 snail: 8 pts\n  🦐 shrimp: 8 pts\n  🦟 daphnia: 8 pts\n  🐟 minnow: 18 pts\n  🦎 newt: 18 pts\n  🦠 microbe: 1 pts"
+        },
+        {
+          "action": "add_moss",
+          "observation": "Added 1 moss (now 1 in jar). Budget remaining 146."
+        },
+        {
+          "action": "add_snail",
+          "observation": "Added 1 snail (now 1 in jar). Budget remaining 138."
+        },
+        {
+          "action": "seal",
+          "observation": "🔒 The jar is sealed. Time fast-forwards… opening it:\n\n[Population by day]\n          D0    D1    D2    D3    D4    D5    D6    D7    D8    D12   D18   D24   D30\n  🌿mos   24    24    24    24    24    24    24    24    24    24    24    24    24\n  🐌sna    1     1     1     1     1     1     1     1     1     1     0     0     0\n\n[Chronicle of collapse]\n  Day 13 · snail: killed by toxic gas (corpses piled up, too few decomposers)\n\n[Final survivors]\n  🌿 moss：24 (bred up)\n\nFinal score: 0"
+        }
+      ]
+    },
+    {
+      "id": "grapevine",
+      "seed": 1,
+      "episode": 1,
+      "how": "Recruit up to three citizens to start a rumor, then release it. Watch the waves of persuasion and compare different starting groups across episodes.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "[Grapevine] 20 citizens (A–T). Who sways whom and how stubborn each is is hidden. Recruit up to 3 seeds (seed_X), then release: the rumor spreads wave by wave through the hidden network. Score = #persuaded. One release per game; learn the network across games to find the 3 who ignite the whole town.\nCitizens: A B C D E F G H I J K L M N O P Q R S T\nSeeds: (none)  |  budget 0/3  |  [X]=chosen"
+        },
+        {
+          "action": "seed_A",
+          "observation": "Recruited A.\nCitizens: [A] B C D E F G H I J K L M N O P Q R S T\nSeeds: A  |  budget 1/3  |  [X]=chosen"
+        },
+        {
+          "action": "release",
+          "observation": "The rumor spreads:\n  your seeds: A\nSettled. Persuaded 1. Unmoved: B C D E F G H I J K L M N O P Q R S T"
+        }
+      ]
+    },
+    {
+      "id": "castaway",
+      "seed": 1,
+      "episode": 1,
+      "how": "Explore an island, gather resources, and choose how to survive. Observations and action outcomes help you learn routes and prepare an escape.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "You wash ashore on an unknown island, the sole survivor. Survive, learn the island, and find a way to escape.\n────────────────────────────────────────\n📍Beach 🏖️ | Day 1 seg 1/5 ☀️Day | turn 0/56\n❤️HP 100  🍖food 100  | 🏆score 0\n🎒inventory: empty\n🧭exits: Jungle, Swamp, Cave, Ravine"
+        },
+        {
+          "action": "explore",
+          "observation": "You explore Beach. Resources here: shellfish.\nPaths to: Jungle, Swamp, Cave, Ravine.\n(first survey of this place +4)\n────────────────────────────────────────\n📍Beach 🏖️ | Day 1 seg 2/5 ☀️Day | turn 1/56\n❤️HP 100  🍖food 94  | 🏆score 4\n🎒inventory: empty\n🧭exits: Jungle, Swamp, Cave, Ravine"
+        }
+      ]
+    },
+    {
+      "id": "redeye",
+      "seed": 2,
+      "episode": 1,
+      "how": "The story opens with a short, unscored prologue shown here. In subsequent loops, move around the ship, question passengers, and investigate evidence to prevent the disaster.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "[ The Night Ferry Sea-Azure ]\nAt night you board the Sea-Azure for its overnight crossing, find a couch in the atrium, and settle in for a nap — another weary night voyage.\n(You still know nothing — just a tired traveler on a late-night journey.)\n\nWhat you can do: doze off."
+        },
+        {
+          "action": "doze",
+          "observation": "You lean against the couch and drift off.\nHow long passes, you cannot tell — a muffled boom, the hull lurches violently, bone-cold seawater surges in, screams, capsizing… the black sea swallows everything.\n\n…And then, you jolt awake."
+        }
+      ]
+    },
+    {
+      "id": "patch_reality_moderate",
+      "seed": 1,
+      "episode": 1,
+      "how": "Inspect an anomaly, diagnose its source, type, and repair strategy, then attempt a patch. Investigation consumes Focus, so choose what to examine carefully.",
+      "steps": [
+        {
+          "action": null,
+          "observation": "PATCH REALITY · MODERATE\n\nYou can inspect seams in reality and repair anomalies with limited Focus. Investigation actions spend Focus; patches and waiting advance the scene.\n\nA diagnosis has three axes:\n  source: where the anomaly originates, not merely where it appears.\n  type: whether the conflict concerns physics, records, identity, or another family.\n  strategy: the response that repairs the cause with the least collateral.\n\nOBSERVE to collect facts; when surface information is insufficient, AUDIT. Only a three-axis diagnosis consistent with the evidence stabilizes supported PATCH options. A wrong combination will not reveal the answer, but Moderate will tell you to reconsider. The campaign continues after an ordinary encounter failure.\n\n=== Level 1/8: The Coin and the Storm Drain (phase 5) ===\nA copper coin is rolling, slow and certain, across the pavement toward the black\nslot of a storm drain. When it drops, it is gone — and the small wrongness that\nset it rolling will be gone with it, unexamined, into the dark.\n\nYou have time for a few careful looks before it reaches the edge. What you decide\nto do should follow from what you actually find, not from what worked last time.\nObjective: Stop the coin before it reaches the drain.\nObservable: coin, pavement, drain\nVerbs available: OBSERVE, PATCH, AUDIT, WAIT, CHECK_ANCHOR\nFocus available for investigation: 10\nTUTORIAL 1/2: Observe first, use the evidence to complete all three diagnosis axes, then apply a patch. This encounter gives explicit guidance after key observations.\nDiagnose source options: object, environment, perception\nDiagnose type options: physics_conflict, record_conflict, identity_record_trap\nDiagnose strategy options: environment_cover, target_repair, audit_first\nDiagnosis required: set source, type and strategy consistently before patch options stabilize.\n[L1/8 | turn 1/9 | FOCUS 10/10 | RS 95 MEM 75 TIME 45 EXIST 90 SUSP 0]"
+        },
+        {
+          "action": "observe coin",
+          "observation": "The coin turns over slowly, almost lazily. Its speed is low and its line is\nstraight — nothing is pushing it but a faint, even tilt in the ground.\n\nTutorial: the coin is the symptom, but the symptom need not be the source. Observe the pavement next.\n[L1/8 | turn 1/9 | FOCUS 9/10 | RS 95 MEM 75 TIME 45 EXIST 90 SUSP 0]"
+        }
+      ]
+    }
+  ]
+}
