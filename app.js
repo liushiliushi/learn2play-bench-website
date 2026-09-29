@@ -22,22 +22,42 @@ let selectedGroup = 'backbones';
 const body = document.querySelector('#result-body');
 function renderResults() {
   const key = selectedGroup === 'methods' ? document.querySelector('#method-backbone').value : selectedGroup;
-  const rows = results[key];
+  const metric = Number(document.querySelector('#rank-metric').value);
+  const metricName = ['','Max','Mean','LG','LS'][metric];
+  const harnessBackbone = document.querySelector('#harness-backbone').value;
+  const comparisonRows = selectedGroup === 'harnesses' ? results.harnesses.slice(harnessBackbone === 'opus' ? 0 : 2, harnessBackbone === 'opus' ? 2 : 4) : results[key];
+  const rows = [...comparisonRows].sort((a,b) => b[metric] - a[metric] || a[0].localeCompare(b[0]));
   const maxima = [1,2,3,4].map(i => Math.max(...rows.map(row => row[i])));
   body.replaceChildren();
+  let rank = 0;
   rows.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
+    if (rowIndex === 0 || row[metric] !== rows[rowIndex - 1][metric]) rank = rowIndex + 1;
+    const rankCell = document.createElement('td');
+    rankCell.className = 'rank-column';
+    const badge = document.createElement('span');
+    badge.className = rank === 1 ? 'rank-badge rank-first' : 'rank-badge';
+    badge.textContent = String(rank);
+    rankCell.append(badge); tr.append(rankCell);
     row.forEach((value, index) => {
       const cell = document.createElement('td');
+      if (index === 0) cell.className = 'entry-name';
+      if (index === metric) cell.classList.add('ranked-metric');
       cell.textContent = index === 0 ? value : (index >= 3 && value > 0 ? '+' : '') + value.toFixed(index === 4 ? 2 : 1);
-      const comparison = selectedGroup === 'harnesses' ? rows.slice(Math.floor(rowIndex / 2) * 2, Math.floor(rowIndex / 2) * 2 + 2) : rows;
-      if (index > 0 && value === (selectedGroup === 'harnesses' ? Math.max(...comparison.map(r => r[index])) : maxima[index - 1])) cell.classList.add('best');
+      if (index > 0 && value === maxima[index - 1]) cell.classList.add('best');
       tr.append(cell);
     });
     body.append(tr);
   });
   document.querySelector('#method-choice').hidden = selectedGroup !== 'methods';
-  const context = selectedGroup === 'backbones' ? 'Nine backbones, one common harness: OpenCode. Highlighted values are best within this comparison.' : selectedGroup === 'methods' ? `Six experience-retention methods with ${key === 'opus' ? 'Claude Opus 5' : 'Kimi K3'} fixed. Highlighted values are best or tied-best.` : 'Compare harnesses within each backbone pair. Highlighted values are best within a pair, not across different models.';
+  document.querySelector('#harness-choice').hidden = selectedGroup !== 'harnesses';
+  document.querySelectorAll('[data-metric]').forEach(header => {
+    const active = Number(header.dataset.metric) === metric;
+    header.setAttribute('aria-sort', active ? 'descending' : 'none');
+    header.classList.toggle('ranked-metric', active);
+  });
+  const settings = selectedGroup === 'backbones' ? '9 backbones · OpenCode harness' : selectedGroup === 'methods' ? `6 methods · ${key === 'opus' ? 'Claude Opus 5' : 'Kimi K3'} backbone` : `2 harnesses · ${harnessBackbone === 'opus' ? 'Claude Opus 5' : 'GPT-5.6-SOL'} backbone`;
+  const context = `${settings} · Ranked by ${metricName}, highest first.`;
   document.querySelector('#table-context').textContent = context;
   document.querySelector('#result-caption').textContent = context;
   document.querySelector('#name-column').textContent = selectedGroup === 'methods' ? 'Method' : selectedGroup === 'harnesses' ? 'Model · Harness' : 'Model';
@@ -48,6 +68,8 @@ document.querySelectorAll('[data-group]').forEach(button => button.addEventListe
   renderResults();
 }));
 document.querySelector('#method-backbone').addEventListener('change', renderResults);
+document.querySelector('#harness-backbone').addEventListener('change', renderResults);
+document.querySelector('#rank-metric').addEventListener('change', renderResults);
 const grid = document.querySelector('#game-grid');
 games.forEach(([emoji,name,description]) => {
   const card = document.createElement('article'); card.className = 'game-card';
