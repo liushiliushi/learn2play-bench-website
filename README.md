@@ -12,6 +12,7 @@ No package installation or build step is needed.
 - `index.html`: research overview, external links, and evaluation description.
 - `app.js`: result snapshot and game descriptions.
 - `styles.css`: responsive visual design.
+- `assets/performance-cost.png`: unchanged manuscript performance–cost figure (copied September 29, 2026). Performance is normalized Max; cost is estimated mean USD per episode, using the manuscript's August 30, 2026 pricing snapshot and cache assumptions. It is not a billing record or a current price quote. Retain the axis scale, legend, and caveats when updating.
 
 The leaderboard uses the manuscript's main backbone/method and harness comparison tables (September 29, 2026). Default ranking is Learning Slope (LS), descending; users can choose Max, Mean, or Learning Gain (LG). Ties share competition ranks (1, 1, 3) at displayed precision. These are point estimates, not statistical-significance ranks or automatically updated results. Methods and harnesses are ranked only within the selected backbone. Preserve comparison groups when updating. The matched-transfer discussion is qualitative and does not claim every model declines.
 
