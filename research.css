@@ -91,6 +91,8 @@ th.ranked-metric { background:#e9f1ee; }
 .protocol h3 { font-size:23px; }
 .protocol p { font-size:16px; }
 .protocol p+p { margin-top:12px; }
+#evaluation-protocol { margin:0 0 30px; scroll-margin-top:90px; }
+#evaluation-protocol h2 { font-size:25px; margin-top:13px; line-height:1.35; }
 .protocol-details { margin-top:20px; border-block:1px solid var(--line); padding:18px 0; }
 .protocol-details summary { cursor:pointer; font-size:16px; font-weight:600; }
 .protocol-details p { padding-top:14px; font-size:16px; max-width:900px; }
