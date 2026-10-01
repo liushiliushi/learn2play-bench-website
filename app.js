@@ -70,23 +70,6 @@ document.querySelectorAll('[data-group]').forEach(button => button.addEventListe
 document.querySelector('#method-backbone').addEventListener('change', renderResults);
 document.querySelector('#harness-backbone').addEventListener('change', renderResults);
 document.querySelector('#rank-metric').addEventListener('change', renderResults);
-const grid = document.querySelector('#game-grid');
-games.forEach(([emoji,name,description], index) => {
-  const card = document.createElement('article'); card.className = 'game-card';
-  const icon = document.createElement('span'); icon.className = 'game-icon'; icon.setAttribute('aria-hidden','true'); icon.textContent = emoji;
-  const title = document.createElement('h3'); title.textContent = name;
-  const text = document.createElement('p'); text.textContent = description;
-  const example = document.createElement('a');
-  example.className = 'game-example-link'; example.href = '#example'; example.textContent = 'See gameplay';
-  example.setAttribute('aria-label', `See ${name} gameplay`);
-  example.addEventListener('click', () => {
-    if (gamePreviews.length) {
-      document.querySelector('#example-game').value = String(index);
-      renderGamePreview();
-    }
-  });
-  card.append(icon,title,text,example); grid.append(card);
-});
 renderResults();
 document.querySelectorAll('[data-curve]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-curve]').forEach(b => {
