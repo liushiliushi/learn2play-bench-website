@@ -82,7 +82,7 @@ games.forEach(([emoji,name,description], index) => {
   example.addEventListener('click', () => {
     if (gamePreviews.length) {
       document.querySelector('#example-game').value = String(index);
-      previewStep = 0; renderGamePreview();
+      renderGamePreview();
     }
   });
   card.append(icon,title,text,example); grid.append(card);
@@ -102,32 +102,33 @@ document.querySelectorAll('[data-curve]').forEach(button => button.addEventListe
 
 const previewGameIds = ['butterfly','hauntedinn','gemforge','mola_tea','synergycorp','hezu','roadside_observatory','lost_and_found','plague','modelkeeper_expert','primordialsoup','poisoner','catnip','dungeon','dreamgarden','ecosphere','grapevine','castaway','redeye','patch_reality_moderate'];
 let gamePreviews = [];
-let previewStep = 0;
 function renderGamePreview() {
   const index = Number(document.querySelector('#example-game').value);
   const preview = gamePreviews[index];
   if (!preview) return;
-  const step = preview.steps[previewStep];
   document.querySelector('#example-name').textContent = `${games[index][0]} ${games[index][1]}`;
   document.querySelector('#example-goal').textContent = games[index][2];
   document.querySelector('#example-how').textContent = preview.how;
   document.querySelector('#example-meta').textContent = `Seed ${preview.seed} · ${preview.id === 'redeye' ? 'Unscored opening prologue' : 'Opening sequence'} · Recorded preview`;
-  document.querySelector('#example-stage').textContent = previewStep ? 'Feedback after your action' : 'Opening situation';
-  document.querySelector('#example-action').textContent = step.action || 'No action yet';
   const output = document.querySelector('#example-output');
-  output.textContent = step.observation; output.scrollTop = 0;
-  document.querySelector('#example-prev').disabled = previewStep === 0;
-  document.querySelector('#example-next').disabled = previewStep === preview.steps.length - 1;
-  document.querySelector('#example-progress').textContent = previewStep === preview.steps.length - 1
-    ? `Step ${previewStep} of ${preview.steps.length - 1} · End of preview`
-    : `Step ${previewStep} of ${preview.steps.length - 1}`;
+  output.replaceChildren(...preview.steps.map((step, stepIndex) => {
+    const entry = document.createElement('section'); entry.className = 'transcript-entry';
+    const heading = document.createElement('h4'); heading.className = 'sample-action';
+    const label = document.createElement('span');
+    label.textContent = stepIndex === 0 ? 'Opening situation' : `Action ${stepIndex}`;
+    heading.append(label);
+    if (step.action) {
+      const action = document.createElement('code'); action.textContent = step.action;
+      heading.append(action);
+    }
+    const feedback = document.createElement('pre'); feedback.textContent = step.observation;
+    entry.append(heading, feedback); return entry;
+  }));
+  const end = document.createElement('p'); end.className = 'transcript-end';
+  end.textContent = 'End of recorded preview'; output.append(end);
+  output.scrollTop = 0;
 }
-document.querySelector('#example-game').addEventListener('change', () => { previewStep = 0; renderGamePreview(); });
-document.querySelector('#example-prev').addEventListener('click', () => { if (previewStep > 0) { previewStep--; renderGamePreview(); } });
-document.querySelector('#example-next').addEventListener('click', () => {
-  const preview = gamePreviews[Number(document.querySelector('#example-game').value)];
-  if (preview && previewStep < preview.steps.length - 1) { previewStep++; renderGamePreview(); }
-});
+document.querySelector('#example-game').addEventListener('change', renderGamePreview);
 fetch('assets/game-examples.json').then(response => {
   if (!response.ok) throw new Error('Unable to load game examples');
   return response.json();
