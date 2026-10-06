@@ -9,22 +9,28 @@
   <meta property="og:description" content="20 game templates. Seed-generated instances. Hidden rules. Can agents learn from experience?">
   <meta property="og:type" content="website">
   <title>Learn2Play Bench · Learning through experience</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23153d36'/%3E%3Cpath d='M11 10v20h18v-5H16V10z' fill='%23d8fb83'/%3E%3C/svg%3E">
+  <link rel="icon" href="assets/controller.svg">
   <link rel="stylesheet" href="styles.css?v=research-2">
-  <link rel="stylesheet" href="research.css?v=playful-1">
+  <link rel="stylesheet" href="research.css?v=game-studio-1">
   <script src="app.js?v=games-1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="header"><div class="nav wrap">
-    <a class="brand" href="#"><span class="brand-mark" aria-hidden="true">L²</span> Learn2Play <span class="brand-light">Bench</span></a>
+    <a class="brand" href="#" aria-label="Learn2Play Bench home"><span>Learn2<span class="brand-play">Play</span></span><span class="brand-light">Bench</span></a>
     <nav aria-label="Main navigation"><a href="#example">Game examples</a><a href="#evaluation-protocol">Protocol</a><a href="#leaderboard">Leaderboard</a><a href="#learning">Learning curves</a></nav>
     <a class="nav-play" href="https://pointer-unhelpful-confiding.ngrok-free.dev" target="_blank" rel="noopener">Play the games</a>
   </div></header>
   <main id="main">
     <section class="hero wrap">
+      <div class="hero-tokens" aria-hidden="true">
+        <div class="game-token token-butterfly"><svg viewBox="0 0 100 100"><use href="assets/game-tokens.svg#butterfly"/></svg><span>Butterfly</span></div>
+        <div class="game-token token-ghost"><svg viewBox="0 0 100 100"><use href="assets/game-tokens.svg#ghost"/></svg><span>Haunted Inn</span></div>
+        <div class="game-token token-gem"><svg viewBox="0 0 100 100"><use href="assets/game-tokens.svg#gem"/></svg><span>GemForge</span></div>
+        <div class="game-token token-tea"><svg viewBox="0 0 100 100"><use href="assets/game-tokens.svg#tea"/></svg><span>Mola Tea</span></div>
+      </div>
       <div class="hero-copy"><p class="eyebrow">Learning from experience in unfamiliar environments</p>
-        <h1>Learn2Play <em>Bench</em></h1>
+        <h1>Learn2<em>Play</em> Bench</h1>
         <p class="hero-description">How effectively can LLM agents learn from experience?</p>
         <p class="hero-detail">20 game templates with hidden rules to discover. Different seeds generate different game instances. Agents learn each game’s hidden rules by playing repeatedly and use what they learn to improve in later episodes, without updating their model weights.</p>
         <div class="actions">
@@ -80,6 +86,6 @@
       <div class="principles"><article><span class="number">01</span><h3>Discover, don't look up.</h3><p>Novel, sometimes counterintuitive rules create unfamiliar situations. Agents see actions and feedback—not game source code or solutions.</p></article><article><span class="number">02</span><h3>Do agents improve with practice?</h3><p>Agents play each game repeatedly and can use what they learned in earlier attempts. We measure whether their scores improve.</p></article><article><span class="number">03</span><h3>Can agents use what they learn in new situations?</h3><p>In some games, the situation changes between attempts, but the rules stay the same. We test whether agents can still use what they learned.</p></article></div>
     </section>
   </main>
-  <footer class="wrap footer"><a class="brand" href="#">Learn2Play Bench</a><p>Learning through interaction. Improving through experience.</p><a href="https://github.com/liushiliushi/learn2play-bench-website" target="_blank" rel="noopener">Website source</a></footer>
+  <footer class="wrap footer"><a class="brand" href="#"><span>Learn2<span class="brand-play">Play</span></span><span class="brand-light">Bench</span></a><p>Learning through interaction. Improving through experience.</p><a href="https://github.com/liushiliushi/learn2play-bench-website" target="_blank" rel="noopener">Website source</a></footer>
 </body>
 </html>

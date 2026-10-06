@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="butterfly" viewBox="0 0 100 100">
+    <path d="M48 47C35 14 9 18 14 42c2 12 14 17 27 14C13 54 22 83 39 72l10-14m3-11c13-33 39-29 34-5-2 12-14 17-27 14 28-2 19 27 2 16L51 58" fill="#9abde6" stroke="#355b7d" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M24 35c9-2 15 8 18 13M76 35c-9-2-15 8-18 13" fill="none" stroke="#e4f1ff" stroke-width="5" stroke-linecap="round"/>
+    <path d="M49 43v22m0-23-7-12m8 12 7-12" stroke="#355b7d" stroke-width="3" stroke-linecap="round"/>
+    <path d="m77 15 2-5 2 5 5 2-5 2-2 5-2-5-5-2Z" fill="#d1a355"/>
+  </symbol>
+  <symbol id="ghost" viewBox="0 0 100 100">
+    <ellipse cx="50" cy="83" rx="24" ry="5" fill="#dcd7ed"/>
+    <path d="M24 76V44a26 26 0 0 1 52 0v32L65 69l-8 8-9-8-10 8-7-8Z" fill="#fffdfa" stroke="#73688c" stroke-width="2.5" stroke-linejoin="round"/>
+    <ellipse cx="41" cy="45" rx="3" ry="4" fill="#73688c"/><ellipse cx="60" cy="45" rx="3" ry="4" fill="#73688c"/>
+    <path d="M46 56q5 5 10 0" fill="none" stroke="#73688c" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="34" cy="53" r="4" fill="#f3d3cb"/><circle cx="67" cy="53" r="4" fill="#f3d3cb"/>
+    <path d="m83 24 2-5 2 5 5 2-5 2-2 5-2-5-5-2Z" fill="#aa9ac6"/>
+  </symbol>
+  <symbol id="gem" viewBox="0 0 100 100">
+    <ellipse cx="50" cy="84" rx="25" ry="4" fill="#d2e2d9"/>
+    <path d="M25 29h50l14 20-39 32-39-32Z" fill="#8ed0ba" stroke="#357568" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="m25 29 8 20 17-20 17 20 8-20M11 49h78M33 49l17 32 17-32" fill="none" stroke="#357568" stroke-width="2" stroke-linejoin="round"/>
+    <path d="m50 30 16 18H34Z" fill="#dbf5e4"/><path d="m34 51 16 27 16-27Z" fill="#ade7d0"/>
+    <path d="m17 14 2-6 2 6 6 2-6 2-2 6-2-6-6-2Z" fill="#d1a355"/>
+  </symbol>
+  <symbol id="tea" viewBox="0 0 100 100">
+    <ellipse cx="48" cy="81" rx="32" ry="5" fill="#e7d9ba"/>
+    <path d="M73 43h6c17 0 16 22-5 22" fill="none" stroke="#99825a" stroke-width="4"/>
+    <path d="M22 43h52v12c0 15-10 24-26 24S22 70 22 55Z" fill="#fffdf4" stroke="#99825a" stroke-width="2.5"/>
+    <ellipse cx="48" cy="43" rx="26" ry="8" fill="#b5cc81" stroke="#99825a" stroke-width="2.5"/>
+    <path d="M48 45c-7-10 2-14 9-14 1 7-1 14-9 14Z" fill="#648b51"/><path d="m47 47 7-10" stroke="#eff5df" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M35 29c-8-7 8-9 1-17m13 14c-8-7 8-9 1-17" fill="none" stroke="#b7ad91" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M29 61q3 10 11 11" fill="none" stroke="#e5dac4" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+</svg>
