@@ -1,0 +1,242 @@
+{
+  "snapshot": "2026-09-29",
+  "pricingSnapshot": "2026-08-30",
+  "source": "results/_analysis/rq6_cost_audit.csv",
+  "sourceSha256": "a8e9c1835f6272b8f7a5853b5da77dd12efc6bad7f6f92649b537788572f69ee",
+  "metric": "Normalized Max (% of reference ceiling)",
+  "costMetric": "Estimated mean USD per episode",
+  "points": [
+    {
+      "id": "awm_gpt5mini",
+      "system": "AWM",
+      "model": "GPT-5 Mini",
+      "group": "methods",
+      "score": 46.997700582341245,
+      "cost": 0.03551396358333333
+    },
+    {
+      "id": "awm_kimik3",
+      "system": "AWM",
+      "model": "Kimi K3",
+      "group": "methods",
+      "score": 56.133433119214786,
+      "cost": 0.223795478
+    },
+    {
+      "id": "awm_opus5",
+      "system": "AWM",
+      "model": "Claude Opus 5",
+      "group": "methods",
+      "score": 50.65328801477751,
+      "cost": 0.4226896962500001
+    },
+    {
+      "id": "claude_code_opus5",
+      "system": "Claude Code",
+      "model": "Claude Opus 5",
+      "group": "claude-code",
+      "score": 81.78801583738465,
+      "cost": 0.6470375379166666
+    },
+    {
+      "id": "codex_gpt56sol",
+      "system": "Codex",
+      "model": "GPT-5.6-SOL",
+      "group": "codex",
+      "score": 74.30840826623238,
+      "cost": 0.14385218133333333
+    },
+    {
+      "id": "evotest_gpt5mini",
+      "system": "EvoTest",
+      "model": "GPT-5 Mini",
+      "group": "methods",
+      "score": 47.46552574379728,
+      "cost": 0.06345466116666668
+    },
+    {
+      "id": "evotest_kimik3",
+      "system": "EvoTest",
+      "model": "Kimi K3",
+      "group": "methods",
+      "score": 62.40990860602703,
+      "cost": 0.6580735868421053
+    },
+    {
+      "id": "evotest_opus5",
+      "system": "EvoTest",
+      "model": "Claude Opus 5",
+      "group": "methods",
+      "score": 66.14632665756376,
+      "cost": 1.1682452491666668
+    },
+    {
+      "id": "memory_gpt5mini",
+      "system": "Memory",
+      "model": "GPT-5 Mini",
+      "group": "methods",
+      "score": 48.72924186635557,
+      "cost": 0.0514800095
+    },
+    {
+      "id": "memory_kimik3",
+      "system": "Memory",
+      "model": "Kimi K3",
+      "group": "methods",
+      "score": 63.26350071393904,
+      "cost": 0.5863638425000001
+    },
+    {
+      "id": "memory_opus5",
+      "system": "Memory",
+      "model": "Claude Opus 5",
+      "group": "methods",
+      "score": 60.893628927855595,
+      "cost": 3.0932980199330125
+    },
+    {
+      "id": "naive_gpt5mini",
+      "system": "Naive",
+      "model": "GPT-5 Mini",
+      "group": "methods",
+      "score": 48.747822022827854,
+      "cost": 0.03711868716666667
+    },
+    {
+      "id": "naive_kimik3",
+      "system": "Naive",
+      "model": "Kimi K3",
+      "group": "methods",
+      "score": 54.71676062282683,
+      "cost": 0.25184354908681783
+    },
+    {
+      "id": "naive_opus5",
+      "system": "Naive",
+      "model": "Claude Opus 5",
+      "group": "methods",
+      "score": 53.401426275344846,
+      "cost": 0.7997412173336159
+    },
+    {
+      "id": "reasoningbank_gpt5mini",
+      "system": "ReasoningBank",
+      "model": "GPT-5 Mini",
+      "group": "methods",
+      "score": 51.87245009855562,
+      "cost": 0.09009948025
+    },
+    {
+      "id": "reasoningbank_kimik3",
+      "system": "ReasoningBank",
+      "model": "Kimi K3",
+      "group": "methods",
+      "score": 59.86305690733244,
+      "cost": 0.339759844
+    },
+    {
+      "id": "reasoningbank_opus5",
+      "system": "ReasoningBank",
+      "model": "Claude Opus 5",
+      "group": "methods",
+      "score": 60.22245387783605,
+      "cost": 0.8581703029166665
+    },
+    {
+      "id": "reflexion_gpt5mini",
+      "system": "Reflexion",
+      "model": "GPT-5 Mini",
+      "group": "methods",
+      "score": 53.45284272097834,
+      "cost": 0.040505713458333335
+    },
+    {
+      "id": "reflexion_kimik3",
+      "system": "Reflexion",
+      "model": "Kimi K3",
+      "group": "methods",
+      "score": 61.58504585284587,
+      "cost": 0.29965733799999994
+    },
+    {
+      "id": "reflexion_opus5",
+      "system": "Reflexion",
+      "model": "Claude Opus 5",
+      "group": "methods",
+      "score": 64.83649670622775,
+      "cost": 0.7926113355544124
+    },
+    {
+      "id": "opencode_claude-opus-5",
+      "system": "OpenCode",
+      "model": "Claude Opus 5",
+      "group": "opencode",
+      "score": 74.54303938829,
+      "cost": 2.5682107429166665
+    },
+    {
+      "id": "opencode_claude-sonnet-5",
+      "system": "OpenCode",
+      "model": "Claude Sonnet 5",
+      "group": "opencode",
+      "score": 55.92945367354231,
+      "cost": 1.3340107250000002
+    },
+    {
+      "id": "opencode_deepseek-v4-pro",
+      "system": "OpenCode",
+      "model": "DeepSeek V4 Pro",
+      "group": "opencode",
+      "score": 54.15016440382958,
+      "cost": 0.021429837114161666
+    },
+    {
+      "id": "opencode_gemini-3.5-flash",
+      "system": "OpenCode",
+      "model": "Gemini 3.5 Flash",
+      "group": "opencode",
+      "score": 71.98547805546852,
+      "cost": 0.5975729652500001
+    },
+    {
+      "id": "opencode_gemini-3.7-flash",
+      "system": "OpenCode",
+      "model": "Gemini 3.7 Flash",
+      "group": "opencode",
+      "score": 58.309094284115595,
+      "cost": 0.051870110374999986
+    },
+    {
+      "id": "opencode_gpt-5-mini",
+      "system": "OpenCode",
+      "model": "GPT-5 Mini",
+      "group": "opencode",
+      "score": 34.04426650387625,
+      "cost": 0.0062606989166666665
+    },
+    {
+      "id": "opencode_gpt-5.6-sol",
+      "system": "OpenCode",
+      "model": "GPT-5.6-SOL",
+      "group": "opencode",
+      "score": 56.990744052003166,
+      "cost": 0.11870099233333335
+    },
+    {
+      "id": "opencode_kimi-k3",
+      "system": "OpenCode",
+      "model": "Kimi K3",
+      "group": "opencode",
+      "score": 68.47915714184339,
+      "cost": 0.3133645095
+    },
+    {
+      "id": "opencode_qwen3.8-max",
+      "system": "OpenCode",
+      "model": "Qwen 3.8 Max",
+      "group": "opencode",
+      "score": 72.49790151628373,
+      "cost": 0.22487684333333333
+    }
+  ]
+}

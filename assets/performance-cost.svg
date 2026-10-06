@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 510" width="1120" height="510" role="img" aria-labelledby="cost-plot-title cost-plot-description" font-family="Arial, sans-serif">
+      <title id="cost-plot-title">Performance and estimated inference cost</title>
+      <desc id="cost-plot-description">29 configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed line is the frontier across all 29 configurations. Each point has a title with its configuration and values.</desc>
+      <rect width="1120" height="510" fill="#fff"/>
+      <style>.cost-point{cursor:pointer}.cost-point:focus-visible{outline:none}.cost-point .point-halo{opacity:0}.cost-point:hover .point-halo,.cost-point:focus .point-halo,.cost-point.is-selected .point-halo{opacity:1}.cost-point:focus .point-mark{stroke:#182526;stroke-width:2.5}</style>
+<path d="M74 422H1082" stroke="#e9eeeb"/><text x="60" y="427" text-anchor="end" fill="#66756e" font-size="14">20</text>
+<path d="M74 367.42857142857144H1082" stroke="#e9eeeb"/><text x="60" y="372.42857142857144" text-anchor="end" fill="#66756e" font-size="14">30</text>
+<path d="M74 312.8571428571429H1082" stroke="#e9eeeb"/><text x="60" y="317.8571428571429" text-anchor="end" fill="#66756e" font-size="14">40</text>
+<path d="M74 258.28571428571433H1082" stroke="#e9eeeb"/><text x="60" y="263.28571428571433" text-anchor="end" fill="#66756e" font-size="14">50</text>
+<path d="M74 203.71428571428572H1082" stroke="#e9eeeb"/><text x="60" y="208.71428571428572" text-anchor="end" fill="#66756e" font-size="14">60</text>
+<path d="M74 149.1428571428571H1082" stroke="#e9eeeb"/><text x="60" y="154.1428571428571" text-anchor="end" fill="#66756e" font-size="14">70</text>
+<path d="M74 94.57142857142861H1082" stroke="#e9eeeb"/><text x="60" y="99.57142857142861" text-anchor="end" fill="#66756e" font-size="14">80</text>
+<path d="M74 40H1082" stroke="#e9eeeb"/><text x="60" y="45" text-anchor="end" fill="#66756e" font-size="14">90</text>
+<path d="M203.5237921207142 40V422" stroke="#f0f3f1"/><text x="203.5237921207142" y="449" text-anchor="middle" fill="#66756e" font-size="14">$0.01</text>
+<path d="M358.81994949607173 40V422" stroke="#f0f3f1"/><text x="358.81994949607173" y="449" text-anchor="middle" fill="#66756e" font-size="14">$0.03</text>
+<path d="M529.0095168482857 40V422" stroke="#f0f3f1"/><text x="529.0095168482857" y="449" text-anchor="middle" fill="#66756e" font-size="14">$0.1</text>
+<path d="M684.3056742236432 40V422" stroke="#f0f3f1"/><text x="684.3056742236432" y="449" text-anchor="middle" fill="#66756e" font-size="14">$0.3</text>
+<path d="M854.4952415758571 40V422" stroke="#f0f3f1"/><text x="854.4952415758571" y="449" text-anchor="middle" fill="#66756e" font-size="14">$1</text>
+<path d="M1009.7913989512148 40V422" stroke="#f0f3f1"/><text x="1009.7913989512148" y="449" text-anchor="middle" fill="#66756e" font-size="14">$3</text>
+<text transform="translate(23 231) rotate(-90)" text-anchor="middle" fill="#3e5148" font-size="15">Normalized Max (%)</text>
+      <text x="578" y="493" text-anchor="middle" fill="#3e5148" font-size="15">Estimated cost per episode (USD · log scale)</text>
+      <text x="74" y="19" fill="#66756e" font-size="12">↖ Higher score, lower cost</text>
+<path d="M137.32742284850352 345.35843136456106 L311.2657089308376 235.63767425338716 L436.2191260131806 212.94179976382634 L580.4090676067267 125.63125774713188 L792.955485378022 84.81397071598661" fill="none" stroke="#829d8f" stroke-width="1.6" stroke-dasharray="5 6" opacity="1"/>
+<g aria-hidden="true" pointer-events="none"><rect x="804.955485378022" y="96.81397071598661" width="110.8" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="810.955485378022" y="111.81397071598661" fill="#167457" font-size="14" font-weight="600">Claude Opus 5</text>
+        <text x="810.955485378022" y="128.8139707159866" fill="#6c7771" font-size="12">Claude Code</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="592.4090676067267" y="78.63125774713188" width="95.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="598.4090676067267" y="93.63125774713188" fill="#c15439" font-size="14" font-weight="600">GPT-5.6-SOL</text>
+        <text x="598.4090676067267" y="110.63125774713188" fill="#6c7771" font-size="12">Codex</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="448.2191260131806" y="165.94179976382634" width="133.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="454.2191260131806" y="180.94179976382634" fill="#1674be" font-size="14" font-weight="600">Gemini 3.7 Flash</text>
+        <text x="454.2191260131806" y="197.94179976382634" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="173.2657089308376" y="188.63767425338716" width="126" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="179.2657089308376" y="203.63767425338716" fill="#1674be" font-size="14" font-weight="600">DeepSeek V4 Pro</text>
+        <text x="179.2657089308376" y="220.63767425338716" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="149.32742284850352" y="298.35843136456106" width="88" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="155.32742284850352" y="313.35843136456106" fill="#1674be" font-size="14" font-weight="600">GPT-5 Mini</text>
+        <text x="155.32742284850352" y="330.35843136456106" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="932.4241732667072" y="69.35084219533172" width="110.8" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="938.4241732667072" y="84.35084219533172" fill="#1674be" font-size="14" font-weight="600">Claude Opus 5</text>
+        <text x="938.4241732667072" y="101.35084219533172" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g class="cost-point" data-cost-id="awm_gpt5mini" >
+        <title>AWM · GPT-5 Mini: Max 47.0%, estimated cost $0.036 per episode</title><circle cx="382.6708567277119" cy="274.66969110779496" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="382.6708567277119" cy="274.66969110779496" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="382.6708567277119" cy="274.66969110779496" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="awm_kimik3" >
+        <title>AWM · Kimi K3: Max 56.1%, estimated cost $0.224 per episode</title><circle cx="642.8811230374247" cy="224.8146935494279" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="642.8811230374247" cy="224.8146935494279" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="642.8811230374247" cy="224.8146935494279" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="awm_opus5" >
+        <title>AWM · Claude Opus 5: Max 50.7%, estimated cost $0.423 per episode</title><circle cx="732.7706309789955" cy="254.72062826221418" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="732.7706309789955" cy="254.72062826221418" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="732.7706309789955" cy="254.72062826221418" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="claude_code_opus5" >
+        <title>Claude Code · Claude Opus 5: Max 81.8%, estimated cost $0.647 per episode</title><circle cx="792.955485378022" cy="84.81397071598661" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="792.955485378022" cy="84.81397071598661" r="11" fill="#167457" fill-opacity=".15"/>
+        <circle class="point-mark" cx="792.955485378022" cy="84.81397071598661" r="6" fill="#167457" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="codex_gpt56sol" >
+        <title>Codex · GPT-5.6-SOL: Max 74.3%, estimated cost $0.144 per episode</title><circle cx="580.4090676067267" cy="125.63125774713188" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="580.4090676067267" cy="125.63125774713188" r="11" fill="#c15439" fill-opacity=".15"/>
+        <path class="point-mark" d="M580.4090676067267 118.63125774713188l7 7-7 7-7-7Z" fill="#c15439" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="evotest_gpt5mini" >
+        <title>EvoTest · GPT-5 Mini: Max 47.5%, estimated cost $0.063 per episode</title><circle cx="464.71421556112676" cy="272.1167023695634" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="464.71421556112676" cy="272.1167023695634" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="464.71421556112676" cy="272.1167023695634" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="evotest_kimik3" >
+        <title>EvoTest · Kimi K3: Max 62.4%, estimated cost $0.658 per episode</title><circle cx="795.3461724333151" cy="190.56307017853817" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="795.3461724333151" cy="190.56307017853817" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="795.3461724333151" cy="190.56307017853817" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="evotest_opus5" >
+        <title>EvoTest · Claude Opus 5: Max 66.1%, estimated cost $1.17 per episode</title><circle cx="876.4766021847103" cy="170.1729030972949" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="876.4766021847103" cy="170.1729030972949" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="876.4766021847103" cy="170.1729030972949" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="memory_gpt5mini" >
+        <title>Memory · GPT-5 Mini: Max 48.7%, estimated cost $0.051 per episode</title><circle cx="435.15200356696715" cy="265.22042295788816" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="435.15200356696715" cy="265.22042295788816" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="435.15200356696715" cy="265.22042295788816" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="memory_kimik3" >
+        <title>Memory · Kimi K3: Max 63.3%, estimated cost $0.586 per episode</title><circle cx="779.0369688434245" cy="185.90489610393269" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="779.0369688434245" cy="185.90489610393269" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="779.0369688434245" cy="185.90489610393269" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="memory_opus5" >
+        <title>Memory · Claude Opus 5: Max 60.9%, estimated cost $3.09 per episode</title><circle cx="1014.1205247162661" cy="198.83762499370235" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="1014.1205247162661" cy="198.83762499370235" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="1014.1205247162661" cy="198.83762499370235" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="naive_gpt5mini" >
+        <title>Naive · GPT-5 Mini: Max 48.7%, estimated cost $0.037 per episode</title><circle cx="388.918054759895" cy="265.1190283897108" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="388.918054759895" cy="265.1190283897108" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="388.918054759895" cy="265.1190283897108" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="naive_kimik3" >
+        <title>Naive · Kimi K3: Max 54.7%, estimated cost $0.252 per episode</title><circle cx="659.5718760821272" cy="232.54567774400212" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="659.5718760821272" cy="232.54567774400212" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="659.5718760821272" cy="232.54567774400212" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="naive_opus5" >
+        <title>Naive · Claude Opus 5: Max 53.4%, estimated cost $0.800 per episode</title><circle cx="822.9066825464688" cy="239.72364518311812" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="822.9066825464688" cy="239.72364518311812" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="822.9066825464688" cy="239.72364518311812" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="reasoningbank_gpt5mini" >
+        <title>ReasoningBank · GPT-5 Mini: Max 51.9%, estimated cost $0.090 per episode</title><circle cx="514.2722671969157" cy="248.06748660502507" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="514.2722671969157" cy="248.06748660502507" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="514.2722671969157" cy="248.06748660502507" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="reasoningbank_kimik3" >
+        <title>ReasoningBank · Kimi K3: Max 59.9%, estimated cost $0.340 per episode</title><circle cx="701.8984360344949" cy="204.4616037342715" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="701.8984360344949" cy="204.4616037342715" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="701.8984360344949" cy="204.4616037342715" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="reasoningbank_opus5" >
+        <title>ReasoningBank · Claude Opus 5: Max 60.2%, estimated cost $0.858 per episode</title><circle cx="832.8743581081231" cy="202.50032312380898" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="832.8743581081231" cy="202.50032312380898" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="832.8743581081231" cy="202.50032312380898" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="reflexion_gpt5mini" >
+        <title>Reflexion · GPT-5 Mini: Max 53.5%, estimated cost $0.041 per episode</title><circle cx="401.2616707983396" cy="239.44305829408964" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="401.2616707983396" cy="239.44305829408964" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="401.2616707983396" cy="239.44305829408964" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="reflexion_kimik3" >
+        <title>Reflexion · Kimi K3: Max 61.6%, estimated cost $0.300 per episode</title><circle cx="684.1441234310827" cy="195.06446406018398" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="684.1441234310827" cy="195.06446406018398" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="684.1441234310827" cy="195.06446406018398" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="reflexion_opus5" >
+        <title>Reflexion · Claude Opus 5: Max 64.8%, estimated cost $0.793 per episode</title><circle cx="821.6408033707604" cy="177.32083226030002" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="821.6408033707604" cy="177.32083226030002" r="11" fill="#9473c4" fill-opacity=".15"/>
+        <circle class="point-mark" cx="821.6408033707604" cy="177.32083226030002" r="5" fill="#9473c4" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_claude-opus-5" >
+        <title>OpenCode · Claude Opus 5: Max 74.5%, estimated cost $2.57 per episode</title><circle cx="987.8241732667071" cy="124.35084219533172" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="987.8241732667071" cy="124.35084219533172" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="987.8241732667071" cy="124.35084219533172" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_claude-sonnet-5" >
+        <title>OpenCode · Claude Sonnet 5: Max 55.9%, estimated cost $1.33 per episode</title><circle cx="895.2328139355405" cy="225.9278385243834" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="895.2328139355405" cy="225.9278385243834" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="895.2328139355405" cy="225.9278385243834" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_deepseek-v4-pro" >
+        <title>OpenCode · DeepSeek V4 Pro: Max 54.2%, estimated cost $0.021 per episode</title><circle cx="311.2657089308376" cy="235.63767425338716" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="311.2657089308376" cy="235.63767425338716" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="311.2657089308376" cy="235.63767425338716" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_gemini-3.5-flash" >
+        <title>OpenCode · Gemini 3.5 Flash: Max 72.0%, estimated cost $0.598 per episode</title><circle cx="781.7136850721454" cy="138.3078197544432" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="781.7136850721454" cy="138.3078197544432" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="781.7136850721454" cy="138.3078197544432" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_gemini-3.7-flash" >
+        <title>OpenCode · Gemini 3.7 Flash: Max 58.3%, estimated cost $0.052 per episode</title><circle cx="436.2191260131806" cy="212.94179976382634" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="436.2191260131806" cy="212.94179976382634" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="436.2191260131806" cy="212.94179976382634" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_gpt-5-mini" >
+        <title>OpenCode · GPT-5 Mini: Max 34.0%, estimated cost $0.0063 per episode</title><circle cx="137.32742284850352" cy="345.35843136456106" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="137.32742284850352" cy="345.35843136456106" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="137.32742284850352" cy="345.35843136456106" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_gpt-5.6-sol" >
+        <title>OpenCode · GPT-5.6-SOL: Max 57.0%, estimated cost $0.119 per episode</title><circle cx="553.2433448019867" cy="220.1362253162113" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="553.2433448019867" cy="220.1362253162113" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="553.2433448019867" cy="220.1362253162113" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_kimi-k3" >
+        <title>OpenCode · Kimi K3: Max 68.5%, estimated cost $0.313 per episode</title><circle cx="690.4666482162704" cy="157.44231388308322" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="690.4666482162704" cy="157.44231388308322" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="690.4666482162704" cy="157.44231388308322" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_qwen3.8-max" >
+        <title>OpenCode · Qwen 3.8 Max: Max 72.5%, estimated cost $0.225 per episode</title><circle cx="643.5625044116766" cy="135.51145172542306" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="643.5625044116766" cy="135.51145172542306" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="643.5625044116766" cy="135.51145172542306" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+</svg>

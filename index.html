@@ -11,8 +11,9 @@
   <title>Learn2Play Bench · Learning through experience</title>
   <link rel="icon" href="assets/controller.svg">
   <link rel="stylesheet" href="styles.css?v=research-2">
-  <link rel="stylesheet" href="research.css?v=contact-2">
+  <link rel="stylesheet" href="research.css?v=cost-clear-1">
   <script src="app.js?v=games-1" defer></script>
+  <script src="cost-chart.js?v=clear-1" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -76,9 +77,28 @@
     </section>
     <section class="section wrap cost-section" id="performance-cost">
       <div class="section-heading"><p class="eyebrow">Efficiency</p><h2>Performance and inference cost</h2><p>Compare Max scores with estimated mean inference cost per episode. Points toward the upper left achieve higher performance at lower estimated cost.</p></div>
-      <figure class="cost-figure">
-        <div class="cost-figure-heading"><span>Performance–cost comparison</span><a href="assets/performance-cost.png" target="_blank" rel="noopener">Open full-size figure</a></div>
-        <div class="cost-chart-scroll" tabindex="0" role="region" aria-label="Performance–cost figure; scroll horizontally on small screens"><img src="assets/performance-cost.png" width="2520" height="1500" loading="lazy" alt="Scatter plot of agent configurations: horizontal axis is estimated mean cost per episode in US dollars on a log1p scale; vertical axis is normalized Max score. A dashed performance–cost frontier connects OpenCode GPT-5 Mini, DeepSeek V4 Pro, Gemini 3.7 Flash, Codex GPT-5.6-SOL, and Claude Code Opus 5. Claude Code Opus 5 reaches the highest Max among the plotted configurations."></div>
+      <figure class="cost-figure cost-explorer">
+        <div class="cost-toolbar">
+          <div class="cost-filters" role="group" aria-label="Filter cost configurations">
+            <button type="button" data-cost-filter="all" aria-pressed="true" disabled>All configurations</button>
+            <button type="button" data-cost-filter="opencode" aria-pressed="false" disabled>OpenCode</button>
+            <button type="button" data-cost-filter="methods" aria-pressed="false" disabled>Methods</button>
+            <button type="button" data-cost-filter="harnesses" aria-pressed="false" disabled>Other harnesses</button>
+          </div>
+          <a href="assets/performance-cost.svg" target="_blank" rel="noopener">Open chart ↗</a>
+        </div>
+        <div class="cost-legend" aria-label="Chart legend">
+          <span class="cost-key key-opencode">OpenCode</span><span class="cost-key key-methods">Methods</span><span class="cost-key key-claude">Claude Code</span><span class="cost-key key-codex">Codex</span><span class="cost-key key-frontier">Frontier · all configurations</span><span id="cost-count">29 configurations</span>
+        </div>
+        <div class="cost-plot-scroll" tabindex="0" role="region" aria-label="Interactive cost chart; scroll horizontally on small screens">
+          <div id="cost-plot"><img src="assets/performance-cost.svg" width="1120" height="510" loading="lazy" alt="29 agent configurations by normalized Max score and estimated US dollars per episode. Higher and farther left is better. Claude Code with Opus 5 has the highest Max at 81.8%."/></div>
+        </div>
+        <div class="cost-inspector">
+          <p id="cost-hint">Hover, tap, or focus a point to see its full name and exact values.</p>
+          <div id="cost-selection" aria-live="polite" aria-atomic="true" hidden><strong data-cost-name></strong><span>Max <b data-cost-score></b></span><span>Cost / episode <b data-cost-price></b></span></div>
+        </div>
+        <figcaption>Max is normalized to each game’s reference ceiling. The dashed frontier marks configurations with the highest Max at their cost or lower, across this snapshot. Costs are estimates using the August 30, 2026 pricing snapshot and cache assumptions; they are not current price quotes.</figcaption>
+        <noscript><p class="cost-no-script">Enable JavaScript for filters and point details. The full chart is shown above.</p></noscript>
       </figure>
     </section>
     <section class="section wrap" id="benchmark">
