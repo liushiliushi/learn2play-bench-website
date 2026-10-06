@@ -131,14 +131,6 @@ th.ranked-metric { background:#e9f1ee; }
 .resource-grid span { color:var(--green); font-size:14px; margin-top:auto; }
 .resources>.small-note { margin-top:20px; }
 .footer { border-top:1px solid var(--line); padding-block:28px; }
-.contact-card { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:28px; padding:36px; border:1px solid #c9d7ca; border-radius:20px; background:#f0f5e7; }
-.contact-card>div { flex:1 1 360px; }
-.contact-card h2 { font-size:28px; margin-bottom:12px; }
-.contact-card p { font-size:16px; max-width:520px; }
-.contact-email { display:inline-flex; align-items:center; gap:12px; max-width:100%; padding:14px 18px; border:1px solid #abc7bb; border-radius:12px; background:#fffefb; color:var(--green); font-weight:600; }
-.contact-email svg { flex:none; }
-.contact-email span { min-width:0; overflow-wrap:anywhere; }
-.contact-email:hover { background:#e4f5bf; border-color:var(--green); }
 .footer-links { display:flex; flex-wrap:wrap; gap:18px; }
 .footer-links a { text-decoration:underline; text-underline-offset:4px; }
 @media(max-width:1000px) {
@@ -171,8 +163,6 @@ th.ranked-metric { background:#e9f1ee; }
   .curve-scroll { padding:12px; }
   .research-figure figcaption { padding:18px; }
   .footer p { font-size:13px; }
-  .contact-card { padding:24px; gap:22px; }
-  .contact-email { font-size:15px; padding:12px 14px; gap:10px; }
 }
 
 /* Game-studio identity: playful framing, quiet and readable research panels. */
