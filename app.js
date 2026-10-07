@@ -8,6 +8,7 @@ const results = {
     ['Gemini 3.7 Flash',58.3,39.9,10.7,2.47],['GPT-5.6-SOL',57.0,41.1,14.5,3.71],
     ['Claude Sonnet 5',55.9,35.6,15.7,3.72],['DeepSeek V4 Pro',54.2,38.2,14.7,3.66],['GPT-5 Mini',34.0,22.3,9.2,1.83]
   ],
+  humans: [['Human Top-1',84.3,53.5,21.6,7.33],['Human Top-3',79.1,50.1,18.9,5.54],['Human Top-5',75.1,47.1,17.1,4.62],['Human Mean',43.6,31.2,10.4,2.72]],
   opus: [['EvoTest',66.1,51.3,9.4,2.52],['Reflexion',64.8,48.8,11.6,2.93],['Memory',60.9,48.2,11.4,2.87],['ReasoningBank',60.2,45.3,12.3,2.85],['Naive',53.4,36.6,-5.1,-1.08],['AWM',50.7,37.8,0.7,0.43]],
   kimi: [['Memory',63.3,48.0,16.9,4.69],['EvoTest',62.4,48.0,1.8,1.01],['Reflexion',61.6,40.4,14.8,3.35],['ReasoningBank',59.9,40.1,8.3,2.59],['AWM',56.1,37.0,4.8,0.62],['Naive',54.7,31.9,0.3,0.42]],
   harnesses: [['Opus 5 · OpenCode',74.5,53.8,21.3,5.13],['Opus 5 · Claude Code',81.8,62.3,27.1,6.59],['GPT-5.6-SOL · OpenCode',57.0,41.1,14.5,3.71],['GPT-5.6-SOL · Codex',74.3,54.8,22.2,5.66]]
@@ -26,7 +27,7 @@ function renderResults() {
   const metric = Number(document.querySelector('#rank-metric').value);
   const metricName = ['','Max','Mean','LG','LS'][metric];
   const harnessBackbone = document.querySelector('#harness-backbone').value;
-  const comparisonRows = selectedGroup === 'harnesses' ? results.harnesses.slice(harnessBackbone === 'opus' ? 0 : 2, harnessBackbone === 'opus' ? 2 : 4) : results[key];
+  const comparisonRows = selectedGroup === 'backbones' ? [...results.backbones, ...results.humans] : selectedGroup === 'harnesses' ? results.harnesses.slice(harnessBackbone === 'opus' ? 0 : 2, harnessBackbone === 'opus' ? 2 : 4) : results[key];
   const rows = [...comparisonRows].sort((a,b) => b[metric] - a[metric] || a[0].localeCompare(b[0]));
   const maxima = [1,2,3,4].map(i => Math.max(...rows.map(row => row[i])));
   body.replaceChildren();
@@ -34,6 +35,7 @@ function renderResults() {
   rows.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
     if (row[0] === 'Claude Opus 5.5') tr.classList.add('result-update');
+    if (row[0].startsWith('Human ')) tr.classList.add('human-reference');
     if (rowIndex === 0 || row[metric] !== rows[rowIndex - 1][metric]) rank = rowIndex + 1;
     const rankCell = document.createElement('td');
     rankCell.className = 'rank-column';
@@ -53,16 +55,17 @@ function renderResults() {
   });
   document.querySelector('#method-choice').hidden = selectedGroup !== 'methods';
   document.querySelector('#harness-choice').hidden = selectedGroup !== 'harnesses';
+  document.querySelector('#human-reference-note').hidden = selectedGroup !== 'backbones';
   document.querySelectorAll('[data-metric]').forEach(header => {
     const active = Number(header.dataset.metric) === metric;
     header.setAttribute('aria-sort', active ? 'descending' : 'none');
     header.classList.toggle('ranked-metric', active);
   });
-  const settings = selectedGroup === 'backbones' ? `${results.backbones.length} backbones · OpenCode harness` : selectedGroup === 'methods' ? `6 methods · ${key === 'opus' ? 'Claude Opus 5' : 'Kimi K3'} backbone` : `2 harnesses · ${harnessBackbone === 'opus' ? 'Claude Opus 5' : 'GPT-5.6-SOL'} backbone`;
+  const settings = selectedGroup === 'backbones' ? `${results.backbones.length} OpenCode backbones + ${results.humans.length} human references` : selectedGroup === 'methods' ? `6 methods · ${key === 'opus' ? 'Claude Opus 5' : 'Kimi K3'} backbone` : `2 harnesses · ${harnessBackbone === 'opus' ? 'Claude Opus 5' : 'GPT-5.6-SOL'} backbone`;
   const context = `${settings} · Ranked by ${metricName}, highest first.`;
   document.querySelector('#table-context').textContent = context;
   document.querySelector('#result-caption').textContent = context;
-  document.querySelector('#name-column').textContent = selectedGroup === 'methods' ? 'Method' : selectedGroup === 'harnesses' ? 'Model · Harness' : 'Model';
+  document.querySelector('#name-column').textContent = selectedGroup === 'methods' ? 'Method' : selectedGroup === 'harnesses' ? 'Model · Harness' : 'Model / Human reference';
 }
 document.querySelectorAll('[data-group]').forEach(button => button.addEventListener('click', () => {
   selectedGroup = button.dataset.group;
@@ -79,11 +82,14 @@ document.querySelectorAll('[data-curve]').forEach(button => button.addEventListe
     b.setAttribute('aria-pressed', String(b === button));
   });
   const chart = document.querySelector('#learning-chart');
-  chart.src = `assets/learning-${button.dataset.curve}.svg?v=opus55-20261007`;
+  chart.src = `assets/learning-${button.dataset.curve}.svg?v=humans-20261007`;
   chart.height = button.dataset.curve === 'backbones' ? 524 : 490;
   chart.alt = button.dataset.curve === 'backbones'
     ? 'Learning curves for ten OpenCode backbones, including Claude Opus 5.5, showing normalized score against progress through the evaluation window.'
-    : 'Learning curves for six self-evolving methods and baselines with Claude Opus 5, showing normalized score against progress through the evaluation window.';
+    : button.dataset.curve === 'humans'
+      ? 'Learning curves for Human Top-1, Top-3 and Top-5, OpenCode with Opus 5.5 and Opus 5, and EvoTest with Opus 5, across all 20 games.'
+      : 'Learning curves for six self-evolving methods and baselines with Claude Opus 5, showing normalized score against progress through the evaluation window.';
+  document.querySelector('#human-curve-note').hidden = button.dataset.curve !== 'humans';
 }));
 
 const previewGameIds = ['butterfly','hauntedinn','gemforge','mola_tea','synergycorp','hezu','roadside_observatory','lost_and_found','plague','modelkeeper_expert','primordialsoup','poisoner','catnip','dungeon','dreamgarden','ecosphere','grapevine','castaway','redeye','patch_reality_moderate'];

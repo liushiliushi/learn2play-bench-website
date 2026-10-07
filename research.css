@@ -301,3 +301,6 @@ th.ranked-metric { background:#e9f1ee; }
 .evaluation-details { margin:0 24px 22px; font-size:14px; line-height:1.65; color:#53685c; }
 .evaluation-details summary { cursor:pointer; font-weight:600; color:#305344; }
 .evaluation-details p { margin:10px 0 0; }
+.human-reference .entry-name { color:#675032; }
+.human-reference-note { margin:0; padding:0 24px 18px; color:var(--muted); font-size:13px; line-height:1.65; }
+#human-curve-note { margin-top:10px; }
