@@ -1,7 +1,8 @@
 'use strict';
-// Snapshot transcribed from the manuscript's main comparison tables, 2026-09-29.
+// Snapshot transcribed from the manuscript's main comparison tables, 2026-10-07.
 const results = {
   backbones: [
+    ['Claude Opus 5.5',80.1,61.0,23.0,5.22],
     ['Claude Opus 5',74.5,53.8,21.3,5.13],['Qwen 3.8 Max',72.5,51.1,25.2,6.30],
     ['Gemini 3.5 Flash',72.0,52.2,19.8,5.37],['Kimi K3',68.5,50.2,17.1,4.24],
     ['Gemini 3.7 Flash',58.3,39.9,10.7,2.47],['GPT-5.6-SOL',57.0,41.1,14.5,3.71],
@@ -32,6 +33,7 @@ function renderResults() {
   let rank = 0;
   rows.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
+    if (row[0] === 'Claude Opus 5.5') tr.classList.add('result-update');
     if (rowIndex === 0 || row[metric] !== rows[rowIndex - 1][metric]) rank = rowIndex + 1;
     const rankCell = document.createElement('td');
     rankCell.className = 'rank-column';
@@ -56,7 +58,7 @@ function renderResults() {
     header.setAttribute('aria-sort', active ? 'descending' : 'none');
     header.classList.toggle('ranked-metric', active);
   });
-  const settings = selectedGroup === 'backbones' ? '9 backbones · OpenCode harness' : selectedGroup === 'methods' ? `6 methods · ${key === 'opus' ? 'Claude Opus 5' : 'Kimi K3'} backbone` : `2 harnesses · ${harnessBackbone === 'opus' ? 'Claude Opus 5' : 'GPT-5.6-SOL'} backbone`;
+  const settings = selectedGroup === 'backbones' ? `${results.backbones.length} backbones · OpenCode harness` : selectedGroup === 'methods' ? `6 methods · ${key === 'opus' ? 'Claude Opus 5' : 'Kimi K3'} backbone` : `2 harnesses · ${harnessBackbone === 'opus' ? 'Claude Opus 5' : 'GPT-5.6-SOL'} backbone`;
   const context = `${settings} · Ranked by ${metricName}, highest first.`;
   document.querySelector('#table-context').textContent = context;
   document.querySelector('#result-caption').textContent = context;
@@ -77,9 +79,10 @@ document.querySelectorAll('[data-curve]').forEach(button => button.addEventListe
     b.setAttribute('aria-pressed', String(b === button));
   });
   const chart = document.querySelector('#learning-chart');
-  chart.src = `assets/learning-${button.dataset.curve}.svg`;
+  chart.src = `assets/learning-${button.dataset.curve}.svg?v=opus55-20261007`;
+  chart.height = button.dataset.curve === 'backbones' ? 524 : 490;
   chart.alt = button.dataset.curve === 'backbones'
-    ? 'Learning curves for nine OpenCode backbones, showing normalized score against progress through the evaluation window.'
+    ? 'Learning curves for ten OpenCode backbones, including Claude Opus 5.5, showing normalized score against progress through the evaluation window.'
     : 'Learning curves for six self-evolving methods and baselines with Claude Opus 5, showing normalized score against progress through the evaluation window.';
 }));
 

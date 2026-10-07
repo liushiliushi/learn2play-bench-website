@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 510" width="1120" height="510" role="img" aria-labelledby="cost-plot-title cost-plot-description" font-family="Arial, sans-serif">
       <title id="cost-plot-title">Performance and estimated inference cost</title>
-      <desc id="cost-plot-description">29 configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed line is the frontier across all 29 configurations. Each point has a title with its configuration and values.</desc>
+      <desc id="cost-plot-description">30 configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed line is the frontier across all 30 configurations. Each point has a title with its configuration and values.</desc>
       <rect width="1120" height="510" fill="#fff"/>
       <style>.cost-point{cursor:pointer}.cost-point:focus-visible{outline:none}.cost-point .point-halo{opacity:0}.cost-point:hover .point-halo,.cost-point:focus .point-halo,.cost-point.is-selected .point-halo{opacity:1}.cost-point:focus .point-mark{stroke:#182526;stroke-width:2.5}</style>
 <path d="M74 422H1082" stroke="#e9eeeb"/><text x="60" y="427" text-anchor="end" fill="#66756e" font-size="14">20</text>
@@ -21,9 +21,6 @@
       <text x="578" y="493" text-anchor="middle" fill="#3e5148" font-size="15">Estimated cost per episode (USD · log scale)</text>
       <text x="74" y="19" fill="#66756e" font-size="12">↖ Higher score, lower cost</text>
 <path d="M137.32742284850352 345.35843136456106 L311.2657089308376 235.63767425338716 L436.2191260131806 212.94179976382634 L580.4090676067267 125.63125774713188 L792.955485378022 84.81397071598661" fill="none" stroke="#829d8f" stroke-width="1.6" stroke-dasharray="5 6" opacity="1"/>
-<g aria-hidden="true" pointer-events="none"><rect x="804.955485378022" y="96.81397071598661" width="110.8" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
-        <text x="810.955485378022" y="111.81397071598661" fill="#167457" font-size="14" font-weight="600">Claude Opus 5</text>
-        <text x="810.955485378022" y="128.8139707159866" fill="#6c7771" font-size="12">Claude Code</text></g>
 <g aria-hidden="true" pointer-events="none"><rect x="592.4090676067267" y="78.63125774713188" width="95.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
         <text x="598.4090676067267" y="93.63125774713188" fill="#c15439" font-size="14" font-weight="600">GPT-5.6-SOL</text>
         <text x="598.4090676067267" y="110.63125774713188" fill="#6c7771" font-size="12">Codex</text></g>
@@ -36,9 +33,12 @@
 <g aria-hidden="true" pointer-events="none"><rect x="149.32742284850352" y="298.35843136456106" width="88" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
         <text x="155.32742284850352" y="313.35843136456106" fill="#1674be" font-size="14" font-weight="600">GPT-5 Mini</text>
         <text x="155.32742284850352" y="330.35843136456106" fill="#6c7771" font-size="12">OpenCode</text></g>
-<g aria-hidden="true" pointer-events="none"><rect x="932.4241732667072" y="69.35084219533172" width="110.8" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
-        <text x="938.4241732667072" y="84.35084219533172" fill="#1674be" font-size="14" font-weight="600">Claude Opus 5</text>
-        <text x="938.4241732667072" y="101.35084219533172" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="874.8477498876401" y="46.93324002647324" width="126" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="880.8477498876401" y="61.93324002647324" fill="#1674be" font-size="14" font-weight="600">Claude Opus 5.5</text>
+        <text x="880.8477498876401" y="78.93324002647324" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="932.4241732667072" y="144.35084219533172" width="110.8" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="938.4241732667072" y="159.35084219533172" fill="#1674be" font-size="14" font-weight="600">Claude Opus 5</text>
+        <text x="938.4241732667072" y="176.35084219533172" fill="#6c7771" font-size="12">OpenCode</text></g>
 <g class="cost-point" data-cost-id="awm_gpt5mini" >
         <title>AWM · GPT-5 Mini: Max 47.0%, estimated cost $0.036 per episode</title><circle cx="382.6708567277119" cy="274.66969110779496" r="13" fill="transparent"/>
         <circle class="point-halo" cx="382.6708567277119" cy="274.66969110779496" r="11" fill="#9473c4" fill-opacity=".15"/>
@@ -183,5 +183,10 @@
         <title>OpenCode · Qwen 3.8 Max: Max 72.5%, estimated cost $0.225 per episode</title><circle cx="643.5625044116766" cy="135.51145172542306" r="13" fill="transparent"/>
         <circle class="point-halo" cx="643.5625044116766" cy="135.51145172542306" r="11" fill="#1674be" fill-opacity=".15"/>
         <circle class="point-mark" cx="643.5625044116766" cy="135.51145172542306" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<g class="cost-point" data-cost-id="opencode_claude-opus-5-5" >
+        <title>OpenCode · Claude Opus 5.5: Max 80.1%, estimated cost $1.06 per episode</title><circle cx="862.8477498876401" cy="93.93324002647324" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="862.8477498876401" cy="93.93324002647324" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="862.8477498876401" cy="93.93324002647324" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
       </g>
 </svg>

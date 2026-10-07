@@ -295,3 +295,9 @@ th.ranked-metric { background:#e9f1ee; }
   .metric-grid>div { padding:14px; }
   .principles article { padding:22px; }
 }
+
+/* Newly evaluated backbone, matching the blue model curve. */
+.result-update .entry-name { color:#0047ab; }
+.evaluation-details { margin:0 24px 22px; font-size:14px; line-height:1.65; color:#53685c; }
+.evaluation-details summary { cursor:pointer; font-weight:600; color:#305344; }
+.evaluation-details p { margin:10px 0 0; }

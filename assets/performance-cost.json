@@ -1,8 +1,23 @@
 {
-  "snapshot": "2026-09-29",
+  "snapshot": "2026-10-07",
   "pricingSnapshot": "2026-08-30",
   "source": "results/_analysis/rq6_cost_audit.csv",
   "sourceSha256": "a8e9c1835f6272b8f7a5853b5da77dd12efc6bad7f6f92649b537788572f69ee",
+  "opus55": {
+    "performanceSourceSha256": "e21c6c2b82b146ca477f14a26dcd771ef25232065b1eb49525898b4221458238",
+    "costSourceSha256": "ecf499de9f4e2fbeac135ec304fc04add677895ccb2d33e010cbe5a633edea6f",
+    "pricingSource": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "pricingAccessed": "2026-10-07",
+    "usdPerMillionTokens": {
+      "fresh_input": 4.0,
+      "output": 20.0,
+      "cache_read": 0.2,
+      "cache_write": 5.0
+    },
+    "trials": 60,
+    "collectedEpisodes": 600,
+    "reportedEpisodes": 375
+  },
   "metric": "Normalized Max (% of reference ceiling)",
   "costMetric": "Estimated mean USD per episode",
   "points": [
@@ -237,6 +252,14 @@
       "group": "opencode",
       "score": 72.49790151628373,
       "cost": 0.22487684333333333
+    },
+    {
+      "id": "opencode_claude-opus-5-5",
+      "system": "OpenCode",
+      "model": "Claude Opus 5.5",
+      "group": "opencode",
+      "score": 80.1169455448871,
+      "cost": 1.0608687906666665
     }
   ]
 }

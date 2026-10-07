@@ -55,7 +55,7 @@ const CostChart = (() => {
     const labels = labelLayout(points, candidates, width);
     const chunks = [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 510" width="${width}" height="510" role="${interactive ? 'group' : 'img'}" aria-labelledby="cost-plot-title cost-plot-description" font-family="Arial, sans-serif">
       <title id="cost-plot-title">Performance and estimated inference cost</title>
-      <desc id="cost-plot-description">${points.length} configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed line is the frontier across all 29 configurations. ${interactive ? 'Focus or select any point to read its exact values below the chart.' : 'Each point has a title with its configuration and values.'}</desc>
+      <desc id="cost-plot-description">${points.length} configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed line is the frontier across all ${data.points.length} configurations. ${interactive ? 'Focus or select any point to read its exact values below the chart.' : 'Each point has a title with its configuration and values.'}</desc>
       <rect width="${width}" height="510" fill="#fff"/>
       <style>.cost-point{cursor:pointer}.cost-point:focus-visible{outline:none}.cost-point .point-halo{opacity:0}.cost-point:hover .point-halo,.cost-point:focus .point-halo,.cost-point.is-selected .point-halo{opacity:1}.cost-point:focus .point-mark{stroke:#182526;stroke-width:2.5}</style>`];
     for (let score = 20; score <= 90; score += 10) {
@@ -94,7 +94,7 @@ const CostChart = (() => {
     const host = document.querySelector('#cost-plot');
     if (!host) return;
     try {
-      const response = await fetch('assets/performance-cost.json?v=clear-1');
+      const response = await fetch('assets/performance-cost.json?v=opus55-20261007');
       if (!response.ok) throw new Error('Cost snapshot unavailable');
       const data = await response.json();
       let filter = 'all', selected = null, lastWidth = 0;

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 490" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 524" role="img">
 <title>Normalized learning curves: backbones</title>
-<rect width="820" height="490" fill="white"/>
+<rect width="820" height="524" fill="white"/>
 <g font-family="Arial, sans-serif" font-size="14" fill="#475569">
 <text x="65" y="24">Normalized score (% of reference ceiling)</text>
 <path d="M65 335.0 H790" stroke="#e2e8f0"/>
@@ -134,4 +134,17 @@
 <circle cx="790.00" cy="205.25" r="3" fill="#9333ea"/>
 <path d="M555 470 h22" stroke="#9333ea" stroke-width="3"/>
 <text x="585" y="475">Gemini 3.7 Flash</text>
+<polyline points="65.00,218.58 145.56,200.85 226.11,179.03 306.67,173.49 387.22,166.76 467.78,157.68 548.33,138.03 628.89,135.07 709.44,135.54 790.00,133.10" fill="none" stroke="#0047ab" stroke-width="2.4"/>
+<circle cx="65.00" cy="218.58" r="3" fill="#0047ab"/>
+<circle cx="145.56" cy="200.85" r="3" fill="#0047ab"/>
+<circle cx="226.11" cy="179.03" r="3" fill="#0047ab"/>
+<circle cx="306.67" cy="173.49" r="3" fill="#0047ab"/>
+<circle cx="387.22" cy="166.76" r="3" fill="#0047ab"/>
+<circle cx="467.78" cy="157.68" r="3" fill="#0047ab"/>
+<circle cx="548.33" cy="138.03" r="3" fill="#0047ab"/>
+<circle cx="628.89" cy="135.07" r="3" fill="#0047ab"/>
+<circle cx="709.44" cy="135.54" r="3" fill="#0047ab"/>
+<circle cx="790.00" cy="133.10" r="3" fill="#0047ab"/>
+<path d="M65 497 h22" stroke="#0047ab" stroke-width="3"/>
+<text x="95" y="502">Claude Opus 5.5</text>
 </g></svg>
