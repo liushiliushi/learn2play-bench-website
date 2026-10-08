@@ -35,7 +35,6 @@ function renderResults() {
   let rank = 0;
   rows.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
-    if (['Claude Opus 5.5', 'GPT-6 Astra'].includes(row[0])) tr.classList.add('result-update');
     if (row[0].startsWith('Human ')) tr.classList.add('human-reference');
     if (rowIndex === 0 || row[metric] !== rows[rowIndex - 1][metric]) rank = rowIndex + 1;
     const rankCell = document.createElement('td');
