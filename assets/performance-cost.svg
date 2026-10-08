@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 510" width="1120" height="510" role="img" aria-labelledby="cost-plot-title cost-plot-description" font-family="Arial, sans-serif">
-      <title id="cost-plot-title">Performance and estimated inference cost</title>
-      <desc id="cost-plot-description">30 configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed frontier uses all 30 configurations with known costs. GPT-6 Astra cost is unconfirmed and is not plotted. Each point has a title with its configuration and values.</desc>
+      <title id="cost-plot-title">Performance and inference cost</title>
+      <desc id="cost-plot-description">31 configurations. Horizontal axis: mean US dollars per completed episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed frontier uses 30 standard-price estimates. Astra uses a user-confirmed bill of $150 divided by 600 completed episodes: $0.25 per episode, and is excluded from that frontier. Each point has a title with its configuration and values.</desc>
       <rect width="1120" height="510" fill="#fff"/>
       <style>.cost-point{cursor:pointer}.cost-point:focus-visible{outline:none}.cost-point .point-halo{opacity:0}.cost-point:hover .point-halo,.cost-point:focus .point-halo,.cost-point.is-selected .point-halo{opacity:1}.cost-point:focus .point-mark{stroke:#182526;stroke-width:2.5}</style>
 <path d="M74 422H1082" stroke="#e9eeeb"/><text x="60" y="427" text-anchor="end" fill="#66756e" font-size="14">20</text>
@@ -18,12 +18,12 @@
 <path d="M854.4952415758571 40V422" stroke="#f0f3f1"/><text x="854.4952415758571" y="449" text-anchor="middle" fill="#66756e" font-size="14">$1</text>
 <path d="M1009.7913989512148 40V422" stroke="#f0f3f1"/><text x="1009.7913989512148" y="449" text-anchor="middle" fill="#66756e" font-size="14">$3</text>
 <text transform="translate(23 231) rotate(-90)" text-anchor="middle" fill="#3e5148" font-size="15">Normalized Max (%)</text>
-      <text x="578" y="493" text-anchor="middle" fill="#3e5148" font-size="15">Estimated cost per episode (USD · log scale)</text>
+      <text x="578" y="493" text-anchor="middle" fill="#3e5148" font-size="15">Cost per episode (USD · log scale)</text>
       <text x="74" y="19" fill="#66756e" font-size="12">↖ Higher score, lower cost</text>
 <path d="M137.32742284850352 345.35843136456106 L311.2657089308376 235.63767425338716 L436.2191260131806 212.94179976382634 L580.4090676067267 125.63125774713188 L792.955485378022 84.81397071598661" fill="none" stroke="#829d8f" stroke-width="1.6" stroke-dasharray="5 6" opacity="1"/>
-<g aria-hidden="true" pointer-events="none"><rect x="592.4090676067267" y="78.63125774713188" width="95.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
-        <text x="598.4090676067267" y="93.63125774713188" fill="#c15439" font-size="14" font-weight="600">GPT-5.6-SOL</text>
-        <text x="598.4090676067267" y="110.63125774713188" fill="#6c7771" font-size="12">Codex</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="472.80906760672667" y="78.63125774713188" width="95.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="478.80906760672667" y="93.63125774713188" fill="#c15439" font-size="14" font-weight="600">GPT-5.6-SOL</text>
+        <text x="478.80906760672667" y="110.63125774713188" fill="#6c7771" font-size="12">Codex</text></g>
 <g aria-hidden="true" pointer-events="none"><rect x="448.2191260131806" y="165.94179976382634" width="133.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
         <text x="454.2191260131806" y="180.94179976382634" fill="#1674be" font-size="14" font-weight="600">Gemini 3.7 Flash</text>
         <text x="454.2191260131806" y="197.94179976382634" fill="#6c7771" font-size="12">OpenCode</text></g>
@@ -36,9 +36,9 @@
 <g aria-hidden="true" pointer-events="none"><rect x="874.8477498876401" y="46.93324002647324" width="126" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
         <text x="880.8477498876401" y="61.93324002647324" fill="#1674be" font-size="14" font-weight="600">Claude Opus 5.5</text>
         <text x="880.8477498876401" y="78.93324002647324" fill="#6c7771" font-size="12">OpenCode</text></g>
-<g aria-hidden="true" pointer-events="none"><rect x="932.4241732667072" y="144.35084219533172" width="110.8" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
-        <text x="938.4241732667072" y="159.35084219533172" fill="#1674be" font-size="14" font-weight="600">Claude Opus 5</text>
-        <text x="938.4241732667072" y="176.35084219533172" fill="#6c7771" font-size="12">OpenCode</text></g>
+<g aria-hidden="true" pointer-events="none"><rect x="670.5333089689998" y="68.05151432785686" width="95.6" height="39" rx="4" fill="#fff" fill-opacity=".94"/>
+        <text x="676.5333089689998" y="83.05151432785686" fill="#1674be" font-size="14" font-weight="600">GPT-6 Astra</text>
+        <text x="676.5333089689998" y="100.05151432785686" fill="#6c7771" font-size="12">OpenCode</text></g>
 <g class="cost-point" data-cost-id="awm_gpt5mini" >
         <title>AWM · GPT-5 Mini: Max 47.0%, estimated cost $0.036 per episode</title><circle cx="382.6708567277119" cy="274.66969110779496" r="13" fill="transparent"/>
         <circle class="point-halo" cx="382.6708567277119" cy="274.66969110779496" r="11" fill="#9473c4" fill-opacity=".15"/>
@@ -189,5 +189,10 @@
         <circle class="point-halo" cx="862.8477498876401" cy="93.93324002647324" r="11" fill="#1674be" fill-opacity=".15"/>
         <circle class="point-mark" cx="862.8477498876401" cy="93.93324002647324" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
       </g>
-<text x="74" y="467" fill="#66756e" font-size="12">GPT-6 Astra: cost unconfirmed; not plotted.</text>
+<g class="cost-point" data-cost-id="opencode_gpt-6-astra" >
+        <title>OpenCode · GPT-6 Astra: Max 76.2%, billed cost $0.25 per episode</title><circle cx="658.5333089689998" cy="115.05151432785686" r="13" fill="transparent"/>
+        <circle class="point-halo" cx="658.5333089689998" cy="115.05151432785686" r="11" fill="#1674be" fill-opacity=".15"/>
+        <circle class="point-mark" cx="658.5333089689998" cy="115.05151432785686" r="6" fill="#1674be" stroke="#fff" stroke-width="2"/>
+      </g>
+<text x="74" y="467" fill="#66756e" font-size="12">Astra: billed $150 / 600 episodes = $0.25/episode; other points are standard-price estimates.</text>
 </svg>

@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="styles.css?v=research-2">
   <link rel="stylesheet" href="research.css?v=leaderboard-20261008">
   <script src="app.js?v=leaderboard-20261008" defer></script>
-  <script src="cost-chart.js?v=astra-cost-unconfirmed-20261008" defer></script>
+  <script src="cost-chart.js?v=astra-billed-150-20261008" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -76,7 +76,7 @@
       </figure>
     </section>
     <section class="section wrap cost-section" id="performance-cost">
-      <div class="section-heading"><p class="eyebrow">Efficiency</p><h2>Performance and inference cost</h2><p>Compare Max scores with estimated mean inference cost per episode. Points toward the upper left achieve higher performance at lower estimated cost.</p></div>
+      <div class="section-heading"><p class="eyebrow">Efficiency</p><h2>Performance and inference cost</h2><p>Compare Max scores with mean cost per completed episode. Astra uses a confirmed bill; other configurations use standard-price estimates.</p></div>
       <figure class="cost-figure cost-explorer">
         <div class="cost-toolbar">
           <div class="cost-filters" role="group" aria-label="Filter cost configurations">
@@ -85,20 +85,20 @@
             <button type="button" data-cost-filter="methods" aria-pressed="false" disabled>Methods</button>
             <button type="button" data-cost-filter="harnesses" aria-pressed="false" disabled>Other harnesses</button>
           </div>
-          <a href="assets/performance-cost.svg?v=astra-cost-unconfirmed-20261008" target="_blank" rel="noopener">Open chart ↗</a>
+          <a href="assets/performance-cost.svg?v=astra-billed-150-20261008" target="_blank" rel="noopener">Open chart ↗</a>
         </div>
         <div class="cost-legend" aria-label="Chart legend">
-          <span class="cost-key key-opencode">OpenCode</span><span class="cost-key key-methods">Methods</span><span class="cost-key key-claude">Claude Code</span><span class="cost-key key-codex">Codex</span><span class="cost-key key-frontier">Frontier · known costs</span><span id="cost-count">30 configurations</span>
+          <span class="cost-key key-opencode">OpenCode</span><span class="cost-key key-methods">Methods</span><span class="cost-key key-claude">Claude Code</span><span class="cost-key key-codex">Codex</span><span class="cost-key key-frontier">Frontier · standard-price estimates</span><span id="cost-count">31 configurations</span>
         </div>
         <div class="cost-plot-scroll" tabindex="0" role="region" aria-label="Interactive cost chart; scroll horizontally on small screens">
-          <div id="cost-plot"><img src="assets/performance-cost.svg?v=astra-cost-unconfirmed-20261008" width="1120" height="510" loading="lazy" alt="30 agent configurations by normalized Max score and estimated US dollars per episode. Higher and farther left is better. Claude Code with Opus 5 has the highest Max at 81.8%."/></div>
+          <div id="cost-plot"><img src="assets/performance-cost.svg?v=astra-billed-150-20261008" width="1120" height="510" loading="lazy" alt="31 agent configurations by normalized Max score and US dollars per episode. Astra uses billed cost; other points use standard-price estimates. Higher and farther left is better. Claude Code with Opus 5 has the highest Max at 81.8%."/></div>
         </div>
         <div class="cost-inspector">
           <p id="cost-hint">Hover, tap, or focus a point to see its full name and reported values.</p>
-          <div id="cost-selection" aria-live="polite" aria-atomic="true" hidden><strong data-cost-name></strong><span>Max <b data-cost-score></b></span><span>Cost / episode <b data-cost-price></b></span></div>
+          <div id="cost-selection" aria-live="polite" aria-atomic="true" hidden><strong data-cost-name></strong><span>Max <b data-cost-score></b></span><span>Cost / episode <b data-cost-price></b></span><span data-cost-basis></span></div>
         </div>
-        <p class="table-foot" id="astra-cost-status"><strong>GPT-6 Astra: cost unconfirmed.</strong> No cost point or numeric cost is shown until complete usage is reconciled.</p>
-        <figcaption>Max is normalized to each game’s reference ceiling. The dashed frontier uses configurations with known costs. Astra is omitted because 13 of 4,253 native usage records lack usable token counts. Its performance results remain in the leaderboard and learning curves. Costs use recorded token usage and the August 30, 2026 pricing snapshot, except Opus 5.5. Opus 5.5 uses <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Anthropic’s standard prices</a> accessed October 7, 2026. Costs average all collected episodes; performance uses the scoring windows above. These estimates are not billing records or current price quotes.</figcaption>
+        <p class="table-foot" id="astra-cost-status"><strong>GPT-6 Astra: $150 total billed · $0.25 per episode.</strong> Bill confirmed by the experiment owner; total divided by 600 completed episodes.</p>
+        <figcaption>Max is normalized to each game’s reference ceiling. The dashed frontier compares standard-price estimates and excludes Astra’s billed point because the cost bases differ. Astra’s total bill is confirmed by the experiment owner; individual charges for retries and preflight are not separately itemized here. Other costs use recorded token usage and the August 30, 2026 pricing snapshot, except Opus 5.5. Opus 5.5 uses <a href="https://platform.claude.com/docs/en/about-claude/pricing" target="_blank" rel="noopener">Anthropic’s standard prices</a> accessed October 7, 2026. Costs average all collected episodes; performance uses the scoring windows above. Only Astra uses a billed amount; the other estimates are not billing records or current price quotes.</figcaption>
         <noscript><p class="cost-no-script">Enable JavaScript for filters and point details. The full chart is shown above.</p></noscript>
       </figure>
     </section>

@@ -40,11 +40,13 @@
     "trials": 60,
     "collectedEpisodes": 600,
     "reportedEpisodes": 375,
-    "costStatus": "unconfirmed",
-    "exactCostUsd": null,
-    "note": "No numeric Astra cost is published until complete usage is reconciled. Excluded from the plot, frontier and efficiency ratios."
+    "costStatus": "billing_confirmed_by_user",
+    "totalBilledUsd": 150,
+    "billingConfirmationSourceSha256": "abcd23d9d21ec724a0af6e267f8e2550427a32d528ff49521cde927bfb8d9f36",
+    "costBasis": "billed",
+    "note": "User-confirmed evaluation bill: USD150 total / 600 completed episodes = USD0.25 per episode. Attempt-level charges are not separately itemized. Standard-rate token reconciliation remains incomplete. Excluded from the standard-price frontier."
   },
-  "costMetric": "Estimated mean USD per episode",
+  "costMetric": "Mean USD per completed episode; Astra billed, other configurations standard-price estimates",
   "points": [
     {
       "id": "awm_gpt5mini",
@@ -285,18 +287,19 @@
       "group": "opencode",
       "score": 80.1169455448871,
       "cost": 1.0608687906666665
-    }
-  ],
-  "unplotted": [
+    },
     {
       "id": "opencode_gpt-6-astra",
       "system": "OpenCode",
       "model": "GPT-6 Astra",
       "group": "opencode",
       "score": 76.24710470431943,
-      "cost": null,
-      "costStatus": "unconfirmed",
-      "reason": "Incomplete native usage; awaiting gateway reconciliation."
+      "cost": 0.25,
+      "costStatus": "billing_confirmed_by_user",
+      "costBasis": "billed",
+      "totalBilledUsd": 150,
+      "completedEpisodes": 600
     }
-  ]
+  ],
+  "unplotted": []
 }

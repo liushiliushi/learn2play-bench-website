@@ -6,12 +6,13 @@ const CostChart = (() => {
   const names = { opencode: 'OpenCode', methods: 'Methods', 'claude-code': 'Claude Code', codex: 'Codex' };
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const dollars = value => '$' + value.toFixed(value < 0.01 ? 4 : value < 1 ? 3 : 2);
-  const price = point => dollars(point.cost);
+  const price = point => point.costBasis === 'billed' ? '$' + point.cost.toFixed(2) : dollars(point.cost);
+  const basis = point => point.costBasis === 'billed' ? 'billed cost' : 'estimated cost';
   const hasCost = point => Number.isFinite(point.cost) && point.cost > 0 && !point.costIsLowerBound && point.costStatus !== 'unconfirmed';
   const visiblePoints = (points, filter) => points.filter(p => hasCost(p) && (filter === 'all' || (filter === 'harnesses' ? ['claude-code', 'codex'].includes(p.group) : p.group === filter)));
   function frontier(points) {
     let best = -Infinity;
-    return points.filter(hasCost).sort((a, b) => a.cost - b.cost || b.score - a.score).filter(p => {
+    return points.filter(p => hasCost(p) && p.costBasis !== 'billed').sort((a, b) => a.cost - b.cost || b.score - a.score).filter(p => {
       if (p.score <= best) return false;
       best = p.score;
       return true;
@@ -56,8 +57,8 @@ const CostChart = (() => {
     ).slice(0, filter === 'all' ? 7 : 9);
     const labels = labelLayout(points, candidates, width);
     const chunks = [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 510" width="${width}" height="510" role="${interactive ? 'group' : 'img'}" aria-labelledby="cost-plot-title cost-plot-description" font-family="Arial, sans-serif">
-      <title id="cost-plot-title">Performance and estimated inference cost</title>
-      <desc id="cost-plot-description">${points.length} configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed frontier uses all ${data.points.filter(hasCost).length} configurations with known costs. GPT-6 Astra cost is unconfirmed and is not plotted. ${interactive ? 'Focus or select any point to read its values below the chart.' : 'Each point has a title with its configuration and values.'}</desc>
+      <title id="cost-plot-title">Performance and inference cost</title>
+      <desc id="cost-plot-description">${points.length} configurations. Horizontal axis: mean US dollars per completed episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed frontier uses ${data.points.filter(p => hasCost(p) && p.costBasis !== 'billed').length} standard-price estimates. Astra uses a user-confirmed bill of $150 divided by 600 completed episodes: $0.25 per episode, and is excluded from that frontier. ${interactive ? 'Focus or select any point to read its values below the chart.' : 'Each point has a title with its configuration and values.'}</desc>
       <rect width="${width}" height="510" fill="#fff"/>
       <style>.cost-point{cursor:pointer}.cost-point:focus-visible{outline:none}.cost-point .point-halo{opacity:0}.cost-point:hover .point-halo,.cost-point:focus .point-halo,.cost-point.is-selected .point-halo{opacity:1}.cost-point:focus .point-mark{stroke:#182526;stroke-width:2.5}</style>`];
     for (let score = 20; score <= 90; score += 10) {
@@ -69,7 +70,7 @@ const CostChart = (() => {
       chunks.push(`<path d="M${x} ${g.top}V${g.bottom}" stroke="#f0f3f1"/><text x="${x}" y="${g.bottom + 27}" text-anchor="middle" fill="#66756e" font-size="14">$${cost}</text>`);
     }
     chunks.push(`<text transform="translate(23 ${(g.top + g.bottom) / 2}) rotate(-90)" text-anchor="middle" fill="#3e5148" font-size="15">Normalized Max (%)</text>
-      <text x="${(g.left + g.right) / 2}" y="493" text-anchor="middle" fill="#3e5148" font-size="15">Estimated cost per episode (USD · log scale)</text>
+      <text x="${(g.left + g.right) / 2}" y="493" text-anchor="middle" fill="#3e5148" font-size="15">Cost per episode (USD · log scale)</text>
       <text x="${g.left}" y="19" fill="#66756e" font-size="12">↖ Higher score, lower cost</text>`);
     chunks.push(`<path d="${efficient.map((p, i) => `${i ? 'L' : 'M'}${g.x(p.cost)} ${g.y(p.score)}`).join(' ')}" fill="none" stroke="#829d8f" stroke-width="1.6" stroke-dasharray="5 6" opacity="${filter === 'all' ? 1 : 0.45}"/>`);
     for (const label of labels) {
@@ -81,14 +82,14 @@ const CostChart = (() => {
     // Put selected points last, so their ring stays visible in dense clusters.
     for (const p of [...points].sort((a, b) => Number(a.id === selected) - Number(b.id === selected))) {
       const x = g.x(p.cost), y = g.y(p.score), color = colors[p.group];
-      const description = `${p.system} · ${p.model}: Max ${p.score.toFixed(1)}%, estimated cost ${price(p)} per episode`;
+      const description = `${p.system} · ${p.model}: Max ${p.score.toFixed(1)}%, ${basis(p)} ${price(p)} per episode`;
       chunks.push(`<g class="cost-point${p.id === selected ? ' is-selected' : ''}" data-cost-id="${escape(p.id)}" ${interactive ? `tabindex="0" role="button" aria-pressed="${p.id === selected}" aria-label="${escape(description)}"` : ''}>
         <title>${escape(description)}</title><circle cx="${x}" cy="${y}" r="13" fill="transparent"/>
         <circle class="point-halo" cx="${x}" cy="${y}" r="11" fill="${color}" fill-opacity=".15"/>
         ${p.group === 'codex' ? `<path class="point-mark" d="M${x} ${y - 7}l7 7-7 7-7-7Z" fill="${color}" stroke="#fff" stroke-width="2"/>` : `<circle class="point-mark" cx="${x}" cy="${y}" r="${p.group === 'methods' ? 5 : 6}" fill="${color}" stroke="#fff" stroke-width="2"/>`}
       </g>`);
     }
-    chunks.push(`<text x="${g.left}" y="467" fill="#66756e" font-size="12">GPT-6 Astra: cost unconfirmed; not plotted.</text>`);
+    chunks.push(`<text x="${g.left}" y="467" fill="#66756e" font-size="12">Astra: billed $150 / 600 episodes = $0.25/episode; other points are standard-price estimates.</text>`);
     chunks.push('</svg>');
     return chunks.join('\n');
   }
@@ -97,7 +98,7 @@ const CostChart = (() => {
     const host = document.querySelector('#cost-plot');
     if (!host) return;
     try {
-      const response = await fetch('assets/performance-cost.json?v=astra-cost-unconfirmed-20261008');
+      const response = await fetch('assets/performance-cost.json?v=astra-billed-150-20261008');
       if (!response.ok) throw new Error('Cost snapshot unavailable');
       const data = await response.json();
       let filter = 'all', selected = null, lastWidth = 0;
@@ -106,6 +107,7 @@ const CostChart = (() => {
         details.querySelector('[data-cost-name]').textContent = `${p.system} · ${p.model}`;
         details.querySelector('[data-cost-score]').textContent = `${p.score.toFixed(1)}%`;
         details.querySelector('[data-cost-price]').textContent = price(p);
+        details.querySelector('[data-cost-basis]').textContent = p.costBasis === 'billed' ? 'Billed · $150 total / 600 episodes' : 'Standard-price estimate';
         details.hidden = false;
         document.querySelector('#cost-hint').hidden = true;
       };
@@ -122,7 +124,7 @@ const CostChart = (() => {
         const tooltip = host.querySelector('.cost-tooltip');
         tooltip.querySelector('strong').textContent = point.model;
         tooltip.querySelector('small').textContent = point.system;
-        tooltip.querySelector('span').textContent = `${point.score.toFixed(1)}% Max · ${price(point)} / episode`;
+        tooltip.querySelector('span').textContent = `${point.score.toFixed(1)}% Max · ${price(point)} / episode · ${basis(point)}`;
         tooltip.hidden = false;
         const scale = host.clientWidth / lastWidth, g = geometry(lastWidth), scroller = host.parentElement;
         tooltip.style.left = `${Math.max(scroller.scrollLeft + 8, Math.min(g.x(point.cost) * scale + 16, scroller.scrollLeft + scroller.clientWidth - tooltip.offsetWidth - 8))}px`;

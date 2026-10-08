@@ -37,12 +37,17 @@ astra = json.loads(astra_performance_path.read_text())
 astra_cost = json.loads(astra_cost_path.read_text())
 assert astra['terminal_replays_verified'] == 600 and astra['paper_scored_episodes'] == 375
 assert not astra_cost['selected_cohort']['usage_complete']
-unplotted = [{'id': 'opencode_gpt-6-astra', 'system': 'OpenCode',
+billing_path = ASTRA / 'website_cost_accuracy_20261008/user-reported-total.json'
+billing = json.loads(billing_path.read_text())
+assert billing['status'] == 'billing_confirmed_by_user'
+assert billing['total_usd'] == 150 and billing['completed_episodes'] == 600
+points.append({'id': 'opencode_gpt-6-astra', 'system': 'OpenCode',
                'model': 'GPT-6 Astra', 'group': 'opencode',
                'score': astra['metrics']['max'],
-               'cost': None, 'costStatus': 'unconfirmed',
-               'reason': 'Incomplete native usage; awaiting gateway reconciliation.'}]
-assert len(points) == 30 and len({p['id'] for p in points}) == 30
+               'cost': billing['total_usd'] / billing['completed_episodes'],
+               'costStatus': 'billing_confirmed_by_user', 'costBasis': 'billed',
+               'totalBilledUsd': billing['total_usd'], 'completedEpisodes': 600})
+assert len(points) == 31 and len({p['id'] for p in points}) == 31
 assert all(p['cost'] > 0 and 20 <= p['score'] <= 90 for p in points)
 data = {
     'snapshot': '2026-10-08', 'pricingSnapshot': '2026-08-30',
@@ -63,9 +68,11 @@ data = {
               'uniqueUsageRecords': astra_cost['selected_cohort']['unique_native_reports'],
               'unknownUsageRecords': len(astra_cost['selected_cohort']['unknown_usage_records']),
               'trials': 60, 'collectedEpisodes': 600, 'reportedEpisodes': 375,
-              'costStatus': 'unconfirmed', 'exactCostUsd': None,
-              'note': 'No numeric Astra cost is published until complete usage is reconciled. Excluded from the plot, frontier and efficiency ratios.'},
-    'costMetric': 'Estimated mean USD per episode', 'points': points, 'unplotted': unplotted,
+              'costStatus': 'billing_confirmed_by_user', 'totalBilledUsd': 150,
+              'billingConfirmationSourceSha256': hashlib.sha256(billing_path.read_bytes()).hexdigest(),
+              'costBasis': 'billed',
+              'note': 'User-confirmed evaluation bill: USD150 total / 600 completed episodes = USD0.25 per episode. Attempt-level charges are not separately itemized. Standard-rate token reconciliation remains incomplete. Excluded from the standard-price frontier.'},
+    'costMetric': 'Mean USD per completed episode; Astra billed, other configurations standard-price estimates', 'points': points, 'unplotted': [],
 }
 (SITE / 'assets/performance-cost.json').write_text(json.dumps(data, indent=2) + '\n')
 print(f'Exported {len(points)} audited coordinates; no metrics recomputed.')
