@@ -1,8 +1,9 @@
 'use strict';
-// Snapshot transcribed from the manuscript's main comparison tables, 2026-10-07.
+// Snapshot transcribed from the manuscript's main comparison tables, 2026-10-08.
 const results = {
   backbones: [
     ['Claude Opus 5.5',80.1,61.0,23.0,5.22],
+    ['GPT-6 Astra',76.2,56.1,23.8,5.88],
     ['Claude Opus 5',74.5,53.8,21.3,5.13],['Qwen 3.8 Max',72.5,51.1,25.2,6.30],
     ['Gemini 3.5 Flash',72.0,52.2,19.8,5.37],['Kimi K3',68.5,50.2,17.1,4.24],
     ['Gemini 3.7 Flash',58.3,39.9,10.7,2.47],['GPT-5.6-SOL',57.0,41.1,14.5,3.71],
@@ -34,7 +35,7 @@ function renderResults() {
   let rank = 0;
   rows.forEach((row, rowIndex) => {
     const tr = document.createElement('tr');
-    if (row[0] === 'Claude Opus 5.5') tr.classList.add('result-update');
+    if (['Claude Opus 5.5', 'GPT-6 Astra'].includes(row[0])) tr.classList.add('result-update');
     if (row[0].startsWith('Human ')) tr.classList.add('human-reference');
     if (rowIndex === 0 || row[metric] !== rows[rowIndex - 1][metric]) rank = rowIndex + 1;
     const rankCell = document.createElement('td');
@@ -82,12 +83,12 @@ document.querySelectorAll('[data-curve]').forEach(button => button.addEventListe
     b.setAttribute('aria-pressed', String(b === button));
   });
   const chart = document.querySelector('#learning-chart');
-  chart.src = `assets/learning-${button.dataset.curve}.svg?v=humans-20261007`;
-  chart.height = button.dataset.curve === 'backbones' ? 524 : 490;
+  chart.src = `assets/learning-${button.dataset.curve}.svg?v=astra-20261008`;
+  chart.height = button.dataset.curve === 'backbones' ? 524 : button.dataset.curve === 'humans' ? 497 : 490;
   chart.alt = button.dataset.curve === 'backbones'
-    ? 'Learning curves for ten OpenCode backbones, including Claude Opus 5.5, showing normalized score against progress through the evaluation window.'
+    ? 'Learning curves for eleven OpenCode backbones, including GPT-6 Astra and Claude Opus 5.5, showing normalized score against progress through the evaluation window.'
     : button.dataset.curve === 'humans'
-      ? 'Learning curves for Human Top-1, Top-3 and Top-5, OpenCode with Opus 5.5 and Opus 5, and EvoTest with Opus 5, across all 20 games.'
+      ? 'Learning curves for Human Top-1, Top-3 and Top-5, OpenCode with GPT-6 Astra, Opus 5.5 and Opus 5, and EvoTest with Opus 5, across all 20 games.'
       : 'Learning curves for six self-evolving methods and baselines with Claude Opus 5, showing normalized score against progress through the evaluation window.';
   document.querySelector('#human-curve-note').hidden = button.dataset.curve !== 'humans';
 }));

@@ -1,6 +1,6 @@
 {
-  "source": "canonical_curves.json with Opus 5.5 cohort; paper_metrics.challenge_weighted_curve; human_experiment.json weighted_curve",
-  "snapshot": "2026-10-07",
+  "source": "Frozen manuscript curve snapshots; canonical and Opus 5.5 curves retained; audited GPT-6 Astra paper_analysis.json curve added; human_experiment.json weighted_curve",
+  "snapshot": "2026-10-08",
   "opus55SourceSha256": "e21c6c2b82b146ca477f14a26dcd771ef25232065b1eb49525898b4221458238",
   "humanSourceSha256": "f96b5b42b10112de89b1c61326171986af46992b377dc40ac696dd01a50b521a",
   "humanPlotPolicy": "Top-k selected separately in each game by peak score. Human plots carry each selected player's prior best forward only at unobserved positions, as in the manuscript; reported metrics are unchanged.",
@@ -154,6 +154,21 @@
           71.40437310661697,
           71.23674980810982,
           72.10749952547569
+        ]
+      },
+      {
+        "name": "GPT-6 Astra",
+        "values": [
+          36.161579667401035,
+          43.57239384141857,
+          48.38735484083291,
+          53.4087859541451,
+          57.254591585141064,
+          59.648647847610306,
+          63.110121408219506,
+          64.6877226262248,
+          64.64037348308504,
+          71.79385767327861
         ]
       }
     ],
@@ -339,7 +354,23 @@
           56.037859837564206,
           61.298384524401996
         ]
+      },
+      {
+        "name": "OpenCode \u00b7 GPT-6 Astra",
+        "values": [
+          36.161579667401035,
+          43.57239384141857,
+          48.38735484083291,
+          53.4087859541451,
+          57.254591585141064,
+          59.648647847610306,
+          63.110121408219506,
+          64.6877226262248,
+          64.64037348308504,
+          71.79385767327861
+        ]
       }
     ]
-  }
+  },
+  "astraSourceSha256": "d8a39aa5f1e071ac4b099c67fe17b35520f63c11e1407ffd7e54b563818651ba"
 }

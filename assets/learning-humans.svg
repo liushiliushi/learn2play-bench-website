@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 490" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 497" role="img">
 <title>Normalized learning curves: humans</title>
-<rect width="820" height="490" fill="white"/>
+<rect width="820" height="497" fill="white"/>
 <g font-family="Arial, sans-serif" font-size="14" fill="#475569">
 <text x="65" y="24">Normalized score (% of reference ceiling)</text>
 <path d="M65 335.0 H790" stroke="#e2e8f0"/>
@@ -95,4 +95,17 @@
 <circle cx="790.00" cy="163.36" r="3" fill="#a16207"/>
 <path d="M555 443 h22" stroke="#a16207" stroke-width="3" stroke-dasharray="2 4"/>
 <text x="585" y="448">Human Top-5</text>
+<polyline points="65.00,233.75 145.56,213.00 226.11,199.52 306.67,185.46 387.22,174.69 467.78,167.98 548.33,158.29 628.89,153.87 709.44,154.01 790.00,133.98" fill="none" stroke="#0f6b87" stroke-width="2.4" stroke-dasharray="6 3"/>
+<circle cx="65.00" cy="233.75" r="3" fill="#0f6b87"/>
+<circle cx="145.56" cy="213.00" r="3" fill="#0f6b87"/>
+<circle cx="226.11" cy="199.52" r="3" fill="#0f6b87"/>
+<circle cx="306.67" cy="185.46" r="3" fill="#0f6b87"/>
+<circle cx="387.22" cy="174.69" r="3" fill="#0f6b87"/>
+<circle cx="467.78" cy="167.98" r="3" fill="#0f6b87"/>
+<circle cx="548.33" cy="158.29" r="3" fill="#0f6b87"/>
+<circle cx="628.89" cy="153.87" r="3" fill="#0f6b87"/>
+<circle cx="709.44" cy="154.01" r="3" fill="#0f6b87"/>
+<circle cx="790.00" cy="133.98" r="3" fill="#0f6b87"/>
+<path d="M65 470 h22" stroke="#0f6b87" stroke-width="3" stroke-dasharray="6 3"/>
+<text x="95" y="475">OpenCode · GPT-6 Astra</text>
 </g></svg>

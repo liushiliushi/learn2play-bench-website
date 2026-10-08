@@ -1,5 +1,5 @@
 {
-  "snapshot": "2026-10-07",
+  "snapshot": "2026-10-08",
   "pricingSnapshot": "2026-08-30",
   "source": "results/_analysis/rq6_cost_audit.csv",
   "sourceSha256": "a8e9c1835f6272b8f7a5853b5da77dd12efc6bad7f6f92649b537788572f69ee",
@@ -19,6 +19,31 @@
     "reportedEpisodes": 375
   },
   "metric": "Normalized Max (% of reference ceiling)",
+  "astra": {
+    "performanceSourceSha256": "d8a39aa5f1e071ac4b099c67fe17b35520f63c11e1407ffd7e54b563818651ba",
+    "costSourceSha256": "30d8eda595703d1bb585569941dc9f24655bda87cfe0af06aab9c5c07f7ade78",
+    "pricingSource": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+    "pricingAccessed": "2026-10-08",
+    "usdPerMillionTokens": {
+      "fresh_input": 10.0,
+      "cache_read": 1.0,
+      "cache_write": 12.5,
+      "output": 50.0
+    },
+    "longContextThreshold": 272000,
+    "longContextMultipliers": {
+      "input_and_cache": 2,
+      "output_including_reasoning": 1.5
+    },
+    "uniqueUsageRecords": 4253,
+    "unknownUsageRecords": 13,
+    "trials": 60,
+    "collectedEpisodes": 600,
+    "reportedEpisodes": 375,
+    "costIsLowerBound": true,
+    "exactCostUsd": null,
+    "note": "Generation includes reasoning without double counting. Unknown usage is not zero; excluded from the known-cost frontier and efficiency ratios."
+  },
   "costMetric": "Estimated mean USD per episode",
   "points": [
     {
@@ -260,6 +285,15 @@
       "group": "opencode",
       "score": 80.1169455448871,
       "cost": 1.0608687906666665
+    },
+    {
+      "id": "opencode_gpt-6-astra",
+      "system": "OpenCode",
+      "model": "GPT-6 Astra",
+      "group": "opencode",
+      "score": 76.24710470431943,
+      "cost": 0.4160961583333333,
+      "costIsLowerBound": true
     }
   ]
 }
