@@ -40,9 +40,9 @@
     "trials": 60,
     "collectedEpisodes": 600,
     "reportedEpisodes": 375,
-    "costIsLowerBound": true,
+    "costStatus": "unconfirmed",
     "exactCostUsd": null,
-    "note": "Generation includes reasoning without double counting. Unknown usage is not zero; excluded from the known-cost frontier and efficiency ratios."
+    "note": "No numeric Astra cost is published until complete usage is reconciled. Excluded from the plot, frontier and efficiency ratios."
   },
   "costMetric": "Estimated mean USD per episode",
   "points": [
@@ -285,15 +285,18 @@
       "group": "opencode",
       "score": 80.1169455448871,
       "cost": 1.0608687906666665
-    },
+    }
+  ],
+  "unplotted": [
     {
       "id": "opencode_gpt-6-astra",
       "system": "OpenCode",
       "model": "GPT-6 Astra",
       "group": "opencode",
       "score": 76.24710470431943,
-      "cost": 0.4160961583333333,
-      "costIsLowerBound": true
+      "cost": null,
+      "costStatus": "unconfirmed",
+      "reason": "Incomplete native usage; awaiting gateway reconciliation."
     }
   ]
 }

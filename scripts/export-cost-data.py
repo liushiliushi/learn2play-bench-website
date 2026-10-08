@@ -37,12 +37,12 @@ astra = json.loads(astra_performance_path.read_text())
 astra_cost = json.loads(astra_cost_path.read_text())
 assert astra['terminal_replays_verified'] == 600 and astra['paper_scored_episodes'] == 375
 assert not astra_cost['selected_cohort']['usage_complete']
-points.append({'id': 'opencode_gpt-6-astra', 'system': 'OpenCode',
+unplotted = [{'id': 'opencode_gpt-6-astra', 'system': 'OpenCode',
                'model': 'GPT-6 Astra', 'group': 'opencode',
                'score': astra['metrics']['max'],
-               'cost': astra_cost['known_usd_lower_bound_per_episode'],
-               'costIsLowerBound': True})
-assert len(points) == 31 and len({p['id'] for p in points}) == 31
+               'cost': None, 'costStatus': 'unconfirmed',
+               'reason': 'Incomplete native usage; awaiting gateway reconciliation.'}]
+assert len(points) == 30 and len({p['id'] for p in points}) == 30
 assert all(p['cost'] > 0 and 20 <= p['score'] <= 90 for p in points)
 data = {
     'snapshot': '2026-10-08', 'pricingSnapshot': '2026-08-30',
@@ -63,9 +63,9 @@ data = {
               'uniqueUsageRecords': astra_cost['selected_cohort']['unique_native_reports'],
               'unknownUsageRecords': len(astra_cost['selected_cohort']['unknown_usage_records']),
               'trials': 60, 'collectedEpisodes': 600, 'reportedEpisodes': 375,
-              'costIsLowerBound': True, 'exactCostUsd': None,
-              'note': 'Generation includes reasoning without double counting. Unknown usage is not zero; excluded from the known-cost frontier and efficiency ratios.'},
-    'costMetric': 'Estimated mean USD per episode', 'points': points,
+              'costStatus': 'unconfirmed', 'exactCostUsd': None,
+              'note': 'No numeric Astra cost is published until complete usage is reconciled. Excluded from the plot, frontier and efficiency ratios.'},
+    'costMetric': 'Estimated mean USD per episode', 'points': points, 'unplotted': unplotted,
 }
 (SITE / 'assets/performance-cost.json').write_text(json.dumps(data, indent=2) + '\n')
 print(f'Exported {len(points)} audited coordinates; no metrics recomputed.')

@@ -6,11 +6,12 @@ const CostChart = (() => {
   const names = { opencode: 'OpenCode', methods: 'Methods', 'claude-code': 'Claude Code', codex: 'Codex' };
   const escape = value => String(value).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const dollars = value => '$' + value.toFixed(value < 0.01 ? 4 : value < 1 ? 3 : 2);
-  const price = point => (point.costIsLowerBound ? '≥ ' : '') + dollars(point.cost);
-  const visiblePoints = (points, filter) => points.filter(p => filter === 'all' || (filter === 'harnesses' ? ['claude-code', 'codex'].includes(p.group) : p.group === filter));
+  const price = point => dollars(point.cost);
+  const hasCost = point => Number.isFinite(point.cost) && point.cost > 0 && !point.costIsLowerBound && point.costStatus !== 'unconfirmed';
+  const visiblePoints = (points, filter) => points.filter(p => hasCost(p) && (filter === 'all' || (filter === 'harnesses' ? ['claude-code', 'codex'].includes(p.group) : p.group === filter)));
   function frontier(points) {
     let best = -Infinity;
-    return points.filter(p => !p.costIsLowerBound).sort((a, b) => a.cost - b.cost || b.score - a.score).filter(p => {
+    return points.filter(hasCost).sort((a, b) => a.cost - b.cost || b.score - a.score).filter(p => {
       if (p.score <= best) return false;
       best = p.score;
       return true;
@@ -51,13 +52,12 @@ const CostChart = (() => {
     const efficient = frontier(data.points), efficientIds = new Set(efficient.map(p => p.id));
     const candidates = [...points].sort((a, b) =>
       Number(b.id === selected) - Number(a.id === selected) ||
-      Number(Boolean(b.costIsLowerBound)) - Number(Boolean(a.costIsLowerBound)) ||
       Number(efficientIds.has(b.id)) - Number(efficientIds.has(a.id)) || b.score - a.score
     ).slice(0, filter === 'all' ? 7 : 9);
     const labels = labelLayout(points, candidates, width);
     const chunks = [`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${width} 510" width="${width}" height="510" role="${interactive ? 'group' : 'img'}" aria-labelledby="cost-plot-title cost-plot-description" font-family="Arial, sans-serif">
       <title id="cost-plot-title">Performance and estimated inference cost</title>
-      <desc id="cost-plot-description">${points.length} configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed frontier uses all ${data.points.filter(p => !p.costIsLowerBound).length} configurations with known costs. An open marker and right arrow indicate a cost lower bound; unknown additional cost is not zero. ${interactive ? 'Focus or select any point to read its values below the chart.' : 'Each point has a title with its configuration and values.'}</desc>
+      <desc id="cost-plot-description">${points.length} configurations. Horizontal axis: estimated mean US dollars per episode on a logarithmic scale. Vertical axis: normalized Max score, from 20 to 90 percent. Higher and farther left is better. The dashed frontier uses all ${data.points.filter(hasCost).length} configurations with known costs. GPT-6 Astra cost is unconfirmed and is not plotted. ${interactive ? 'Focus or select any point to read its values below the chart.' : 'Each point has a title with its configuration and values.'}</desc>
       <rect width="${width}" height="510" fill="#fff"/>
       <style>.cost-point{cursor:pointer}.cost-point:focus-visible{outline:none}.cost-point .point-halo{opacity:0}.cost-point:hover .point-halo,.cost-point:focus .point-halo,.cost-point.is-selected .point-halo{opacity:1}.cost-point:focus .point-mark{stroke:#182526;stroke-width:2.5}</style>`];
     for (let score = 20; score <= 90; score += 10) {
@@ -81,13 +81,14 @@ const CostChart = (() => {
     // Put selected points last, so their ring stays visible in dense clusters.
     for (const p of [...points].sort((a, b) => Number(a.id === selected) - Number(b.id === selected))) {
       const x = g.x(p.cost), y = g.y(p.score), color = colors[p.group];
-      const description = `${p.system} · ${p.model}: Max ${p.score.toFixed(1)}%, estimated cost ${price(p)} per episode${p.costIsLowerBound ? '; lower bound, usage incomplete; excluded from the known-cost frontier' : ''}`;
+      const description = `${p.system} · ${p.model}: Max ${p.score.toFixed(1)}%, estimated cost ${price(p)} per episode`;
       chunks.push(`<g class="cost-point${p.id === selected ? ' is-selected' : ''}" data-cost-id="${escape(p.id)}" ${interactive ? `tabindex="0" role="button" aria-pressed="${p.id === selected}" aria-label="${escape(description)}"` : ''}>
         <title>${escape(description)}</title><circle cx="${x}" cy="${y}" r="13" fill="transparent"/>
         <circle class="point-halo" cx="${x}" cy="${y}" r="11" fill="${color}" fill-opacity=".15"/>
-        ${p.costIsLowerBound ? `<path d="M${x + 7} ${y}h32m-6 -5 6 5-6 5" fill="none" stroke="${color}" stroke-width="2"/><circle class="point-mark" cx="${x}" cy="${y}" r="6" fill="#fff" stroke="${color}" stroke-width="2"/>` : p.group === 'codex' ? `<path class="point-mark" d="M${x} ${y - 7}l7 7-7 7-7-7Z" fill="${color}" stroke="#fff" stroke-width="2"/>` : `<circle class="point-mark" cx="${x}" cy="${y}" r="${p.group === 'methods' ? 5 : 6}" fill="${color}" stroke="#fff" stroke-width="2"/>`}
+        ${p.group === 'codex' ? `<path class="point-mark" d="M${x} ${y - 7}l7 7-7 7-7-7Z" fill="${color}" stroke="#fff" stroke-width="2"/>` : `<circle class="point-mark" cx="${x}" cy="${y}" r="${p.group === 'methods' ? 5 : 6}" fill="${color}" stroke="#fff" stroke-width="2"/>`}
       </g>`);
     }
+    chunks.push(`<text x="${g.left}" y="467" fill="#66756e" font-size="12">GPT-6 Astra: cost unconfirmed; not plotted.</text>`);
     chunks.push('</svg>');
     return chunks.join('\n');
   }
@@ -96,7 +97,7 @@ const CostChart = (() => {
     const host = document.querySelector('#cost-plot');
     if (!host) return;
     try {
-      const response = await fetch('assets/performance-cost.json?v=astra-20261008');
+      const response = await fetch('assets/performance-cost.json?v=astra-cost-unconfirmed-20261008');
       if (!response.ok) throw new Error('Cost snapshot unavailable');
       const data = await response.json();
       let filter = 'all', selected = null, lastWidth = 0;
@@ -104,7 +105,7 @@ const CostChart = (() => {
       const formatDetails = p => {
         details.querySelector('[data-cost-name]').textContent = `${p.system} · ${p.model}`;
         details.querySelector('[data-cost-score]').textContent = `${p.score.toFixed(1)}%`;
-        details.querySelector('[data-cost-price]').textContent = price(p) + (p.costIsLowerBound ? ' (lower bound)' : '');
+        details.querySelector('[data-cost-price]').textContent = price(p);
         details.hidden = false;
         document.querySelector('#cost-hint').hidden = true;
       };
@@ -121,7 +122,7 @@ const CostChart = (() => {
         const tooltip = host.querySelector('.cost-tooltip');
         tooltip.querySelector('strong').textContent = point.model;
         tooltip.querySelector('small').textContent = point.system;
-        tooltip.querySelector('span').textContent = `${point.score.toFixed(1)}% Max · ${price(point)} / episode${point.costIsLowerBound ? ' (lower bound)' : ''}`;
+        tooltip.querySelector('span').textContent = `${point.score.toFixed(1)}% Max · ${price(point)} / episode`;
         tooltip.hidden = false;
         const scale = host.clientWidth / lastWidth, g = geometry(lastWidth), scroller = host.parentElement;
         tooltip.style.left = `${Math.max(scroller.scrollLeft + 8, Math.min(g.x(point.cost) * scale + 16, scroller.scrollLeft + scroller.clientWidth - tooltip.offsetWidth - 8))}px`;
